@@ -1,1 +1,1 @@
-Jingbo Zhang is a PhD candidate at the Department of Computer Science, City University of Hong Kong. His current research interests include 3D reconstruction and optimization, photorealistic rendering, and computational photography.
+Jingbo Zhang is a PhD candidate at the Department of Computer Science, City University of Hong Kong. His current research interests mainly lie in 3D reconstruction and generation, 2D/3D inpainting, textual optimization, and neural rendering.
