@@ -1,428 +1,986 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Jingbo Zhang</title>
-  
-  <meta name="author" content="Jingbo Zhang">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="./static/css/stylesheet.css">
-	<link rel="icon" href="./static/icon/selfies_eckert.svg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jingbo Zhang - Computer Science PhD - Tencent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .publication-item {
+            transition: all 0.3s ease;
+        }
+        .publication-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .academic-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .news-item {
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        .news-item:hover {
+            border-left-color: #764ba2;
+            background-color: #f8fafc;
+        }
+        .patent-item {
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .patent-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        }
+        #additionalPublications {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        #togglePublications {
+            transition: all 0.3s ease;
+        }
+        #togglePublications:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+    </style>
 </head>
 
-<body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-  <tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="academic-gradient text-white py-8 shadow-lg">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center space-x-8 text-center">
+                    <div>
+                        <h1 class="text-4xl font-bold mb-2">Jingbo Zhang</h1>
+                        <p class="text-xl opacity-90">章敬波</p>
+                        <p class="text-lg opacity-80 mt-1">Researcher, Robotics X Lab, Tencent</p>
+                        
+                        <!-- Contact Icons -->
+                        <div class="flex items-center justify-center space-x-6 mt-4">
+                            <a href="mailto:jbzhang6-c@my.cityu.edu.hk" class="text-white hover:text-blue-200 transition-colors" title="Email">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                            <!-- <a href="tel:+86-15727336166" class="text-white hover:text-green-200 transition-colors" title="Phone">
+                                <i class="fas fa-phone text-xl"></i>
+                            </a> -->
+                            <a href="https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en" class="text-white hover:text-red-200 transition-colors" title="Google Scholar">
+                                <i class="fab fa-google text-xl"></i>
+                            </a>
+                            <a href="https://github.com/eckertzhang/" class="text-white hover:text-gray-200 transition-colors" title="GitHub">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0003-0009-2315" class="text-white hover:text-green-200 transition-colors" title="ORCID">
+                                <i class="fab fa-orcid text-xl"></i>
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Jingbo-Zhang-27?ev=hdr_xprf" class="text-white hover:text-blue-200 transition-colors" title="ResearchGate">
+                                <i class="fab fa-researchgate text-xl"></i>
+                            </a>
+                            <a href="https://twitter.com/eckertzhang" class="text-white hover:text-blue-200 transition-colors" title="X-Twitter">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.xiaohongshu.com/user/profile/5f2ceedf0000000001005948" class="text-white hover:text-blue-200 transition-colors" title="小红书">
+                                <i class="fa-solid fa-book"></i>
+                            </a>
+                            <!-- <a href="EckertZ" class="text-white hover:text-blue-200 transition-colors" title="WeChat">
+                                <i class="fab fa-weixin text-xl"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./Bio/photo/JZhang.jpg" 
+                             alt="Jingbo Zhang" 
+                             class="w-40 h-40 rounded-full border-4 border-white shadow-lg object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Jingbo Zhang</name>
-              </p>
-              <p style="text-align:left">
-                <a href="mailto:jbzhang6-c at my.cityu.edu.hk">Email</a> &nbsp/&nbsp
-                <a href="./Bio/Zhang JingBo CV(2024).pdf">CV</a> &nbsp/&nbsp
-                <a href="./Bio/eckertzhang-bio.txt">Bio</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp 
-                <a href="https://twitter.com/eckertzhang">Twitter</a> &nbsp/&nbsp
-                <a href="https://github.com/eckertzhang/">Github</a>
-              </p>
-              
-              <p style="text-align: justify;">I am a Ph.D. Candidate supervised by <a href="https://liaojing.github.io/html/index.html">Prof. Jing Liao</a> at 
-                the Department of Computer Science, City University of Hong Kong. I have broad research interests in machine learning, pattern recognition, computer vision, and graphics. 
-                Recently, I am focusing on 3D/4D reconstruction and generation, 3D scene editing, 2D/3D inpainting, depth estimation,
-                neural rendering, and diffusion models.
-              </p>
-              <p style="text-align: justify;">
-                If you have any questions to discuss or are interested in collaboration, please feel free to contact me.
-              </p>
-            </td>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex space-x-8">
+                <button class="tab-btn py-4 px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 active" data-tab="homepage">
+                    <i class="fas fa-home mr-2"></i>Homepage
+                </button>
+                <!-- <button class="tab-btn py-4 px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300" data-tab="team">
+                    <i class="fas fa-users mr-2"></i>Collaborators
+                </button> -->
+            </div>
+        </div>
+    </nav>
 
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="./Bio/photo/JZhang.jpg">
-                <img style="width:60%;max-width:60%; padding-left:25%;" alt="profile photo" src="./Bio/photo/JZhang.jpg" class="hoverZoomLink">
-              </a>
-            </td>
-          </tr>
-        </tbody></table>
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-8">
+        <!-- Homepage Tab -->
+        <div id="homepage" class="tab-content active">
+            <!-- Personal Introduction -->
+            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">About Me</h2>
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                            <p class="text-justify text-gray-700 leading-relaxed mb-4">
+                                I am currently a researcher at <a href="https://roboticsx.tencent.com/#/" class="text-blue-600 hover:underline visited:text-blue-600">Robotics X Lab</a>, Tencent. 
+                                I received my Ph.D. in Computer Science from City University of Hong Kong in 2025, 
+                                under the supervision of <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" class="text-blue-600 hover:underline visited:text-blue-600">Prof. Jing Liao</a>. 
+                                Before pursuing my doctoral studies in Hong Kong, I spent two years as a Ph.D. student specializing in pattern recognition at the School of Automation Science and Electrical Engineering, Beihang University. 
+                                Earlier, I earned my bachelor’s degrees in Engineering Mechanics and Business Administration (as a dual degree) from Beihang University in 2018.
+                            </p>
+                            <p class="text-justify text-gray-700 leading-relaxed mb-4">
+                                My research interests span machine learning, computer vision, computer graphics, large language models and robotics. 
+                                Recently, my work has focused on 2D image editing; 3D/4D scene reconstruction, generation, and editing; as well as scene perception and interaction. 
+                                I am also deeply interested in embodied intelligence and the development of world models that enable intelligent agents to navigate and interact effectively within complex environments.
+                            </p>
+                            <p class="text-justify text-gray-700 leading-relaxed mb-4">
+                                If you would like to discuss research ideas or explore potential collaborations, please feel free to contact me.
+                            </p>
+                            
+                            <!-- Prospective Students & Intern Info -->
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold text-blue-800 mb-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Research Intern Recruitment</h4>
+                                <p class="text-sm text-gray-700 mb-2">
+                                    We are recruiting research interns specializing in <strong>3D generation</strong> or <strong>scene perception</strong>. Candidates should have a solid research background in 3D reconstruction and recognition. We provide a top-tier research platform and cutting-edge exploratory projects.
+                                </p>
+                                <div class="text-xs text-gray-600">
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Strong math & programming skills required</span>
+                                </div>
+                                <div class="text-xs text-gray-600">
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Self-motivated & Deep thinking required</span>
+                                </div>
+                                <!-- <div class="text-xs text-gray-600">
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Persistent & responsible required</span>
+                                </div> -->
+                                <div class="text-xs text-gray-600">
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Background in 3D reconstruction & recognition required</span>
+                                </div>
+                                <div class="text-xs text-gray-600">
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Full-time internship ≥ 6 months required</span>
+                                </div>
+                            </div>
+                            <!-- <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-graduation-cap mr-2"></i>Prospective Students</h4>
+                                <p class="text-sm text-gray-700 mb-2">
+                                    We welcome outstanding students interested in AI, ML, and CV to join our research team. We provide excellent research environment and abundant resources.
+                                </p>
+                                <div class="text-xs text-gray-600">
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Strong math & programming skills required</span>
+                                    <span><i class="fas fa-star text-yellow-500 mr-1"></i>International collaboration opportunities</span>
+                                </div>
+                            </div> -->
+                            
+                            <div class="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Computer Graphics</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">LLMs</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Robotics</span>
+                            </div>
+                        </div>
 
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody> -->
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>
-                <img style="width:3.5%;max-width:3.5%;" src="./static/icon/pika32.svg"> 
-                Publications
-                <!-- <font>&#127796;Publications</font>  -->
-              </heading>
-            </td>
-          </tr>
-        </tbody></table>
+                        <div class="space-y-4">
+                            <!-- <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Academic Achievements</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li><i class="fas fa-award text-yellow-500 mr-2"></i>IEEE Fellow (2020)</li>
+                                    <li><i class="fas fa-medal text-blue-500 mr-2"></i>Changjiang Scholar (2018)</li>
+                                    <li><i class="fas fa-trophy text-green-500 mr-2"></i>NSFC Distinguished Young Scholar (2016)</li>
+                                    <li><i class="fas fa-star text-purple-500 mr-2"></i>CCF Outstanding Contribution Award (2019)</li>
+                                </ul>
+                            </div> -->
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Education</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li><i class="fas fa-graduation-cap mr-2"></i>PhD - Computer Science, City University of Hong Kong (2025)</li>
+                                    <li><i class="fas fa-graduation-cap mr-2"></i>BS - Business Administration (dual degree), Beihang University (2018)</li>
+                                    <li><i class="fas fa-graduation-cap mr-2"></i>BS - Engineering in Mechanics, Beihang University (2018)</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+            </section>
 
-        <!-- List of Publications -->
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody> -->
+            <!-- Recent News -->
+            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Recent News</h2>
+                <div class="space-y-4">
+                    <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">We launched <a href="https://tairos.tencent.com/" class="text-blue-600 hover:underline visited:text-blue-600">TAIROS</a>, an open platform for embodied AI platform for robotics applications</h4>
+                                <p class="text-gray-600 text-sm">We present TAIROS, a comprehensive embodied AI platform that integrates multi-modal perception, long-horizon planning, and dexterous action capabilities into a unified modular architecture.</p>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2025-07-27</span>
+                        </div>
+                    </div>
+                    <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Successfully defended my doctoral dissertation</h4>
+                                <p class="text-gray-600 text-sm">I successfully defended my PhD dissertation, "Improving 3D Reconstruction through Data Prior Exploration," and was awarded the PhD.</p>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2025-06-06</span>
+                        </div>
+                    </div>
+                    <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Paper Accepted to IEEE TCSVT</h4>
+                                <p class="text-gray-600 text-sm">Our research paper, "HumanRef-GS: Image-to-3D Human Generation with Reference-Guided Diffusion and 3D Gaussian Splatting", has been accepted for publication in IEEE Transactions on Circuits and Systems for Video Technology.</p>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2025-02-02</span>
+                        </div>
+                    </div>
+                    <!-- <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Paper Accepted to</h4>
+                                <p class="text-gray-600 text-sm">Our research on "" has been accepted as an oral presentation at ICML 2024.</p>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2024-01-10</span>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
 
+            <!-- Publications -->
+            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Publications</h2>
+                <div class="space-y-6">
 
+                    <!-- Paper example -->
+                    <!-- <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2023_HumanRef/teaser.gif" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
+                                    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
+                                    <a href="https://yanpei.me/">Yanpei Cao</a>,
+                                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://arxiv.org/abs/2401.17807" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2401.17807.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="#" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
+                                    <a href="./papers/2024_3D_Survey/li2024advances.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2024_3D_Survey/survey.jpg" 
+                                     alt="Survey Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    Advances in 3D Generation: A Survey
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
+                                    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
+                                    <a href="https://scholar.google.com.hk/citations?user=2ztThPwAAAAJ&hl=zh-CN">Di Kang</a>,
+                                    <a href="https://scholar.google.com/citations?user=gP-UxcoAAAAJ">Weihao Cheng</a>,
+                                    <a href="https://scholar.google.com/citations?user=UvvufgQAAAAJ&hl=zh-CN">Yiming Gao</a>,
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="https://lzhnb.github.io/">Zhihao Liang</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>,
+                                    <a href="https://yanpei.me/">Yanpei Cao</a>,
+                                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>arXiv preprint arXiv:2401.17807, 2024</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://arxiv.org/pdf/2401.17807.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="./papers/2024_3D_Survey/li2024advances.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2023_HumanRef/teaser.gif" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
+                                    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
+                                    <a href="https://yanpei.me/">Yanpei Cao</a>,
+                                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://eckertzhang.github.io/HumanRef.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2311.16961.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="https://github.com/eckertzhang/HumanRef" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="https://youtu.be/4R3iaamYwa8" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
+                                    <a href="./papers/2023_HumanRef/zhang2023humanref.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2023_VQ-NeRF/teaser.gif" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    VQ-NeRF: Neural Reflectance Decomposition and Editing with Vector Quantization
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <a href="https://github.com/JiuTongBro">Hongliang Zhong</a>,
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://jtbzhl.github.io/VQ-NeRF.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2310.11864.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="https://github.com/JiuTongBro/vqnerf_release" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="https://youtu.be/-kIHOV28ukk" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
+                                    <a href="./papers/2023_AvatarCraft/zhong2023vq.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2023_Text2NeRF/teaser.gif" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    Text2NeRF: Text-Driven 3D Scene Generation with Neural Radiance Fields
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
+                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
+                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://eckertzhang.github.io/Text2NeRF.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2305.11588.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="https://github.com/eckertzhang/Text2NeRF" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="https://youtu.be/G3xiabqcv3E" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
+                                    <a href="./papers/2023_Text2NeRF/zhang2023text2nerf.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2023_AvatarCraft/teaser.gif" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    AvatarCraft: Transforming Text into Neural Human Avatars with Parameterized Shape and Pose Control
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <a href="https://j-rx.com/">Ruixiang Jiang</a>,
+                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="https://mlchai.com/">Menglei Chai</a>,
+                                    <a href="https://mingminghe.com/">Mingming He</a>,
+                                    <a href="https://www.dongdongchen.bid/">Dongdong Chen</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2023</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://avatar-craft.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2303.17606.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="https://github.com/songrise/avatarcraft" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="https://youtu.be/GXPjdN-UF04" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
+                                    <a href="./papers/2023_AvatarCraft/jiang2023avatarcraft.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2022_FDNeRF/FDNeRF.gif" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    FDNeRF: Few-shot Dynamic Neural Radiance Fields for Face Reconstruction and Expression Editing
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
+                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
+                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em><strong>SIGGRAPH Asia</strong>, 2022</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://fdnerf.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2208.05751.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="https://github.com/FDNeRF/FDNeRF" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="https://www.youtube.com/embed/at_42ekU0I0" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
+                                    <a href="./papers/2022_FDNeRF/zhang2022fdnerf.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2024_3D_Survey/survey.jpg" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="https://arxiv.org/abs/2401.17807">
-                <papertitle>
-                  Advances in 3D Generation: A Survey
-                </papertitle>
-              </a>
-              <br>
-              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-              <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-              <a href="https://scholar.google.com.hk/citations?user=2ztThPwAAAAJ&hl=zh-CN">Di Kang</a>,
-              <a href="https://scholar.google.com/citations?user=gP-UxcoAAAAJ">Weihao Cheng</a>,
-              <a href="https://scholar.google.com/citations?user=UvvufgQAAAAJ&hl=zh-CN">Yiming Gao</a>,
-              <strong>Jingbo Zhang</strong>,
-              <a href="https://lzhnb.github.io/">Zhihao Liang</a>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>,
-              <a href="https://yanpei.me/">Yanpei Cao</a>,
-              <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>
-              
-              <br>
-              <!-- <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em> -->
-              <em>under review, 2024</em>
-              <br>
-              <a href="https://arxiv.org/abs/2401.17807">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2401.17807.pdf">[PDF]</a>
-              <a href="./papers/2024_3D_Survey/li2024advances.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2023_HumanRef/teaser.gif" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="https://eckertzhang.github.io/HumanRef.github.io/">
-                <papertitle>
-                  HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion
-                </papertitle>
-              </a>
-              <br>
-              <strong>Jingbo Zhang</strong>,
-              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-              <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-              <a href="https://yanpei.me/">Yanpei Cao</a>,
-              <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>
-              <br>
-              <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em>
-              <!-- <em>under review, 2023</em> -->
-              <br>
-              <a href="https://eckertzhang.github.io/HumanRef.github.io/">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2311.16961.pdf">[PDF]</a>
-              <a href="https://github.com/eckertzhang/HumanRef">[Code]</a>
-              <a href="https://youtu.be/4R3iaamYwa8">[Video]</a>
-              <a href="./papers/2023_HumanRef/zhang2023humanref.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2022_texture_opti/texture_opti.gif" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    Adaptive Joint Optimization for 3D Reconstruction with Differentiable Rendering
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2022</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="https://adjointopti.github.io/adjoin.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2208.07003.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="https://github.com/adjointopti/ADJOIN" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="./papers/2022_texture_opti/zhang2022adaptive.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2023_VQ-NeRF/teaser.gif" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="https://jtbzhl.github.io/VQ-NeRF.github.io/">
-                <papertitle>
-                  VQ-NeRF: Neural Reflectance Decomposition and Editing with Vector Quantization
-                </papertitle>
-              </a>
-              <br>
-              <a href="https://github.com/JiuTongBro">Hongliang Zhong</a>,
-              <strong>Jingbo Zhang</strong>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>
-              <br>
-              <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
-              <br>
-              <a href="https://jtbzhl.github.io/VQ-NeRF.github.io/">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2310.11864.pdf">[PDF]</a>
-              <a href="https://github.com/JiuTongBro/vqnerf_release">[Code]</a>
-              <a href="https://youtu.be/-kIHOV28ukk">[Video]</a>
-              <a href="./papers/2023_AvatarCraft/zhong2023vq.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2023_Text2NeRF/teaser.gif" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="https://eckertzhang.github.io/Text2NeRF.github.io/">
-                <papertitle>
-                  Text2NeRF: Text-Driven 3D Scene Generation with Neural Radiance Fields
-                </papertitle>
-              </a>
-              <br>
-              <strong>Jingbo Zhang</strong>,
-              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-              <a href="http://raywzy.com/">Ziyu Wan</a>,
-              <a href="https://cassiepython.github.io/">Can Wang</a>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>
-              <br>
-              <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
-              <br>
-              <a href="https://eckertzhang.github.io/Text2NeRF.github.io/">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2305.11588.pdf">[PDF]</a>
-              <a href="https://github.com/eckertzhang/Text2NeRF">[Code]</a>
-              <a href="https://youtu.be/G3xiabqcv3E">[Video]</a>
-              <a href="./papers/2023_Text2NeRF/zhang2023text2nerf.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2023_AvatarCraft/teaser.gif" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="https://avatar-craft.github.io/">
-                <papertitle>
-                  AvatarCraft: Transforming Text into Neural Human Avatars with Parameterized Shape and Pose Control
-                </papertitle>
-              </a>
-              <br>
-              <a href="https://j-rx.com/">Ruixiang Jiang</a>,
-              <a href="https://cassiepython.github.io/">Can Wang</a>,
-              <strong>Jingbo Zhang</strong>,
-              <a href="https://mlchai.com/">Menglei Chai</a>,
-              <a href="https://mingminghe.com/">Mingming He</a>,
-              <a href="https://www.dongdongchen.bid/">Dongdong Chen</a>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>
-              <br>
-              <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2023</em>
-              <br>
-              <a href="https://avatar-craft.github.io/">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2303.17606.pdf">[PDF]</a>
-              <a href="https://github.com/songrise/avatarcraft">[Code]</a>
-              <a href="https://youtu.be/GXPjdN-UF04">[Video]</a>
-              <a href="./papers/2023_AvatarCraft/jiang2023avatarcraft.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2022_FDNeRF/FDNeRF.gif" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="https://fdnerf.github.io/">
-                <papertitle>
-                  FDNeRF: Few-shot Dynamic Neural Radiance Fields for Face Reconstruction and Expression Editing
-                </papertitle>
-              </a>
-              <br>
-              <strong>Jingbo Zhang</strong>,
-              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-              <a href="http://raywzy.com/">Ziyu Wan</a>,
-              <a href="https://cassiepython.github.io/">Can Wang</a>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>
-              <br>
-              <em><strong>SIGGRAPH Asia</strong>, 2022</em>
-              <br>
-              <a href="https://fdnerf.github.io/">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2208.05751.pdf">[PDF]</a>
-              <a href="https://github.com/FDNeRF/FDNeRF">[Code]</a>
-              <a href="https://www.youtube.com/embed/at_42ekU0I0">[Video]</a>
-              <a href="./papers/2022_FDNeRF/zhang2022fdnerf.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2022_texture_opti/texture_opti.gif" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="">
-                <papertitle>
-                  Adaptive Joint Optimization for 3D Reconstruction with Differentiable Rendering
-                </papertitle>
-              </a>
-              <br>
-              <strong>Jingbo Zhang</strong>,
-              <a href="http://raywzy.com/">Ziyu Wan</a>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>
-              <br>
-              <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2022</em>
-              <br>
-              <a href="https://adjointopti.github.io/adjoin.github.io/">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2208.07003.pdf">[PDF]</a>
-              <a href="https://github.com/adjointopti/ADJOIN">[Code]</a>
-              <!-- <a href="">[Video]</a> -->
-              <a href="./papers/2022_texture_opti/zhang2022adaptive.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="width:25%; vertical-align:middle;">
-              <img src="./papers/2021_ICT/ICT.png" alt="b3do" width="180" height="130" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="http://raywzy.com/ICT">
-                <papertitle>
-                  High-Fidelity Pluralistic Image Completion with Transformers
-                </papertitle>
-              </a>
-              <br>
-              <a href="http://raywzy.com/">Ziyu Wan</a>,
-              <strong>Jingbo Zhang</strong>,
-              <a href="http://www.dongdongchen.bid/">Dongdong Chen</a>,
-              <a href="https://liaojing.github.io/html/index.html">Jing Liao</a>
-              <br>
-              <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2021</em>
-              <br>
-              <a href="http://raywzy.com/ICT">[Project Page]</a>
-              <a href="https://arxiv.org/pdf/2103.14031.pdf">[PDF]</a>
-              <a href="https://github.com/raywzy/ICT">[Code]</a>
-              <!-- <a href="">[Video]</a> -->
-              <a href="./papers/2021_ICT/wan2021high.bib">[Bibtex]</a>
-              <p>
-              </p>
-            </td>
-          </tr>
+                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                        <div class="grid md:grid-cols-4 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="./papers/2021_ICT/ICT.png" 
+                                     alt="Paper" 
+                                     class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="md:col-span-3">
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
+                                    High-Fidelity Pluralistic Image Completion with Transformers
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
+                                    <strong>Jingbo Zhang</strong>,
+                                    <a href="http://www.dongdongchen.bid/">Dongdong Chen</a>,
+                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
+                                </p>
+                                <p class="text-sm text-gray-500 mb-2">
+                                    <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2021</em>
+                                </p>
+                                <div class="flex space-x-4 text-sm">
+                                    <a href="http://raywzy.com/ICT" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
+                                    <a href="https://arxiv.org/pdf/2103.14031.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
+                                    <a href="https://github.com/raywzy/ICT" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
+                                    <a href="./papers/2021_ICT/wan2021high.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          <tr>
-            <td style="width:25%; vertical-align:middle">
-              <img src="./papers/2019_beta_wavelet/beta_wavelet.jpg" alt="b3do" width="180" height="100" style="border-style: none">
-            </td>
-            <td width="70%" valign="top" style="padding-left: 1%;">
-              <a href="https://ieeexplore.ieee.org/document/8863416">
-                <papertitle>
-                  A multiple beta wavelet-based locally regularized ultraorthogonal forward regression algorithm for time-varying system identification with applications to EEG
-                </papertitle>
-              </a>
-              <br>Yang Li, <strong>Jingbo Zhang</strong>, Weigang Cui, Heng Yuan, Hualiang Wei
-              <br>
-              <em>IEEE Transactions on Instrumentation and Measurement (<strong>TIM</strong>), 2019</em>
-              <br>
-              <!-- <a href="">[Project Page]</a> -->
-              <a href="https://eprints.whiterose.ac.uk/144526/1/IEEE-IM%20Accepted%20Paper%20%28Accepetd%2014-03-2019%29.pdf">[PDF]</a>
-              <!-- <a href="">[Code]</a> -->
-              <!-- <a href="">[Video]</a> -->
-              <a href="./papers/2019_beta_wavelet/li2019multiple.bib">[Bibtex]</a>
-              <!-- <p>
-                A novel parametric modeling algorithm is proposed to identify time-varying nonlinear systems based on a TV-NARX model.
-              </p> -->
-            </td>
-          </tr>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="togglePublications" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-chevron-down mr-2"></i>View Complete Publication List
+                    </button>
+                </div>
+                
+                <!-- Additional Publications (initially hidden) -->
+                <div id="additionalPublications" class="space-y-6 mt-6" style="display: none;"></div>
+            </section>
 
+            <!-- Patents -->
+            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Patents</h2>
 
-        </tbody></table>
+                <div class="patent-item bg-gray-50 rounded-lg p-6">
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="md:col-span-1">
+                            <img src="./patents/CN201711305025_FullTextImage1.png" 
+                                    alt="patents" 
+                                    class="w-full h-40 object-cover object-top rounded-lg">
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    一种基于beta小波基函数展开的时变非线性系统快速辨识方法
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Patent No: CN107967395A
+                                </p>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Inventors: Yang Li, <b>Jingbo Zhang</b>, Weigang Cui, Song Xu, Qinglei Hu
+                                </p>
+                                <!-- <p class="text-sm text-gray-700 leading-relaxed">
+                                    This invention provides 
+                                </p> -->
+                                <div class="mt-3 flex items-center text-sm text-green-600">
+                                    <i class="fas fa-check-circle mr-1"></i>
+                                    <span>Granted (2018-04-27)</span>
+                                </div>
+                                <!-- <div class="mt-3 flex items-center text-sm text-yellow-600">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Under Review (Applied 2023-12-01)</span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="patent-item bg-gray-50 rounded-lg p-6">
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="md:col-span-1">
+                            <img src="./patents/CN108509933A.PDF.png" 
+                                    alt="patents" 
+                                    class="w-full h-40 object-cover object-top rounded-lg">
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    一种基于多小波基函数展开的锋电位时变格兰杰因果准确辨识方法
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Patent No: CN108509933A
+                                </p>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Inventors: Yang Li, Daxin Hao, <b>Jingbo Zhang</b>
+                                </p>
+                                <!-- <p class="text-sm text-gray-700 leading-relaxed">
+                                    This invention provides 
+                                </p> -->
+                                <div class="mt-3 flex items-center text-sm text-green-600">
+                                    <i class="fas fa-check-circle mr-1"></i>
+                                    <span>Granted (2018-09-07)</span>
+                                </div>
+                                <!-- <div class="mt-3 flex items-center text-sm text-yellow-600">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Under Review (Applied 2023-12-01)</span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
 
-        <!-- Patents -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>
-              Patents
-            </heading>
-            <p>
-              <ul>
-                <p><li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  一种基于beta小波基函数展开的时变非线性系统快速辨识方法, CN107967395A, Yang Li, <b>Jingbo Zhang</b>, Weigang Cui, Song Xu, Qinglei Hu<br>
-                </li></p>
-                <p><li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  一种基于多小波基函数展开的锋电位时变格兰杰因果准确辨识方法, CN108509933A, Yang Li, Daxin Hao, <b>Jingbo Zhang</b><br>
-                </li></p>
-              </ul>
-            </p>
-          </td>
-          </tr>
-        </tbody></table>
-        
-        
-        <!-- Teaching -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>
-              Teaching
-            </heading>
-            <p>
-              <ul>
-                <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2020/2021</a>, Teaching Assistant (TA)<br>
-                </li>
-                <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2021/2022</a>, Teaching Assistant (TA)<br>
-                </li>
-                <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2022/2023</a>, Teaching Assistant (TA)<br>
-                </li>
-                <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2023/2024</a>, Teaching Assistant (TA)<br>
-                </li>
-              </ul>
-            </p>
-          </td>
-          </tr>
-        </tbody></table>
+            </section>
 
+            <!-- Employment -->
+             <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Employment</h2>
+                <div class="space-y-4">
+                    <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    Research Intern, <a href="https://roboticsx.tencent.com/#/">Robotics X Lab</a>, Tencent
+                                </h4>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4 text-left">From 2024.09 to now</span>
+                        </div>
+                    </div>
+                    <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    Research Intern, <a href="https://ai.tencent.com/ailab/">Tencent AI Lab</a>
+                                </h4>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4 text-left">From 2023.05 to 2024.08</span>
+                        </div>
+                    </div>
+                    <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    Research Assistant, <a href="http://sri.cityu.edu.hk/sri/">CityU Shenzhen Research Institute</a>
+                                </h4>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">From 2020.06 to 2020.08</span>
+                        </div>
+                    </div>
+                    <div class="news-item pl-6 py-4 rounded-lg">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    Research Intern, <a href="https://ai.tencent.com/ailab/">Tencent AI Lab</a>
+                                </h4>
+                            </div>
+                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">From 2019.12 to 2020.05</span>
+                        </div>
+                    </div>
 
-        <!-- Work Experience -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>
-              Employment
-            </heading>
-            <p>
-              <ul>
-                <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  <strong>2020.06~2020.08</strong>  &nbsp; &nbsp; &nbsp; Research Assistant <a href="http://sri.cityu.edu.hk/sri/">CityU Shenzhen Research Institute</a><br>
-                </li>
-                <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                  <strong>2019.12~2020.05</strong>  &nbsp; &nbsp; &nbsp; Research Intern in <a href="https://ai.tencent.com/ailab/">Tencent AI Lab</a><br>
-                </li>
-              </ul>
-            </p>
-          </td>
-          </tr>
-        </tbody></table>
-				
+                </div>
+             </section>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-              Source code credit to <a href="https://jonbarron.info/" target="_blank">Dr. Jon Barron</a></p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+            <!-- Services -->
+            <!-- <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Academic Services</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Journal Services</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-blue-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">IEEE Transactions on Circuits and Systems for Video Technology</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-green-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">IEEE Transactions on Visualization and Computer Graphics</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-purple-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">Computers & Graphics</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-purple-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">IEEE Transactions on Multimedia</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-purple-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">ACM Computing Surveys</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-purple-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">Signal, Image and Video Processing</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-purple-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">Visual Informatics</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-journal-whills text-purple-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">Virtual Reality</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Conference Services</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-users text-red-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">NeurIPS 2025</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-users text-red-600 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">Pacific Graphics 2025</span>
+                                    <p class="text-sm text-gray-600">Reviewer</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Teaching -->
+            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Teaching</h2>
+                <p>
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
+                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2020/2021</a>, Teaching Assistant (TA)<br>
+                    </li>
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
+                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2021/2022</a>, Teaching Assistant (TA)<br>
+                    </li>
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
+                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2022/2023</a>, Teaching Assistant (TA)<br>
+                    </li>
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
+                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2023/2024</a>, Teaching Assistant (TA)<br>
+                    </li>
+                </p>
+
+                <!-- <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Undergraduate Courses</h3>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">Fundamentals of Machine Learning</h4>
+                                <p class="text-sm text-gray-600 mb-2">Course Code: CS3308 | Credits: 3</p>
+                                <p class="text-sm text-gray-700">
+                                    Introduction to basic concepts, algorithms, and applications of machine learning, including core methods of supervised learning, unsupervised learning, and reinforcement learning.
+                                </p>
+                                <div class="mt-2 text-sm text-blue-600">
+                                    <i class="fas fa-users mr-1"></i>Enrollment: 120 students | 
+                                    <i class="fas fa-star mr-1"></i>Rating: 4.8/5.0
+                                </div>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-800 mb-2">Introduction to Artificial Intelligence</h4>
+                                <p class="text-sm text-gray-600 mb-2">Course Code: CS2106 | Credits: 3</p>
+                                <p class="text-sm text-gray-700">
+                                    Comprehensive introduction to the development history, basic principles, and main application areas of artificial intelligence, providing students with an overall understanding of the AI field.
+                                </p>
+                                <div class="mt-2 text-sm text-green-600">
+                                    <i class="fas fa-users mr-1"></i>Enrollment: 200 students | 
+                                    <i class="fas fa-star mr-1"></i>Rating: 4.7/5.0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Graduate Courses</h3>
+                        <div class="space-y-4">
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-purple-800 mb-2">Deep Learning Theory and Practice</h4>
+                                <p class="text-sm text-gray-600 mb-2">Course Code: CS6308 | Credits: 3</p>
+                                <p class="text-sm text-gray-700">
+                                    In-depth coverage of theoretical foundations and cutting-edge technologies in deep learning, combined with practical projects to develop students' research capabilities.
+                                </p>
+                                <div class="mt-2 text-sm text-purple-600">
+                                    <i class="fas fa-users mr-1"></i>Enrollment: 45 students | 
+                                    <i class="fas fa-star mr-1"></i>Rating: 4.9/5.0
+                                </div>
+                            </div>
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-red-800 mb-2">Advanced Machine Learning</h4>
+                                <p class="text-sm text-gray-600 mb-2">Course Code: CS7308 | Credits: 3</p>
+                                <p class="text-sm text-gray-700">
+                                    Exploration of cutting-edge theories and methods in machine learning, including latest research findings and future development trends.
+                                </p>
+                                <div class="mt-2 text-sm text-red-600">
+                                    <i class="fas fa-users mr-1"></i>Enrollment: 30 students | 
+                                    <i class="fas fa-star mr-1"></i>Rating: 4.8/5.0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Student Supervision</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">32</div>
+                            <p class="text-gray-600">Graduated PhD Students</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600 mb-2">15</div>
+                            <p class="text-gray-600">Current PhD Students</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600 mb-2">8</div>
+                            <p class="text-gray-600">Current MS Students</p>
+                        </div>
+                    </div>
+                </div> -->
+
+            </section>
+        </div>
+
+        <!-- Team Tab -->
+        <div id="team" class="tab-content">
+            <section class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Research Team</h2>
+                <p class="text-gray-700 leading-relaxed mb-8">
+                    Our research team focuses on cutting-edge research in artificial intelligence, machine learning, and computer vision. The team consists of postdoctoral researchers, PhD students, and MS students, working together to advance AI technology development and applications.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <img src="https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/0799d24a-d933-48f7-af10-8db8797cb792/image_1757486461_3_1.jpg" 
+                             alt="Dr. Ming Li" 
+                             class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Ming Li</h3>
+                        <p class="text-blue-600 text-sm mb-2">Postdoctoral Researcher</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Focuses on deep learning and computer vision research, published 15 papers in top-tier conferences including CVPR and ICCV.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <img src="https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e268b1a5-c879-42f0-acfb-d5040e20acfe/image_1757486461_6_1.jpg" 
+                             alt="Hua Wang PhD Student" 
+                             class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Hua Wang</h3>
+                        <p class="text-green-600 text-sm mb-2">PhD Student (5th year)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Research interests in natural language processing and multi-modal learning, recipient of the 2023 Microsoft Research Fellowship.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-purple-200 flex items-center justify-center">
+                            <i class="fas fa-user text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Jing Chen</h3>
+                        <p class="text-purple-600 text-sm mb-2">PhD Student (3rd year)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Specializes in graph neural networks and social network analysis, published 8 papers in conferences including ICLR and NIPS.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-red-200 flex items-center justify-center">
+                            <i class="fas fa-user text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Yang Liu</h3>
+                        <p class="text-red-600 text-sm mb-2">PhD Student (2nd year)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Research focus on reinforcement learning and intelligent decision systems, recipient of Tsinghua University Excellence Scholarship.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-yellow-200 flex items-center justify-center">
+                            <i class="fas fa-user text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Min Zhao</h3>
+                        <p class="text-yellow-600 text-sm mb-2">MS Student (2nd year)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Focuses on federated learning and privacy-preserving technologies, actively participates in multiple international collaboration projects.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6 text-center">
+                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-indigo-200 flex items-center justify-center">
+                            <i class="fas fa-user text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Lei Sun</h3>
+                        <p class="text-indigo-600 text-sm mb-2">MS Student (1st year)</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            New team member with research interests in machine learning theory and algorithm optimization.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Team Achievements</h3>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600 mb-2">120+</div>
+                            <p class="text-gray-600 text-sm">Published Papers</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600 mb-2">15</div>
+                            <p class="text-gray-600 text-sm">Patents Granted</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600 mb-2">8</div>
+                            <p class="text-gray-600 text-sm">Major Awards</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-600 mb-2">$5M+</div>
+                            <p class="text-gray-600 text-sm">Research Funding</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Tab removed as contact info moved to header -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p class="mb-2">&copy; 2024 Dr. Wei Zhang. All rights reserved.</p>
+                <p class="text-gray-400 text-sm">Department of Computer Science and Technology, Tsinghua University</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
