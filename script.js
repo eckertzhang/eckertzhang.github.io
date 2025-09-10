@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="md:col-span-1">
                     <img src="${publication.image}" 
                          alt="Paper" 
-                         class="w-full h-40 object-cover rounded-lg">
+                         class="w-full h-full object-cover rounded-lg">
                 </div>
                 <div class="md:col-span-3">
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">${publication.title}</h4>
