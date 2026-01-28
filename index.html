@@ -70,10 +70,14 @@
                         <h1 class="text-4xl font-bold mb-2">Jingbo Zhang</h1>
                         <p class="text-xl opacity-90">章敬波</p>
                         <p class="text-lg opacity-80 mt-1">Senior Researcher, Robotics X Lab, Tencent</p>
+                        <p class="text-sm opacity-75 mt-2">
+                            <i class="fas fa-envelope mr-1"></i>
+                            <span class="email-display" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs="></span>
+                        </p>
                         
                         <!-- Contact Icons -->
                         <div class="flex items-center justify-center space-x-6 mt-4">
-                            <a href="mailto:jbzhang6-c@my.cityu.edu.hk" class="text-white hover:text-blue-200 transition-colors" title="Email">
+                            <a href="#" class="email-link text-white hover:text-blue-200 transition-colors" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs=" title="Email" aria-label="Email">
                                 <i class="fas fa-envelope text-xl"></i>
                             </a>
                             <!-- <a href="tel:+86-15727336166" class="text-white hover:text-green-200 transition-colors" title="Phone">
@@ -1220,6 +1224,46 @@
         </div>
     </footer>
 
+    <script>
+        // 邮箱防爬虫保护 - 使用Base64编码
+        (function() {
+            // 解码并显示邮箱
+            document.querySelectorAll('.email-display[data-encoded]').forEach(function(element) {
+                try {
+                    const encoded = element.getAttribute('data-encoded');
+                    const email = atob(encoded);
+                    element.textContent = email;
+                    
+                    // 添加点击复制功能
+                    element.style.cursor = 'pointer';
+                    element.title = 'Click to copy';
+                    element.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        navigator.clipboard.writeText(email).then(function() {
+                            const originalText = element.textContent;
+                            element.textContent = '✓ Copied!';
+                            setTimeout(function() {
+                                element.textContent = originalText;
+                            }, 1500);
+                        });
+                    });
+                } catch(e) {
+                    console.error('Email decode error:', e);
+                }
+            });
+            
+            // 处理邮箱链接
+            document.querySelectorAll('.email-link[data-encoded]').forEach(function(link) {
+                try {
+                    const encoded = link.getAttribute('data-encoded');
+                    const email = atob(encoded);
+                    link.setAttribute('href', 'mailto:' + email);
+                } catch(e) {
+                    console.error('Email link decode error:', e);
+                }
+            });
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
