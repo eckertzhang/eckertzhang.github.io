@@ -214,65 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 专利项目点击展开详情功能
-    const patentItems = document.querySelectorAll('.patent-item');
-    patentItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const isExpanded = this.classList.contains('expanded');
-            
-            // 收起所有其他专利项目
-            patentItems.forEach(otherItem => {
-                if (otherItem !== this) {
-                    otherItem.classList.remove('expanded');
-                    const details = otherItem.querySelector('.patent-details');
-                    if (details) {
-                        details.remove();
-                    }
-                }
-            });
-            
-            if (!isExpanded) {
-                // 展开当前项目
-                this.classList.add('expanded');
-                const detailsDiv = document.createElement('div');
-                detailsDiv.className = 'patent-details mt-4 pt-4 border-t border-gray-200';
-                detailsDiv.innerHTML = `
-                    <h5 class="font-semibold text-gray-800 mb-2">技术详情</h5>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-3">
-                        该专利技术采用了先进的算法设计和系统架构，具有高效性、可扩展性和实用性等特点。
-                        技术方案经过充分验证，已在多个实际场景中得到应用。
-                    </p>
-                    <div class="grid md:grid-cols-2 gap-4 text-sm">
-                        <div>
-                            <h6 class="font-medium text-gray-800 mb-1">技术优势</h6>
-                            <ul class="text-gray-600 space-y-1">
-                                <li>• 算法效率提升30%以上</li>
-                                <li>• 支持大规模数据处理</li>
-                                <li>• 具有良好的可扩展性</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h6 class="font-medium text-gray-800 mb-1">应用场景</h6>
-                            <ul class="text-gray-600 space-y-1">
-                                <li>• 智能制造系统</li>
-                                <li>• 金融风控平台</li>
-                                <li>• 医疗诊断辅助</li>
-                            </ul>
-                        </div>
-                    </div>
-                `;
-                this.appendChild(detailsDiv);
-            } else {
-                // 收起当前项目
-                this.classList.remove('expanded');
-                const details = this.querySelector('.patent-details');
-                if (details) {
-                    details.remove();
-                }
-            }
-        });
-    });
-
     // 统计数字动画效果
     function animateNumbers() {
         const numberElements = document.querySelectorAll('.text-2xl.font-bold, .text-3xl.font-bold');
@@ -467,24 +408,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .publication-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .patent-item {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .patent-item:hover {
-            transform: translateY(-1px);
-        }
-        
-        .patent-details {
-            animation: slideDown 0.3s ease-out;
-        }
-        
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         #backToTop {
