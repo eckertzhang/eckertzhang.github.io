@@ -56,6 +56,31 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
+
+        /* Responsive nav scroll */
+        .nav-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .nav-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Publication / patent image height control on mobile */
+        @media (max-width: 767px) {
+            .publication-item .grid > div:first-child img {
+                max-height: 200px;
+                width: 100%;
+                object-fit: cover;
+            }
+            .patent-item .grid > div:first-child img {
+                max-height: 140px;
+                width: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
     </style>
     <link rel="icon" href="./static/icon/selfies_eckert.svg">
 </head>
@@ -63,20 +88,20 @@
 <body class="bg-gray-50 font-sans">
     <!-- Header -->
     <header class="academic-gradient text-white py-8 shadow-lg">
-        <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="flex items-center justify-center">
-                <div class="flex items-center space-x-16 text-center">
+                <div class="flex flex-col-reverse sm:flex-row items-center sm:space-x-12 text-center gap-5 sm:gap-0">
                     <div>
-                        <h1 class="text-4xl font-bold mb-2">Jingbo Zhang</h1>
+                        <h1 class="text-3xl sm:text-4xl font-bold mb-2">Jingbo Zhang</h1>
                         <p class="text-xl opacity-90">章敬波</p>
-                        <p class="text-lg opacity-80 mt-1">Senior Researcher, Robotics X Lab, Tencent</p>
+                        <p class="text-base sm:text-lg opacity-80 mt-1">Senior Researcher, Robotics X Lab, Tencent</p>
                         <p class="text-sm opacity-75 mt-2">
                             <i class="fas fa-envelope mr-1"></i>
                             <span class="email-display" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs="></span>
                         </p>
                         
                         <!-- Contact Icons -->
-                        <div class="flex items-center justify-center space-x-6 mt-4">
+                        <div class="flex flex-wrap items-center justify-center gap-4 mt-4">
                             <a href="#" class="email-link text-white hover:text-blue-200 transition-colors" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs=" title="Email" aria-label="Email">
                                 <i class="fas fa-envelope text-xl"></i>
                             </a>
@@ -96,7 +121,7 @@
                                 <i class="fab fa-researchgate text-xl"></i>
                             </a>
                             <a href="https://twitter.com/eckertzhang" class="text-white hover:text-blue-200 transition-colors" title="X-Twitter">
-                                <i class="fa-brands fa-x-twitter"></i>
+                                <i class="fa-brands fa-x-twitter text-xl"></i>
                             </a>
                             <a href="https://www.xiaohongshu.com/user/profile/5f2ceedf0000000001005948" class="text-white hover:text-blue-200 transition-colors" title="小红书">
                                 <img src="./Bio/employments/xhs.png" alt="小红书" class="w-5 h-5 object-cover rounded-lg">
@@ -106,10 +131,10 @@
                             </a> -->
                         </div>
                     </div>
-                    <div>
+                    <div class="flex-shrink-0">
                         <img src="./Bio/photo/self2025_.jpg" 
                              alt="Jingbo Zhang" 
-                             class="w-40 h-40 rounded-full border-2 border-white shadow-lg object-cover">
+                             class="w-28 h-28 sm:w-40 sm:h-40 rounded-full border-2 border-white shadow-lg object-cover">
                     </div>
                 </div>
             </div>
@@ -118,12 +143,12 @@
 
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex space-x-8">
-                <button class="tab-btn py-4 px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 active" data-tab="homepage">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="nav-scroll flex">
+                <button class="tab-btn flex-shrink-0 py-4 px-4 sm:px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 active whitespace-nowrap" data-tab="homepage">
                     <i class="fas fa-home mr-2"></i>Homepage
                 </button>
-                <!-- <button class="tab-btn py-4 px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300" data-tab="team">
+                <!-- <button class="tab-btn flex-shrink-0 py-4 px-4 sm:px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 whitespace-nowrap" data-tab="team">
                     <i class="fas fa-users mr-2"></i>Collaborators
                 </button> -->
             </div>
@@ -131,12 +156,12 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-6 py-8">
+    <main class="max-w-6xl mx-auto px-3 sm:px-6 py-8">
         <!-- Homepage Tab -->
         <div id="homepage" class="tab-content active">
             <!-- Personal Introduction -->
-            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">About Me</h2>
+            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">About Me</h2>
                 <div class="max-w-6xl mx-auto">
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2">
@@ -231,55 +256,55 @@
             </section>
 
             <!-- Recent News -->
-            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Recent News</h2>
+            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Recent News</h2>
                 <div class="space-y-4">
                     <div class="news-item pl-6 py-4 rounded-lg">
-                        <div class="flex justify-between items-start">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
                             <div>
                                 <h4 class="font-semibold text-gray-800 mb-2">Paper Accepted to CVPR 2026</h4>
                                 <p class="text-gray-600 text-sm">We are excited to announce that our 4D detection project, <a href="https://jarvishou829.github.io/DA4D/" class="text-blue-600 hover:underline visited:text-blue-600">DetAny4D</a>, has been accepted to CVPR 2026.</p>
                             </div>
-                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2026-02-21</span>
+                            <span class="text-xs text-gray-500 whitespace-nowrap sm:ml-4 self-start">2026-02-21</span>
                         </div>
                     </div>
                     <div class="news-item pl-6 py-4 rounded-lg">
-                        <div class="flex justify-between items-start">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
                             <div>
                                 <h4 class="font-semibold text-gray-800 mb-2">We launched <a href="https://tairos.tencent.com/" class="text-blue-600 hover:underline visited:text-blue-600">TAIROS</a>, an open embodied AI platform for robotics applications</h4>
                                 <p class="text-gray-600 text-sm">We present TAIROS, a comprehensive embodied AI platform that integrates multi-modal perception, long-horizon planning, and dexterous action capabilities into a unified modular architecture.</p>
                             </div>
-                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2025-07-27</span>
+                            <span class="text-xs text-gray-500 whitespace-nowrap sm:ml-4 self-start">2025-07-27</span>
                         </div>
                     </div>
                     <div class="news-item pl-6 py-4 rounded-lg">
-                        <div class="flex justify-between items-start">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
                             <div>
                                 <h4 class="font-semibold text-gray-800 mb-2">Successfully defended my doctoral dissertation</h4>
                                 <p class="text-gray-600 text-sm">I successfully defended my PhD dissertation, "Improving 3D Reconstruction through Data Prior Exploration," and was awarded the PhD.</p>
                             </div>
-                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2025-06-06</span>
+                            <span class="text-xs text-gray-500 whitespace-nowrap sm:ml-4 self-start">2025-06-06</span>
                         </div>
                     </div>
                     <!-- <div class="news-item pl-6 py-4 rounded-lg">
-                        <div class="flex justify-between items-start">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
                             <div>
                                 <h4 class="font-semibold text-gray-800 mb-2">Paper Accepted to IEEE TCSVT</h4>
                                 <p class="text-gray-600 text-sm">Our research paper, "HumanRef-GS: Image-to-3D Human Generation with Reference-Guided Diffusion and 3D Gaussian Splatting", has been accepted for publication in IEEE Transactions on Circuits and Systems for Video Technology.</p>
                             </div>
-                            <span class="text-xs text-gray-500 whitespace-nowrap ml-4">2025-02-02</span>
+                            <span class="text-xs text-gray-500 whitespace-nowrap sm:ml-4 self-start">2025-02-02</span>
                         </div>
                     </div> -->
                 </div>
             </section>
 
             <!-- Employment -->
-            <section class="elegant-card rounded-lg shadow-lg p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Employment</h2>
+            <section class="elegant-card rounded-lg shadow-lg p-4 sm:p-8 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Employment</h2>
                 <div class="space-y-4">
                     <!-- Current Position -->
                     <div class="bg-gradient-to-r from-blue-50 to-emerald-50 p-4 rounded-lg border border-blue-200">
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
                             <div class="flex items-center space-x-3">
                                 <div class="w-12 h-12 bg-gradient-to-br rounded-lg flex items-center justify-center">
                                     <img src="./Bio/employments/tencent.png" alt="Tencent RoboticsX Lab" class="w-full h-full object-cover rounded-lg">
@@ -295,7 +320,7 @@
 
                     <!-- Previous Positions -->
                     <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex flex-wrap items-center justify-between gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
                             <div class="flex items-center space-x-3">
                                 <div class="w-10 h-10 bg-gradient-to-br rounded-lg flex items-center justify-center">
                                     <img src="./Bio/employments/roboticsx.png" alt="Tencent RoboticsX Lab" class="w-full h-full object-cover rounded-lg">
@@ -308,7 +333,7 @@
                             <span class="text-sm text-gray-500">2024/09 - 2025/07</span>
                         </div>
 
-                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex flex-wrap items-center justify-between gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
                             <div class="flex items-center space-x-3">
                                 <div class="w-10 h-10 bg-gradient-to-br rounded-lg flex items-center justify-center">
                                     <img src="./Bio/employments/ailab_.png" alt="Tencent AI Lab" class="w-full h-full object-cover rounded-lg">
@@ -321,7 +346,7 @@
                             <span class="text-sm text-gray-500">2023/05 - 2024/08</span>
                         </div>
 
-                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex flex-wrap items-center justify-between gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
                             <div class="flex items-center space-x-3">
                                 <div class="w-10 h-10 bg-gradient-to-br rounded-lg flex items-center justify-center">
                                     <img src="./Bio/employments/cityu.png" alt="CityU" class="w-full h-full object-cover rounded-lg">
@@ -334,7 +359,7 @@
                             <span class="text-sm text-gray-500">2020/06 - 2020/08</span>
                         </div>
 
-                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex flex-wrap items-center justify-between gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
                             <div class="flex items-center space-x-3">
                                 <div class="w-10 h-10 bg-gradient-to-br rounded-lg flex items-center justify-center">
                                     <img src="./Bio/employments/ailab_.png" alt="Tencent AI Lab" class="w-full h-full object-cover rounded-lg">
@@ -353,12 +378,12 @@
 
 
             <!-- Publications -->
-            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Publications</h2>
+            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Publications</h2>
                 <div class="space-y-6">
 
                     <!-- Paper example -->
-                    <!-- <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <!-- <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2023_HumanRef/teaser.gif" 
@@ -380,7 +405,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://arxiv.org/abs/2401.17807" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2401.17807.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -393,7 +418,7 @@
 
                     
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2026_OEVLN/oevln.png"
@@ -420,7 +445,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>Under review, 2026</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <!-- <a href="https://jarvishou829.github.io/DA4D/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a> -->
                                     <!-- <a href="https://arxiv.org/pdf/2511.18814" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a> -->
                                     <!-- <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
@@ -431,7 +456,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2025_da4d/da4d.gif"
@@ -455,7 +480,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://jarvishou829.github.io/DA4D/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2511.18814" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <!-- <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
@@ -466,7 +491,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2025_wordcraft/font-teaser-new.png" 
@@ -487,7 +512,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>arXiv preprint arXiv:2401.17807, 2025</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <!-- <a href="https://arxiv.org/abs/2401.17807" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a> -->
                                     <a href="https://arxiv.org/pdf/2507.09573" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <!-- <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
@@ -498,7 +523,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2025_tairos/perception.png" 
@@ -515,7 +540,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>TAIROS Technical Report, 2025</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://tairos.tencent.com/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://cdn.tairos.tencent-cloud.com/downloads/tools/pdf/tairos.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://tairos.tencent.com/docs/models/perception/sdk_download" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -526,7 +551,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2025_3d_editing/overview.jpg" 
@@ -547,7 +572,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>Visual Informatics, 2025</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <!-- <a href="https://eckertzhang.github.io/HumanRef.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a> -->
                                     <a href="https://pdf.sciencedirectassets.com/315710/1-s2.0-S2468502X25X00036/1-s2.0-S2468502X2500021X/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCWIUw%2FL4G0SAw1cLE6zrYDyap2bvCzeqmnR%2FGGTLcyeAIgU3e03SEM3jvQOtyn4cCigPcNjMhSHf4KNU7E5mwuu%2F8quwUI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDB6%2Bla%2F6fTt7w9PkoCqPBepp%2FrcTE9Gm4gRFIJHDwCwvhRbnU9Hqs7Rs9ujbTRaq31egowtLdWDLT4Q9Pe0uOlJ81VhHGH9DL2kMtxG9HmPEU6mUPbw8ERJNUSYYn8tLKL%2FsAECeRLzo7ZojR4SVNrgOIBdHgz%2B42cEBZxTD%2F7XjYh8KpX533Riq83LOP4hNljahmeTt9NFsijHnifisw0PjS6wZiftHxtSpSyL3JotM810tb6FLxDVzfKEssM0QFOFCo6HRAg1ai01AZWLVmlRwCNDldatUvL4uOd0PqXkPIF3PIeOXL0bkHu0ZOYfeV9ZLPn17LmGkrG6JMFltkZ05psIp1OY3TG0JTDvpsAYL9kBzTDTW%2BseHLI1%2FgK%2FuE3qD9bLXZf65nIFlIYsmhTLVDYfDLVecWvKNg%2BeJnzK0zK%2FQVG3qjxMeGkoLag22WYr61tMkgWMYFAU9P91bFouSTx0Hq8s1HWmJ8aiMLJmFWGMoHEO2bcLxkTg1AJWwhyu%2B28iihYlJ6wxYKLIrsfTUUfptnyXrRYlHY7cE%2F1g%2BoP33CXwMl0BYX3b87l6UJRagXacUu9qkXRf3GJ6DJ1Ng%2F5zZI1R3zxAPixUlQ82JRxqz5ZE2CUbuV3M6t1FEZC4Z6vX5lnCuQsQJKJoFJdoNAW7ghA37gslwHSsLx4S6vzdTR6L5eYUOi6fEjmc9%2Ff2WDiGD1s58huaRKMLqXOV3MSS8yAEWgxSUGAFe1MzZal8coYKRPZ2RX7k5zvJ19KkN4lHXHG%2BSIq3tWvgzqzimkZ4wgVob1ZQ%2Fyr2Akcws8TnsqHYqN2SyrgYzUxGip2A3tzEBjGjjT6rnWgUPByFySqUf83tMOnkmYVwKyIKPnHgY%2Bhp4aQz%2B%2F16GscUwoJGGxgY6sQGFe7Vhmq8Cfz8Ie%2Bdz2d0QAsn2%2FryqOSNMjf1umCbLeJYQYexxKC7mH1DvvPj1dtjjlNiMaREJ4m5pu49UTvRrl%2F96Vt%2BzsLStqNsPeeYdEq2L1NpAbHptA6mPdOBTo2FvXgqivV7%2BlQphx2rmxfyx2xXsnkIzYpshQH%2FiScoQsGEiNuwM%2FoMk8QO4xdf4KcAzwQoMHYX3BvyvvnL9viYbKR2KUjvophu04QaVeMO7SNo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250910T155552Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY3ROCOCV3%2F20250910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ee8eacd4fd5b22b82bb2716bdaf834200630c0c3e27a8996c1d1c5c81efd6abd&hash=4e3318442169c52db7a17aee7506e7bb584feb2d24f4040df46a2c09fefffa3d&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S2468502X2500021X&tid=spdf-b7021988-8020-4d27-9b55-7ffef24f8c47&sid=892696915acb4749ac2a5db1814d50e889cbgxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=00095857025f570607&rr=97d01cb3dddbc523&cc=cn" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <!-- <a href="https://github.com/eckertzhang/HumanRef" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
@@ -558,7 +583,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2025_HumanRef-GS/2025_humanref-gs.gif" 
@@ -582,7 +607,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE Transactions on Circuits and Systems for Video Technology (<strong>TCSVT</strong>), 2025</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://eckertzhang.github.io/HumanRef.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://ieeexplore.ieee.org/abstract/document/10879794" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <!-- <a href="https://github.com/eckertzhang/HumanRef" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
@@ -593,7 +618,7 @@
                         </div>
                     </div>
                     
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2024_3D_Survey/survey.jpg" 
@@ -619,7 +644,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>arXiv preprint arXiv:2401.17807, 2024</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://arxiv.org/pdf/2401.17807.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="./papers/2024_3D_Survey/li2024advances.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
                                 </div>
@@ -627,7 +652,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2024_tpami/ict_pami.png" 
@@ -647,7 +672,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>), 2024</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="http://raywzy.com/ICT/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://ieeexplore.ieee.org/document/10591425" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/raywzy/ICT" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -658,7 +683,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2023_HumanRef/teaser.gif" 
@@ -680,7 +705,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://eckertzhang.github.io/HumanRef.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2311.16961.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/eckertzhang/HumanRef" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -691,7 +716,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2023_VQ-NeRF/teaser.gif" 
@@ -710,7 +735,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://jtbzhl.github.io/VQ-NeRF.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2310.11864.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/JiuTongBro/vqnerf_release" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -721,7 +746,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2023_Text2NeRF/teaser.gif" 
@@ -742,7 +767,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://eckertzhang.github.io/Text2NeRF.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2305.11588.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/eckertzhang/Text2NeRF" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -753,7 +778,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2023_AvatarCraft/teaser.gif" 
@@ -776,7 +801,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2023</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://avatar-craft.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2303.17606.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/songrise/avatarcraft" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -787,7 +812,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2022_FDNeRF/FDNeRF.gif" 
@@ -808,7 +833,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em><strong>SIGGRAPH Asia</strong>, 2022</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://fdnerf.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2208.05751.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/FDNeRF/FDNeRF" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -819,7 +844,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2022_texture_opti/texture_opti.gif" 
@@ -838,7 +863,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2022</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="https://adjointopti.github.io/adjoin.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2208.07003.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/adjointopti/ADJOIN" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -848,7 +873,7 @@
                         </div>
                     </div>
 
-                    <div class="publication-item bg-gray-50 rounded-lg p-6">
+                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
                         <div class="grid md:grid-cols-4 gap-6">
                             <div class="md:col-span-1">
                                 <img src="./papers/2021_ICT/ICT.png" 
@@ -868,7 +893,7 @@
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2021</em>
                                 </p>
-                                <div class="flex space-x-4 text-sm">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
                                     <a href="http://raywzy.com/ICT" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
                                     <a href="https://arxiv.org/pdf/2103.14031.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
                                     <a href="https://github.com/raywzy/ICT" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
@@ -890,10 +915,10 @@
             </section>
 
             <!-- Patents -->
-            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Patents</h2>
+            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Patents</h2>
 
-                <div class="patent-item bg-gray-50 rounded-lg p-6">
+                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6">
                     <div class="grid md:grid-cols-4 gap-6">
                         <div class="md:col-span-1">
                             <img src="./patents/CN201711305025_FullTextImage1.png" 
@@ -927,7 +952,7 @@
                     </div>
                 </div>
 
-                <div class="patent-item bg-gray-50 rounded-lg p-6 mt-6">
+                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6">
                     <div class="grid md:grid-cols-4 gap-6">
                         <div class="md:col-span-1">
                             <img src="./patents/CN108509933A.PDF.png" 
@@ -967,8 +992,8 @@
             
 
             <!-- Services -->
-            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Academic Services</h2>
+            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Academic Services</h2>
                 <p class="text-gray-700 leading-relaxed text-justify">
                     I have served as a reviewer for several prestigious journals and conferences, 
                     including <strong>TPAMI, TVCG, TCSVT, TMM, Computers & Graphics, ACM Computing Surveys, SIVP, Visual Informatics, Virtual Reality, 
@@ -977,8 +1002,8 @@
             </section>
 
             <!-- Teaching -->
-            <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Teaching</h2>
+            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Teaching</h2>
                 <p>
                     <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
                     <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2020/2021</a>, Teaching Assistant (TA)<br>
@@ -1075,7 +1100,7 @@
         <!-- Team Tab -->
         <div id="team" class="tab-content">
             <section class="bg-white rounded-lg shadow-md p-8">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Research Team</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Research Team</h2>
                 <p class="text-gray-700 leading-relaxed mb-8">
                     Our research team focuses on cutting-edge research in artificial intelligence, machine learning, and computer vision. The team consists of postdoctoral researchers, PhD students, and MS students, working together to advance AI technology development and applications.
                 </p>
