@@ -82,13 +82,17 @@
             }
         }
 
-        /* Author contribution markers: * = co-first author, † = co-corresponding author */
+        /* Author contribution markers: * = co-first author, ✉ = corresponding author */
         .author-mark {
             color: #764ba2;
             font-weight: 600;
             vertical-align: super;
             font-size: 0.7em;
             margin-left: 1px;
+        }
+        .author-mark .fa-envelope {
+            font-size: 0.85em;
+            font-weight: 400;
         }
         .author-legend {
             font-size: 0.8rem;
@@ -116,40 +120,47 @@
                             <i class="fas fa-envelope mr-1"></i>
                             <span class="email-display" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs="></span>
                             <span class="mx-2">|</span>
-                            <a href="./Bio/Jingbo_CV_2026.pdf" class="text-white hover:text-yellow-200 transition-colors" target="_blank" rel="noopener noreferrer">
+                            <a href="./Bio/Jingbo_CV_202607.pdf" class="text-white hover:text-yellow-200 transition-colors" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-file-pdf mr-1"></i>CV
                             </a>
                         </p>
                         
                         <!-- Contact Icons -->
-                        <div class="flex flex-wrap items-center justify-center gap-4 mt-4">
-                            <a href="#" class="email-link text-white hover:text-blue-200 transition-colors" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs=" title="Email" aria-label="Email">
-                                <i class="fas fa-envelope text-xl"></i>
+                        <div class="flex flex-wrap items-center justify-center gap-4 mt-4 leading-none">
+                            <a href="#" class="email-link text-white hover:text-blue-200 transition-colors inline-flex" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs=" title="Email" aria-label="Email">
+                                <i class="fas fa-envelope text-xl leading-none"></i>
                             </a>
                             <!-- <a href="tel:+86-15727336166" class="text-white hover:text-green-200 transition-colors" title="Phone">
                                 <i class="fas fa-phone text-xl"></i>
                             </a> -->
-                            <a href="https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en" class="text-white hover:text-red-200 transition-colors" title="Google Scholar">
-                                <i class="fab fa-google text-xl"></i>
+                            <a href="https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en" class="text-white hover:text-red-200 transition-colors inline-flex" title="Google Scholar">
+                                <i class="fab fa-google text-xl leading-none"></i>
                             </a>
-                            <a href="https://github.com/eckertzhang/" class="text-white hover:text-gray-200 transition-colors" title="GitHub">
-                                <i class="fab fa-github text-xl"></i>
+                            <a href="https://github.com/eckertzhang/" class="text-white hover:text-gray-200 transition-colors inline-flex" title="GitHub">
+                                <i class="fab fa-github text-xl leading-none"></i>
                             </a>
-                            <a href="https://orcid.org/0000-0003-0009-2315" class="text-white hover:text-green-200 transition-colors" title="ORCID">
-                                <i class="fab fa-orcid text-xl"></i>
+                            <a href="https://orcid.org/0000-0003-0009-2315" class="text-white hover:text-green-200 transition-colors inline-flex" title="ORCID">
+                                <i class="fab fa-orcid text-xl leading-none"></i>
                             </a>
-                            <a href="https://www.researchgate.net/profile/Jingbo-Zhang-27?ev=hdr_xprf" class="text-white hover:text-blue-200 transition-colors" title="ResearchGate">
-                                <i class="fab fa-researchgate text-xl"></i>
+                            <a href="https://www.researchgate.net/profile/Jingbo-Zhang-27?ev=hdr_xprf" class="text-white hover:text-blue-200 transition-colors inline-flex" title="ResearchGate">
+                                <i class="fab fa-researchgate text-xl leading-none"></i>
                             </a>
-                            <a href="https://twitter.com/eckertzhang" class="text-white hover:text-blue-200 transition-colors" title="X-Twitter">
-                                <i class="fa-brands fa-x-twitter text-xl"></i>
+                            <a href="https://twitter.com/eckertzhang" class="text-white hover:text-blue-200 transition-colors inline-flex" title="X-Twitter">
+                                <i class="fa-brands fa-x-twitter text-xl leading-none"></i>
                             </a>
-                            <a href="https://www.xiaohongshu.com/user/profile/5f2ceedf0000000001005948" class="text-white hover:text-blue-200 transition-colors" title="小红书">
-                                <img src="./Bio/employments/xhs.png" alt="小红书" class="w-5 h-5 object-cover rounded-lg">
+                            <a href="https://www.xiaohongshu.com/user/profile/5f2ceedf0000000001005948" class="hover:opacity-80 transition-opacity inline-flex" title="小红书" aria-label="小红书">
+                                <svg class="w-5 h-5 block" style="position: relative; top: 0px" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                                    <rect x="16" y="16" width="480" height="480" rx="104" fill="#FF2442" stroke="#fff" stroke-width="32"/>
+                                    <text x="256" y="262" text-anchor="middle" dominant-baseline="central" fill="#fff"
+                                          font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif"
+                                          font-size="200" font-weight="700">书</text>
+                                </svg>
                             </a>
-                            <!-- <a href="EckertZ" class="text-white hover:text-blue-200 transition-colors" title="WeChat">
-                                <i class="fab fa-weixin text-xl"></i>
-                            </a> -->
+                            <!-- 微信ID只需在 data-wechat-id 中修改一次，提示文案由脚本生成 -->
+                            <button type="button" class="wechat-id-btn relative p-0 m-0 border-0 bg-transparent text-white hover:text-green-200 transition-colors cursor-pointer group leading-none inline-flex" data-wechat-id="EckertZ">
+                                <i class="fab fa-weixin text-xl leading-none"></i>
+                                <span class="wechat-id-tip pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-2 whitespace-nowrap rounded bg-black/80 px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity z-10"></span>
+                            </button>
                         </div>
                     </div>
                     <div class="flex-shrink-0">
@@ -194,9 +205,10 @@
                                 Earlier, I earned my bachelor’s degrees in Engineering Mechanics and Business Administration (as a dual degree) from BUAA in 2018.
                             </p>
                             <p class="text-justify text-gray-700 leading-relaxed mb-4">
-                                My research interests span machine learning, computer vision, computer graphics, large language models and robotics. 
-                                Recently, my work has focused on 2D image editing; 3D/4D scene reconstruction, generation, and editing; as well as scene perception and interaction. 
-                                I am also deeply interested in embodied intelligence and the development of world models that enable intelligent agents to navigate and interact effectively within complex environments.
+                                My research centers on <strong>Interactive World Models</strong> for embodied AI, spanning computer vision, computer graphics, vision-language models, and robotics. 
+                                Building on a foundation in 3D/4D scene reconstruction, generation, editing, and perception, I study how agents can understand, simulate, and interact with complex physical environments. 
+                                I am also actively exploring <strong>World Action Models (WAMs)</strong> to bridge environmental simulation and agent execution, 
+                                with the goal of developing scalable foundational models that enable intelligent agents to act effectively in the real world.
                             </p>
                             <p class="text-justify text-gray-700 leading-relaxed mb-4">
                                 If you would like to discuss research ideas or explore potential collaborations, please feel free to contact me.
@@ -239,7 +251,7 @@
                                 <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Machine Learning</span>
                                 <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Computer Vision</span>
                                 <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Computer Graphics</span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">LLMs</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">VLMs</span>
                                 <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Robotics</span>
                                 <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Embodied Intelligence</span>
                                 <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">World Models</span>
@@ -406,9 +418,9 @@
             <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-2">Publications</h2>
                 <p class="author-legend mb-6">
-                    <span class="author-mark">*</span> Equal contribution (co-first author)
+                    <span class="author-mark">*</span> Equal contribution
                     <span class="mx-2">·</span>
-                    <span class="author-mark">&dagger;</span> Corresponding author
+                    <span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span> Corresponding author
                 </p>
                 <div class="space-y-6">
 
@@ -460,14 +472,14 @@
                                 <p class="text-sm text-gray-600 mb-2">
                                     <a href="https://scholar.google.com.hk/citations?user=v1NkCl0AAAAJ&hl=zh-CN&oi=sra">Chenghao Gu</a><span class="author-mark">*</span>,
                                     <a href="https://hanyangyu1021.github.io/">Hanyang Yu</a><span class="author-mark">*</span>,
-                                    <strong>Jingbo Zhang</strong><span class="author-mark">&dagger;</span>,
+                                    <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>,
                                     <a href="https://hetolin.github.io/">Haitao Lin</a>,
                                     <a href="https://zhangwenyao1.github.io/">Wenyao Zhang</a>,
                                     <a href="">Jinghe Wang</a>,
                                     <a href="">Hanglei Jin</a>,
                                     <a href="">Shuzhao Xie</a>,
                                     <a href="">Jingyan Jiang</a>,
-                                    <a href="">Zhi Wang</a><span class="author-mark">&dagger;</span>
+                                    <a href="">Zhi Wang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>
                                 </p>
                                 <p class="text-sm text-gray-500 mb-2">
                                     <!-- <em>Conference on Robot Learning (<strong>CoRL</strong>), 2026</em> -->
@@ -609,13 +621,13 @@
                                 </h4>
                                 <p class="text-sm text-gray-600 mb-2">
                                     <a href="https://jarvishou829.github.io/">Jiawei Hou</a>,
-                                    <a>Shenghao Zhang</a><span class="author-mark">&dagger;</span>,
+                                    <a>Shenghao Zhang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>,
                                     <a href="https://cassiepython.github.io/">Can Wang</a>,
                                     <a href="https://edward3862.github.io/">Zheng Gu</a>,
                                     <a>Yonggen Ling</a>,
                                     <a>Taiping Zeng</a>,
-                                    <a>Xiangyang Xue</a><span class="author-mark">&dagger;</span>,
-                                    <strong>Jingbo Zhang</strong><span class="author-mark">&dagger;</span>
+                                    <a>Xiangyang Xue</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>,
+                                    <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>
                                 </p>
                                 <p class="text-sm text-gray-500 mb-2">
                                     <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</em>
@@ -1058,7 +1070,41 @@
             <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Patents</h2>
 
-                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6">
+                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6">
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="md:col-span-1">
+                            <img src="./patents/DecAny4d.png" 
+                                    alt="patents" 
+                                    class="w-full h-40 object-cover object-top rounded-lg">
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-2">
+                                    一种面向视频输入的端到端开放集4D目标检测方法
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Patent No: 	2025120130CN
+                                </p>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Inventors: <b>Jingbo Zhang</b>, Jiawei Hou, Shenghao Zhang, Minglei Lu, Yonggen Ling, Haitao Lin, Yuzhen Liu
+                                </p>
+                                <!-- <p class="text-sm text-gray-700 leading-relaxed">
+                                    This invention provides 
+                                </p> -->
+                                <!-- <div class="mt-3 flex items-center text-sm text-green-600">
+                                    <i class="fas fa-check-circle mr-1"></i>
+                                    <span>Granted (2018-04-27)</span>
+                                </div> -->
+                                <div class="mt-3 flex items-center text-sm text-yellow-600">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Under Review (Applied 2025-12-03)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6">
                     <div class="grid md:grid-cols-4 gap-6">
                         <div class="md:col-span-1">
                             <img src="./patents/CN201711305025_FullTextImage1.png" 
@@ -1083,10 +1129,6 @@
                                     <i class="fas fa-check-circle mr-1"></i>
                                     <span>Granted (2018-04-27)</span>
                                 </div>
-                                <!-- <div class="mt-3 flex items-center text-sm text-yellow-600">
-                                    <i class="fas fa-clock mr-1"></i>
-                                    <span>Under Review (Applied 2023-12-01)</span>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -1386,6 +1428,29 @@
                 } catch(e) {
                     console.error('Email link decode error:', e);
                 }
+            });
+
+            // 微信：悬停显示 ID，点击复制（ID 唯一来源为 data-wechat-id）
+            document.querySelectorAll('.wechat-id-btn[data-wechat-id]').forEach(function(btn) {
+                const wechatId = btn.getAttribute('data-wechat-id');
+                const tip = btn.querySelector('.wechat-id-tip');
+                const label = 'WeChat: ' + wechatId;
+
+                if (tip) tip.textContent = label;
+                btn.removeAttribute('title');
+                btn.setAttribute('aria-label', 'WeChat ID, click to copy');
+
+                btn.addEventListener('click', function() {
+                    navigator.clipboard.writeText(wechatId).then(function() {
+                        if (!tip) return;
+                        tip.textContent = '✓ Copied!';
+                        tip.classList.add('opacity-100');
+                        setTimeout(function() {
+                            tip.textContent = label;
+                            tip.classList.remove('opacity-100');
+                        }, 1500);
+                    });
+                });
             });
         })();
     </script>
