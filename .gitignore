@@ -1,2 +1,5 @@
 .DS_Store
 */DS_Store
+
+# Tailwind standalone CLI binary (46MB, do not commit; re-download when needed)
+.tailwind/tailwindcss

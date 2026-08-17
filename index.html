@@ -4,7 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jingbo Zhang - Computer Science PhD</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SEO -->
+    <meta name="description" content="Jingbo Zhang (章敬波), Computer Science PhD at City University of Hong Kong, researching Interactive World Models and Vision-Language-Action (VLA) for embodied AI — spanning computer vision, graphics, video generation, and robotics.">
+    <meta name="author" content="Jingbo Zhang">
+    <meta name="keywords" content="Jingbo Zhang, 章敬波, World Models, World Action Models, Embodied AI, Computer Vision, Computer Graphics, 3D Reconstruction, 3D Generation, Robotics, City University of Hong Kong">
+    <link rel="canonical" href="https://eckertzhang.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eckertzhang.github.io/">
+    <meta property="og:title" content="Jingbo Zhang - Computer Science PhD">
+    <meta property="og:description" content="Jingbo Zhang (章敬波), Computer Science PhD at City University of Hong Kong, researching Interactive World Models and Vision-Language-Action (VLA) for embodied AI — spanning computer vision, graphics, video generation, and robotics.">
+    <meta property="og:image" content="https://eckertzhang.github.io/Bio/photo/self2025_.jpg">
+    <meta property="og:image:width" content="920">
+    <meta property="og:image:height" content="920">
+    <meta property="og:image:alt" content="Jingbo Zhang (章敬波)">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@eckertzhang">
+    <meta name="twitter:title" content="Jingbo Zhang - Computer Science PhD">
+    <meta name="twitter:description" content="Jingbo Zhang (章敬波), Computer Science PhD at City University of Hong Kong, researching Interactive World Models and Vision-Language-Action (VLA) for embodied AI — spanning computer vision, graphics, video generation, and robotics.">
+    <meta name="twitter:image" content="https://eckertzhang.github.io/Bio/photo/self2025_.jpg">
+    <meta name="twitter:image:alt" content="Jingbo Zhang (章敬波)">
+    <!-- Tailwind CSS：预编译产物（已包含首页所用的全部类）。
+         重新生成：在项目根目录执行  ./build.sh   （改样式后跑一次；开发时可用 ./build.sh --watch）
+         如需临时回退到运行时 CDN，改用下面这行： <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="./static/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         .tab-content {
@@ -102,8 +129,60 @@
             vertical-align: baseline;
             font-size: 0.9em;
         }
+
+        /* Floating table of contents (scrollspy) —— 仅在有足够留白的宽屏显示，避免遮挡居中内容 */
+        #sectionToc {
+            display: none;
+        }
+        @media (min-width: 1400px) {
+            #sectionToc {
+                display: block;
+            }
+        }
+        .toc-link {
+            display: block;
+            color: #9ca3af;
+            line-height: 1.25rem;
+            transition: color 0.2s ease;
+        }
+        .toc-link:hover {
+            color: #2563eb;
+        }
+        .toc-link.is-active {
+            color: #2563eb;
+            font-weight: 600;
+        }
     </style>
     <link rel="icon" href="./static/icon/selfies_eckert.svg">
+
+    <!-- Structured data (schema.org Person) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jingbo Zhang",
+      "alternateName": "章敬波",
+      "url": "https://eckertzhang.github.io/",
+      "image": "https://eckertzhang.github.io/Bio/photo/self2025_.jpg",
+      "jobTitle": "Computer Science PhD",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "City University of Hong Kong"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "City University of Hong Kong" },
+        { "@type": "CollegeOrUniversity", "name": "Beihang University" }
+      ],
+      "knowsAbout": ["World Models", "Embodied AI", "Vision-Language-Action", "Computer Vision", "Computer Graphics", "Video Generation", "Robotics", "3D Reconstruction", "3D Generation"],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en",
+        "https://github.com/eckertzhang/",
+        "https://orcid.org/0000-0003-0009-2315",
+        "https://www.researchgate.net/profile/Jingbo-Zhang-27",
+        "https://twitter.com/eckertzhang"
+      ]
+    }
+    </script>
 </head>
 
 <body class="bg-gray-50 font-sans">
@@ -133,22 +212,22 @@
                             <!-- <a href="tel:+86-15727336166" class="text-white hover:text-green-200 transition-colors" title="Phone">
                                 <i class="fas fa-phone text-xl"></i>
                             </a> -->
-                            <a href="https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en" class="text-white hover:text-red-200 transition-colors inline-flex" title="Google Scholar">
+                            <a href="https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-white hover:text-red-200 transition-colors inline-flex" title="Google Scholar">
                                 <i class="fab fa-google text-xl leading-none"></i>
                             </a>
-                            <a href="https://github.com/eckertzhang/" class="text-white hover:text-gray-200 transition-colors inline-flex" title="GitHub">
+                            <a href="https://github.com/eckertzhang/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors inline-flex" title="GitHub">
                                 <i class="fab fa-github text-xl leading-none"></i>
                             </a>
-                            <a href="https://orcid.org/0000-0003-0009-2315" class="text-white hover:text-green-200 transition-colors inline-flex" title="ORCID">
+                            <a href="https://orcid.org/0000-0003-0009-2315" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-200 transition-colors inline-flex" title="ORCID">
                                 <i class="fab fa-orcid text-xl leading-none"></i>
                             </a>
-                            <a href="https://www.researchgate.net/profile/Jingbo-Zhang-27?ev=hdr_xprf" class="text-white hover:text-blue-200 transition-colors inline-flex" title="ResearchGate">
+                            <a href="https://www.researchgate.net/profile/Jingbo-Zhang-27?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200 transition-colors inline-flex" title="ResearchGate">
                                 <i class="fab fa-researchgate text-xl leading-none"></i>
                             </a>
-                            <a href="https://twitter.com/eckertzhang" class="text-white hover:text-blue-200 transition-colors inline-flex" title="X-Twitter">
+                            <a href="https://twitter.com/eckertzhang" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-200 transition-colors inline-flex" title="X-Twitter">
                                 <i class="fa-brands fa-x-twitter text-xl leading-none"></i>
                             </a>
-                            <a href="https://www.xiaohongshu.com/user/profile/5f2ceedf0000000001005948" class="hover:opacity-80 transition-opacity inline-flex" title="小红书" aria-label="小红书">
+                            <a href="https://www.xiaohongshu.com/user/profile/5f2ceedf0000000001005948" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity inline-flex" title="小红书" aria-label="小红书">
                                 <svg class="w-5 h-5 block" style="position: relative; top: 0px" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
                                     <rect x="16" y="16" width="480" height="480" rx="104" fill="#FF2442" stroke="#fff" stroke-width="32"/>
                                     <text x="256" y="262" text-anchor="middle" dominant-baseline="central" fill="#fff"
@@ -176,13 +255,13 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="nav-scroll flex">
-                <button class="tab-btn flex-shrink-0 py-4 px-4 sm:px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 active whitespace-nowrap" data-tab="homepage">
+            <div class="nav-scroll flex" role="tablist" aria-label="Site sections">
+                <button id="tab-homepage" role="tab" aria-selected="true" aria-controls="homepage" class="tab-btn flex-shrink-0 py-4 px-4 sm:px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 active whitespace-nowrap" data-tab="homepage">
                     <i class="fas fa-home mr-2"></i>Homepage
                 </button>
-                <!-- <button class="tab-btn flex-shrink-0 py-4 px-4 sm:px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 whitespace-nowrap" data-tab="team">
-                    <i class="fas fa-users mr-2"></i>Collaborators
-                </button> -->
+                <button id="tab-team" role="tab" aria-selected="false" aria-controls="team" class="tab-btn flex-shrink-0 py-4 px-4 sm:px-6 text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition-all duration-300 whitespace-nowrap" data-tab="team">
+                    <i class="fas fa-handshake mr-2"></i>Collaboration
+                </button>
             </div>
         </div>
     </nav>
@@ -190,9 +269,21 @@
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-3 sm:px-6 py-8">
         <!-- Homepage Tab -->
-        <div id="homepage" class="tab-content active">
+        <div id="homepage" class="tab-content active" role="tabpanel" aria-labelledby="tab-homepage">
+            <!-- Floating table of contents (scrollspy)。仅在够宽的屏幕显示，切到 Collaboration 页时随父容器自动隐藏。 -->
+            <aside id="sectionToc" aria-label="On this page" class="fixed right-6 top-1/2 -translate-y-1/2 z-40">
+                <ul class="space-y-2 border-l border-gray-200 pl-4 text-sm">
+                    <li><a href="#about" class="toc-link">About</a></li>
+                    <li><a href="#news" class="toc-link">News</a></li>
+                    <li><a href="#publications" class="toc-link">Publications</a></li>
+                    <li><a href="#patents" class="toc-link">Patents</a></li>
+                    <li><a href="#services" class="toc-link">Services</a></li>
+                    <li><a href="#teaching" class="toc-link">Teaching</a></li>
+                </ul>
+            </aside>
+
             <!-- Personal Introduction -->
-            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+            <section id="about" class="scroll-mt-20 bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">About Me</h2>
                 <div class="max-w-6xl mx-auto">
                     <div class="grid md:grid-cols-3 gap-8">
@@ -200,7 +291,7 @@
                             <p class="text-justify text-gray-700 leading-relaxed mb-4">
                                 <!-- I am currently a senior researcher at <a href="https://roboticsx.tencent.com/#/" class="text-blue-600 hover:underline visited:text-blue-600">Robotics X Lab</a>, Tencent.  -->
                                 I received my Ph.D. in Computer Science from City University of Hong Kong in 2025, 
-                                under the supervision of <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" class="text-blue-600 hover:underline visited:text-blue-600">Prof. Jing Liao</a>. 
+                                under the supervision of <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline visited:text-blue-600">Prof. Jing Liao</a>. 
                                 Before pursuing my doctoral studies in Hong Kong, I spent two years as a Ph.D. student specializing in pattern recognition at the School of Automation Science and Electrical Engineering, Beihang University (BUAA). 
                                 Earlier, I earned my bachelor’s degrees in Engineering Mechanics and Business Administration (as a dual degree) from BUAA in 2018.
                             </p>
@@ -214,28 +305,32 @@
                                 If you would like to discuss research ideas or explore potential collaborations, please feel free to contact me.
                             </p>
                             
-                            <!-- Prospective Students & Intern Info -->
-                            <!-- <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                                <h4 class="font-semibold text-blue-800 mb-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Research Intern Recruitment</h4>
+                            <!-- Intern Info -->
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold text-blue-800 mb-2"><i class="fa-solid fa-magnifying-glass-plus mr-2"></i>Research Intern Recruitment</h4>
                                 <p class="text-sm text-gray-700 mb-2">
-                                    We are recruiting research interns specializing in <strong>3D generation</strong> or <strong>scene perception</strong>. Candidates should have a solid research background in 3D reconstruction and recognition. We provide a top-tier research platform and cutting-edge exploratory projects.
+                                    I am looking for motivated research interns to work on <strong>Interactive World Models</strong>, <strong>World Action Models (WAMs)</strong>, and <strong>Vision-Language-Action (VLA)</strong> for embodied AI. 
+                                    Ideal candidates have a solid foundation in one or more of vision-language models, video understanding and generation, or world models. 
+                                    You will join a top-tier research platform and take on cutting-edge, exploratory projects.
                                 </p>
                                 <div class="text-xs text-gray-600">
-                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Strong math & programming skills required</span>
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Solid mathematics and programming skills (Python / PyTorch), with fluency in vibe coding</span>
                                 </div>
                                 <div class="text-xs text-gray-600">
-                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Self-motivated & Deep thinking required</span>
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Self-motivated, with strong critical thinking</span>
                                 </div>
                                 <div class="text-xs text-gray-600">
-                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Persistent & responsible required</span>
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Persistent, responsible, and detail-oriented</span>
                                 </div>
                                 <div class="text-xs text-gray-600">
-                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Background in 3D reconstruction & recognition required</span>
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Research background in CV, CG, robotics, world models, or diffusion models</span>
                                 </div>
                                 <div class="text-xs text-gray-600">
-                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Full-time internship ≥ 6 months required</span>
+                                    <span class="mr-4"><i class="fas fa-check text-green-500 mr-1"></i>Available for a full-time internship of at least 6 months</span>
                                 </div>
-                            </div> -->
+                            </div>
+
+                            <!-- Prospective Students -->
                             <!-- <div class="bg-blue-50 p-4 rounded-lg mb-4">
                                 <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-graduation-cap mr-2"></i>Prospective Students</h4>
                                 <p class="text-sm text-gray-700 mb-2">
@@ -248,13 +343,14 @@
                             </div> -->
                             
                             <div class="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">World Models</span>
+                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Embodied AI</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Vision-Language-Action (VLA)</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Video Generation</span>
                                 <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Computer Vision</span>
                                 <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Computer Graphics</span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">VLMs</span>
                                 <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Robotics</span>
-                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Embodied Intelligence</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">World Models</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Machine Learning</span>
                             </div>
                         </div>
 
@@ -279,7 +375,8 @@
                             <div class="bg-purple-50 p-4 rounded-lg">
                                 <h4 class="font-semibold text-gray-800 mb-2">Honors & Awards</h4>
                                 <ul class="text-sm text-gray-600 space-y-1">
-                                    <li><i class="fas fa-medal text-yellow-500 mr-2"></i>Outstanding Intern Award, Tencent RoboticsX Lab, 2025</li>
+                                    <!-- <li><i class="fas fa-medal text-yellow-500 mr-2"></i>XXX</li> -->
+                                    <li><i class="fas fa-award text-yellow-500 mr-2"></i>Outstanding Intern Award, Tencent RoboticsX Lab, 2025</li>
                                     <li><i class="fas fa-award text-purple-500 mr-2"></i>Research Tuition Scholarship, CityUHK, 2023</li>
                                     <li><i class="fas fa-award text-orange-500 mr-2"></i>Outstanding Academic Performance Award, CityUHK, 2022</li>
                                     <li><i class="fas fa-award text-green-500 mr-2"></i>Outstanding Graduate Thesis Award, BUAA, 2018</li>
@@ -291,14 +388,14 @@
             </section>
 
             <!-- Recent News -->
-            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+            <section id="news" class="scroll-mt-20 bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Recent News</h2>
                 <div class="space-y-4">
                     <div class="news-item pl-6 py-4 rounded-lg">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
                             <div>
                                 <h4 class="font-semibold text-gray-800 mb-2">Paper Accepted to CVPR 2026</h4>
-                                <p class="text-gray-600 text-sm">We are excited to announce that our 4D detection project, <a href="https://jarvishou829.github.io/DA4D/" class="text-blue-600 hover:underline visited:text-blue-600">DetAny4D</a>, has been accepted to CVPR 2026.</p>
+                                <p class="text-gray-600 text-sm">We are excited to announce that our 4D detection project, <a href="https://jarvishou829.github.io/DA4D/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline visited:text-blue-600">DetAny4D</a>, has been accepted to CVPR 2026.</p>
                             </div>
                             <span class="text-xs text-gray-500 whitespace-nowrap sm:ml-4 self-start">2026-02-21</span>
                         </div>
@@ -306,7 +403,7 @@
                     <div class="news-item pl-6 py-4 rounded-lg">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
                             <div>
-                                <h4 class="font-semibold text-gray-800 mb-2">We launched <a href="https://tairos.tencent.com/" class="text-blue-600 hover:underline visited:text-blue-600">TAIROS</a>, an open embodied AI platform for robotics applications</h4>
+                                <h4 class="font-semibold text-gray-800 mb-2">We launched <a href="https://tairos.tencent.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline visited:text-blue-600">TAIROS</a>, an open embodied AI platform for robotics applications</h4>
                                 <p class="text-gray-600 text-sm">We present TAIROS, a comprehensive embodied AI platform that integrates multi-modal perception, long-horizon planning, and dexterous action capabilities into a unified modular architecture.</p>
                             </div>
                             <span class="text-xs text-gray-500 whitespace-nowrap sm:ml-4 self-start">2025-07-27</span>
@@ -415,683 +512,33 @@
 
 
             <!-- Publications -->
-            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+            <section id="publications" class="scroll-mt-20 bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-2">Publications</h2>
                 <p class="author-legend mb-6">
                     <span class="author-mark">*</span> Equal contribution
                     <span class="mx-2">·</span>
                     <span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span> Corresponding author
                 </p>
+
+                <!--
+                    ====== 如何新增/修改正刊论文 ======
+                    论文卡片不在此处硬编码，而是由 script.js 根据 data.js 中的数据自动渲染到下方 #publicationsList。
+                    编辑 data.js 里的 publicationsData 数组即可（"Show more" 折叠区的论文放在 additionalPublicationsData）。
+                    列表按数组顺序显示，新论文一般加在数组最前面。每条为一个对象，字段：
+                      image    : 缩略图路径（必填）
+                      imageAlt : 图片替代文本（可选，默认 "Paper"）
+                      title    : 论文标题（必填）
+                      authors  : 作者 HTML（可用 <a href="...">名字</a> / <strong>本人</strong> /
+                                 共同一作 <span class="author-mark">*</span> / 通讯 <span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>）
+                      venue    : 发表信息（自动包裹 <em>，可含 <strong>，如 "... (<strong>CVPR</strong>), 2026"）
+                      page / pdf / code / video / bibtex : 各类链接 URL，留空或删除该字段则对应按钮不显示
+                    下面注释掉的 "Paper example" 仅作 HTML 结构参考模板，无需改动。
+                -->
+
                 <div class="space-y-6">
-
-                    <!-- Paper example -->
-                    <!-- <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2023_HumanRef/teaser.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-                                    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-                                    <a href="https://yanpei.me/">Yanpei Cao</a>,
-                                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://arxiv.org/abs/2401.17807" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2401.17807.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="#" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
-                                    <a href="./papers/2024_3D_Survey/li2024advances.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2026_VoxelasMemory/Voxel_as_Memory.jpg" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    Voxel as Memory: Long video generation with 4D voxel control
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://bestzzhang.github.io/">Zhiyuan Zhang</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://scholars.cityu.edu.hk/en/persons/zhithuang2/">Zhitong Huang</a>,
-                                    <a href="https://scholars.cityu.edu.hk/en/persons/qisun45/">Qi Sun</a>,
-                                    <a href="https://hetolin.github.io/">Haitao Lin</a>,
-                                    <a>Shenghao Zhang</a>,
-                                    <a>Yuzhen Liu</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <!-- <em>Conference on Robot Learning (<strong>CoRL</strong>), 2026</em> -->
-                                    <em>Under review, 2026</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://bestzzhang.github.io/VAM/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <!-- <a href="" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a> -->
-                                    <!-- <a href="" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
-                                    <!-- <a href="" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <!-- <a href="./papers/2026_GeniWorld/gu2026geniworld.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2026_GeniWorld/GeniWorld.png" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://scholar.google.com.hk/citations?user=v1NkCl0AAAAJ&hl=zh-CN&oi=sra">Chenghao Gu</a><span class="author-mark">*</span>,
-                                    <a href="https://hanyangyu1021.github.io/">Hanyang Yu</a><span class="author-mark">*</span>,
-                                    <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>,
-                                    <a href="https://hetolin.github.io/">Haitao Lin</a>,
-                                    <a href="https://zhangwenyao1.github.io/">Wenyao Zhang</a>,
-                                    <a href="">Jinghe Wang</a>,
-                                    <a href="">Hanglei Jin</a>,
-                                    <a href="">Shuzhao Xie</a>,
-                                    <a href="">Jingyan Jiang</a>,
-                                    <a href="">Zhi Wang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <!-- <em>Conference on Robot Learning (<strong>CoRL</strong>), 2026</em> -->
-                                    <em>Under review, 2026</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <!-- <a href="" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a> -->
-                                    <a href="https://arxiv.org/pdf/2608.06332" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <!-- <a href="" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
-                                    <!-- <a href="" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <a href="./papers/2026_GeniWorld/gu2026geniworld.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2026_ImageWAM/imagewam.png" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=v_6ZAw0AAAAJ">Yuyang Zhang</a>,
-                                    <a href="https://zhangwenyao1.github.io/">Wenyao Zhang</a>,
-                                    <a href="https://qizekun.github.io/">Zekun Qi</a>,
-                                    <a href="https://cghezhang.github.io/">He Zhang</a>,
-                                    <a href="https://hetolin.github.io/">Haitao Lin</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="">Zhibo Chen</a>,
-                                    <a href="">Yao Mu</a>,
-                                    <a href="">Xiaokang Yang</a>,
-                                    <a href="">Xin Jin</a>,
-                                    <a href="">Wenjun Zeng</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <!-- <em>Conference on Robot Learning (<strong>CoRL</strong>), 2026</em> -->
-                                    <em>Under review, 2026</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://zhangwenyao1.github.io/ImageWAM/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2606.19531" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/yuyangalin/ImageWAM" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <!-- <a href="" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <a href="./papers/2026_ImageWAM/zhang2026imagewam.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2026_MaskWAM/maskwam.png" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://hanyangyu1021.github.io/">Hanyang Yu</a>,
-                                    <a href="https://hetolin.github.io/">Haitao Lin</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://zhangwenyao1.github.io/">Wenyao Zhang</a>,
-                                    <a href="https://chenghaogu.github.io/">Chenghao Gu</a>,
-                                    <a href="https://hengli.me/">Heng Li</a>,
-                                    <a href="https://ece.hkust.edu.hk/pingtan">Ping Tan</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <!-- <em>Conference on Robot Learning (<strong>CoRL</strong>), 2026</em> -->
-                                    <em>Under review, 2026</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://hanyangyu1021.github.io/maskwam.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2606.13515" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/hanyangyu1021/maskwam" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="https://www.youtube.com/watch?v=x0tY7byEaF4" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
-                                    <a href="./papers/2026_MaskWAM/yu2026maskwam.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2026_OEVLN/oevln.png"
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    OE-VLN: Benchmarking Open-Ended Vision-Language Navigation under Natural Human Instructions
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a>Jiaru Zhong</a>,
-                                    <a>Yuxiang Yang</a>,
-                                    <a>Wei Cui</a>,
-                                    <a>Junliang Chen</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a>Huaiyuan Xu</a>,
-                                    <a>Jiahui Xu</a>,
-                                    <a>Yijie Guo</a>,
-                                    <a>Yi Wang</a>,
-                                    <a>Qiang Zhang</a>,
-                                    <a>Lap-Pui Chau</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>Under review, 2026</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <!-- <a href="https://jarvishou829.github.io/DA4D/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a> -->
-                                    <!-- <a href="https://arxiv.org/pdf/2511.18814" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a> -->
-                                    <!-- <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
-                                    <!-- <a href="#" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <!-- <a href="./papers/2025_da4d/hou2025detany4d.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2025_da4d/da4d.gif"
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://jarvishou829.github.io/">Jiawei Hou</a>,
-                                    <a>Shenghao Zhang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>,
-                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
-                                    <a href="https://edward3862.github.io/">Zheng Gu</a>,
-                                    <a>Yonggen Ling</a>,
-                                    <a>Taiping Zeng</a>,
-                                    <a>Xiangyang Xue</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>,
-                                    <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://jarvishou829.github.io/DA4D/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2511.18814" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <!-- <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
-                                    <!-- <a href="#" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <a href="./papers/2025_da4d/hou2025detany4d.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2025_wordcraft/font-teaser-new.png" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    WordCraft: Interactive Artistic Typography with Attention Awareness and Noise Blending
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Zhe Wang,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://scholar.google.com/citations?user=-wfXmM4AAAAJ&hl=zh-CN">Tianyi Wei</a>,
-                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
-                                    <a href="https://research.monash.edu/en/persons/wanchao-su">Wanchao Su</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>arXiv preprint arXiv:2401.17807, 2025</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <!-- <a href="https://arxiv.org/abs/2401.17807" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a> -->
-                                    <a href="https://arxiv.org/pdf/2507.09573" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <!-- <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
-                                    <!-- <a href="#" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <a href="./papers/2025_wordcraft/wang2025wordcraft.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2025_tairos/perception.png" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    TAIROS: An Embodied AI Platform for Robotics Applications
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Tencent Robotics X Team & Futian Laboratory, Shenzhen
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>TAIROS Technical Report, 2025</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://tairos.tencent.com/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://cdn.tairos.tencent-cloud.com/downloads/tools/pdf/tairos.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://tairos.tencent.com/docs/models/perception/sdk_download" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <!-- <a href="#" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <!-- <a href="./papers/2025_wordcraft/wang2025wordcraft.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2025_3d_editing/overview.jpg" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                                     
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    Generative object insertion in gaussian splatting with a multi-view diffusion model
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://github.com/JiuTongBro">Hongliang Zhong</a>,
-                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>Visual Informatics, 2025</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <!-- <a href="https://eckertzhang.github.io/HumanRef.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a> -->
-                                    <a href="https://pdf.sciencedirectassets.com/315710/1-s2.0-S2468502X25X00036/1-s2.0-S2468502X2500021X/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCWIUw%2FL4G0SAw1cLE6zrYDyap2bvCzeqmnR%2FGGTLcyeAIgU3e03SEM3jvQOtyn4cCigPcNjMhSHf4KNU7E5mwuu%2F8quwUI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDB6%2Bla%2F6fTt7w9PkoCqPBepp%2FrcTE9Gm4gRFIJHDwCwvhRbnU9Hqs7Rs9ujbTRaq31egowtLdWDLT4Q9Pe0uOlJ81VhHGH9DL2kMtxG9HmPEU6mUPbw8ERJNUSYYn8tLKL%2FsAECeRLzo7ZojR4SVNrgOIBdHgz%2B42cEBZxTD%2F7XjYh8KpX533Riq83LOP4hNljahmeTt9NFsijHnifisw0PjS6wZiftHxtSpSyL3JotM810tb6FLxDVzfKEssM0QFOFCo6HRAg1ai01AZWLVmlRwCNDldatUvL4uOd0PqXkPIF3PIeOXL0bkHu0ZOYfeV9ZLPn17LmGkrG6JMFltkZ05psIp1OY3TG0JTDvpsAYL9kBzTDTW%2BseHLI1%2FgK%2FuE3qD9bLXZf65nIFlIYsmhTLVDYfDLVecWvKNg%2BeJnzK0zK%2FQVG3qjxMeGkoLag22WYr61tMkgWMYFAU9P91bFouSTx0Hq8s1HWmJ8aiMLJmFWGMoHEO2bcLxkTg1AJWwhyu%2B28iihYlJ6wxYKLIrsfTUUfptnyXrRYlHY7cE%2F1g%2BoP33CXwMl0BYX3b87l6UJRagXacUu9qkXRf3GJ6DJ1Ng%2F5zZI1R3zxAPixUlQ82JRxqz5ZE2CUbuV3M6t1FEZC4Z6vX5lnCuQsQJKJoFJdoNAW7ghA37gslwHSsLx4S6vzdTR6L5eYUOi6fEjmc9%2Ff2WDiGD1s58huaRKMLqXOV3MSS8yAEWgxSUGAFe1MzZal8coYKRPZ2RX7k5zvJ19KkN4lHXHG%2BSIq3tWvgzqzimkZ4wgVob1ZQ%2Fyr2Akcws8TnsqHYqN2SyrgYzUxGip2A3tzEBjGjjT6rnWgUPByFySqUf83tMOnkmYVwKyIKPnHgY%2Bhp4aQz%2B%2F16GscUwoJGGxgY6sQGFe7Vhmq8Cfz8Ie%2Bdz2d0QAsn2%2FryqOSNMjf1umCbLeJYQYexxKC7mH1DvvPj1dtjjlNiMaREJ4m5pu49UTvRrl%2F96Vt%2BzsLStqNsPeeYdEq2L1NpAbHptA6mPdOBTo2FvXgqivV7%2BlQphx2rmxfyx2xXsnkIzYpshQH%2FiScoQsGEiNuwM%2FoMk8QO4xdf4KcAzwQoMHYX3BvyvvnL9viYbKR2KUjvophu04QaVeMO7SNo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250910T155552Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY3ROCOCV3%2F20250910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ee8eacd4fd5b22b82bb2716bdaf834200630c0c3e27a8996c1d1c5c81efd6abd&hash=4e3318442169c52db7a17aee7506e7bb584feb2d24f4040df46a2c09fefffa3d&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S2468502X2500021X&tid=spdf-b7021988-8020-4d27-9b55-7ffef24f8c47&sid=892696915acb4749ac2a5db1814d50e889cbgxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=00095857025f570607&rr=97d01cb3dddbc523&cc=cn" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <!-- <a href="https://github.com/eckertzhang/HumanRef" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
-                                    <!-- <a href="https://youtu.be/4R3iaamYwa8" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <a href="./papers/2025_3d_editing/zhong2025generative.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2025_HumanRef-GS/2025_humanref-gs.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                                     
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    HumanRef-GS: Image-to-3D Human Generation With Reference-Guided Diffusion and 3D Gaussian Splatting
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-                                    <a href="https://github.com/JiuTongBro">Hongliang Zhong</a>,
-                                    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-                                    <a href="https://yanpei.me/">Yanpei Cao</a>,
-                                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE Transactions on Circuits and Systems for Video Technology (<strong>TCSVT</strong>), 2025</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://eckertzhang.github.io/HumanRef.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://ieeexplore.ieee.org/abstract/document/10879794" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <!-- <a href="https://github.com/eckertzhang/HumanRef" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a> -->
-                                    <!-- <a href="https://youtu.be/4R3iaamYwa8" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <a href="./papers/2025_HumanRef-GS/zhang2025humanref.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2024_3D_Survey/survey.jpg" 
-                                     alt="Survey Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    Advances in 3D Generation: A Survey
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-                                    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-                                    <a href="https://scholar.google.com.hk/citations?user=2ztThPwAAAAJ&hl=zh-CN">Di Kang</a>,
-                                    <a href="https://scholar.google.com/citations?user=gP-UxcoAAAAJ">Weihao Cheng</a>,
-                                    <a href="https://scholar.google.com/citations?user=UvvufgQAAAAJ&hl=zh-CN">Yiming Gao</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://lzhnb.github.io/">Zhihao Liang</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>,
-                                    <a href="https://yanpei.me/">Yanpei Cao</a>,
-                                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>arXiv preprint arXiv:2401.17807, 2024</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://arxiv.org/pdf/2401.17807.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="./papers/2024_3D_Survey/li2024advances.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2024_tpami/ict_pami.png" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    High-Fidelity and Efficient Pluralistic Image Completion With Transformers
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="http://www.dongdongchen.bid/">Dongdong Chen</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>), 2024</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="http://raywzy.com/ICT/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://ieeexplore.ieee.org/document/10591425" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/raywzy/ICT" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <!-- <a href="https://youtu.be/4R3iaamYwa8" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a> -->
-                                    <a href="./papers/2024_tpami/wan2024high.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2023_HumanRef/teaser.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-                                    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-                                    <a href="https://yanpei.me/">Yanpei Cao</a>,
-                                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN">Ying Shan</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://eckertzhang.github.io/HumanRef.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2311.16961.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/eckertzhang/HumanRef" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="https://youtu.be/4R3iaamYwa8" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
-                                    <a href="./papers/2023_HumanRef/zhang2023humanref.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2023_VQ-NeRF/teaser.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    VQ-NeRF: Neural Reflectance Decomposition and Editing with Vector Quantization
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://github.com/JiuTongBro">Hongliang Zhong</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://jtbzhl.github.io/VQ-NeRF.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2310.11864.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/JiuTongBro/vqnerf_release" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="https://youtu.be/-kIHOV28ukk" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
-                                    <a href="./papers/2023_AvatarCraft/zhong2023vq.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2023_Text2NeRF/teaser.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    Text2NeRF: Text-Driven 3D Scene Generation with Neural Radiance Fields
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
-                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://eckertzhang.github.io/Text2NeRF.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2305.11588.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/eckertzhang/Text2NeRF" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="https://youtu.be/G3xiabqcv3E" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
-                                    <a href="./papers/2023_Text2NeRF/zhang2023text2nerf.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2023_AvatarCraft/teaser.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    AvatarCraft: Transforming Text into Neural Human Avatars with Parameterized Shape and Pose Control
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="https://j-rx.com/">Ruixiang Jiang</a>,
-                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://mlchai.com/">Menglei Chai</a>,
-                                    <a href="https://mingminghe.com/">Mingming He</a>,
-                                    <a href="https://www.dongdongchen.bid/">Dongdong Chen</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2023</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://avatar-craft.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2303.17606.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/songrise/avatarcraft" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="https://youtu.be/GXPjdN-UF04" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
-                                    <a href="./papers/2023_AvatarCraft/jiang2023avatarcraft.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2022_FDNeRF/FDNeRF.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    FDNeRF: Few-shot Dynamic Neural Radiance Fields for Face Reconstruction and Expression Editing
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
-                                    <a href="https://cassiepython.github.io/">Can Wang</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em><strong>SIGGRAPH Asia</strong>, 2022</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://fdnerf.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2208.05751.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/FDNeRF/FDNeRF" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="https://www.youtube.com/embed/at_42ekU0I0" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>
-                                    <a href="./papers/2022_FDNeRF/zhang2022fdnerf.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2022_texture_opti/texture_opti.gif" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    Adaptive Joint Optimization for 3D Reconstruction with Differentiable Rendering
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2022</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="https://adjointopti.github.io/adjoin.github.io/" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2208.07003.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/adjointopti/ADJOIN" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="./papers/2022_texture_opti/zhang2022adaptive.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="publication-item bg-gray-50 rounded-lg p-4 sm:p-6">
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="md:col-span-1">
-                                <img src="./papers/2021_ICT/ICT.png" 
-                                     alt="Paper" 
-                                     class="w-full h-full object-cover rounded-lg">
-                            </div>
-                            <div class="md:col-span-3">
-                                <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                                    High-Fidelity Pluralistic Image Completion with Transformers
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    <a href="http://raywzy.com/">Ziyu Wan</a>,
-                                    <strong>Jingbo Zhang</strong>,
-                                    <a href="http://www.dongdongchen.bid/">Dongdong Chen</a>,
-                                    <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm">Jing Liao</a>
-                                </p>
-                                <p class="text-sm text-gray-500 mb-2">
-                                    <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2021</em>
-                                </p>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                                    <a href="http://raywzy.com/ICT" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>
-                                    <a href="https://arxiv.org/pdf/2103.14031.pdf" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-                                    <a href="https://github.com/raywzy/ICT" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>
-                                    <a href="./papers/2021_ICT/wan2021high.bib" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <div id="publicationsList" class="space-y-6"></div>
                 </div>
+
                 <div class="text-center mt-6">
                     <button id="togglePublications" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                         <i class="fas fa-chevron-down mr-2"></i>Show more
@@ -1103,113 +550,38 @@
             </section>
 
             <!-- Patents -->
-            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+            <section id="patents" class="scroll-mt-20 bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Patents</h2>
 
-                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6">
-                    <div class="grid md:grid-cols-4 gap-6">
-                        <div class="md:col-span-1">
-                            <img src="./patents/DecAny4d.png" 
-                                    alt="patents" 
-                                    class="w-full h-40 object-cover object-top rounded-lg">
-                        </div>
-                        <div class="md:col-span-3">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-gray-800 mb-2">
-                                    一种面向视频输入的端到端开放集4D目标检测方法
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Patent No: 	2025120130CN
-                                </p>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Inventors: <b>Jingbo Zhang</b>, Jiawei Hou, Shenghao Zhang, Minglei Lu, Yonggen Ling, Haitao Lin, Yuzhen Liu
-                                </p>
-                                <!-- <p class="text-sm text-gray-700 leading-relaxed">
-                                    This invention provides 
-                                </p> -->
-                                <!-- <div class="mt-3 flex items-center text-sm text-green-600">
-                                    <i class="fas fa-check-circle mr-1"></i>
-                                    <span>Granted (2018-04-27)</span>
-                                </div> -->
-                                <div class="mt-3 flex items-center text-sm text-yellow-600">
-                                    <i class="fas fa-clock mr-1"></i>
-                                    <span>Under Review (Applied 2025-12-03)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!--
+                    ====== 如何新增/修改专利 ======
+                    专利卡片不在此处硬编码，而是由 script.js 根据 data.js 中的数据自动渲染到下方 #patentsList。
+                    编辑 data.js 里的 patentsData 数组即可（"Show more" 折叠区的专利放在 additionalPatentsData）。每条为一个对象，字段：
+                      image      : 缩略图路径
+                      title      : 专利名称
+                      patentNo   : 专利号
+                      inventors  : 发明人 HTML（可用 <b>本人</b> 标注）
+                      status     : "granted"（已授权，绿色对勾）或 "review"（审查中，黄色时钟）
+                      statusText : 状态文案，如 "Granted (2018-04-27)" 或 "Under Review (Applied 2025-12-03)"
+                -->
+
+                <div id="patentsList"></div>
+
+                <div class="text-center mt-6">
+                    <button id="togglePatents" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-chevron-down mr-2"></i>Show more
+                    </button>
                 </div>
 
-                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6">
-                    <div class="grid md:grid-cols-4 gap-6">
-                        <div class="md:col-span-1">
-                            <img src="./patents/CN201711305025_FullTextImage1.png" 
-                                    alt="patents" 
-                                    class="w-full h-40 object-cover object-top rounded-lg">
-                        </div>
-                        <div class="md:col-span-3">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-gray-800 mb-2">
-                                    一种基于beta小波基函数展开的时变非线性系统快速辨识方法
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Patent No: CN107967395A
-                                </p>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Inventors: Yang Li, <b>Jingbo Zhang</b>, Weigang Cui, Song Xu, Qinglei Hu
-                                </p>
-                                <!-- <p class="text-sm text-gray-700 leading-relaxed">
-                                    This invention provides 
-                                </p> -->
-                                <div class="mt-3 flex items-center text-sm text-green-600">
-                                    <i class="fas fa-check-circle mr-1"></i>
-                                    <span>Granted (2018-04-27)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6">
-                    <div class="grid md:grid-cols-4 gap-6">
-                        <div class="md:col-span-1">
-                            <img src="./patents/CN108509933A.PDF.png" 
-                                    alt="patents" 
-                                    class="w-full h-40 object-cover object-top rounded-lg">
-                        </div>
-                        <div class="md:col-span-3">
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-gray-800 mb-2">
-                                    一种基于多小波基函数展开的锋电位时变格兰杰因果准确辨识方法
-                                </h4>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Patent No: CN108509933A
-                                </p>
-                                <p class="text-sm text-gray-600 mb-2">
-                                    Inventors: Yang Li, Daxin Hao, <b>Jingbo Zhang</b>
-                                </p>
-                                <!-- <p class="text-sm text-gray-700 leading-relaxed">
-                                    This invention provides 
-                                </p> -->
-                                <div class="mt-3 flex items-center text-sm text-green-600">
-                                    <i class="fas fa-check-circle mr-1"></i>
-                                    <span>Granted (2018-09-07)</span>
-                                </div>
-                                <!-- <div class="mt-3 flex items-center text-sm text-yellow-600">
-                                    <i class="fas fa-clock mr-1"></i>
-                                    <span>Under Review (Applied 2023-12-01)</span>
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Additional Patents (initially hidden) -->
+                <div id="additionalPatents" class="mt-6" style="display: none;"></div>
 
             </section>
 
             
 
             <!-- Services -->
-            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+            <section id="services" class="scroll-mt-20 bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Academic Services</h2>
                 <p class="text-gray-700 leading-relaxed text-justify">
                     I have served as a reviewer for several prestigious journals and conferences, 
@@ -1219,22 +591,14 @@
             </section>
 
             <!-- Teaching -->
-            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
+            <section id="teaching" class="scroll-mt-20 bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Teaching</h2>
-                <p>
-                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2020/2021</a>, Teaching Assistant (TA)<br>
-                    </li>
-                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2021/2022</a>, Teaching Assistant (TA)<br>
-                    </li>
-                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2022/2023</a>, Teaching Assistant (TA)<br>
-                    </li>
-                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">
-                    <a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm">CS3402: Database Systems, 2023/2024</a>, Teaching Assistant (TA)<br>
-                    </li>
-                </p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 text-left">
+                    <li><a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">CS3402: Database Systems, 2020/2021</a>, Teaching Assistant (TA)</li>
+                    <li><a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">CS3402: Database Systems, 2021/2022</a>, Teaching Assistant (TA)</li>
+                    <li><a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">CS3402: Database Systems, 2022/2023</a>, Teaching Assistant (TA)</li>
+                    <li><a href="https://www.cityu.edu.hk/catalogue/ug/current/course/CS3402.htm" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">CS3402: Database Systems, 2023/2024</a>, Teaching Assistant (TA)</li>
+                </ul>
 
                 <!-- <div class="grid md:grid-cols-2 gap-8">
                     <div>
@@ -1293,124 +657,28 @@
                     </div>
                 </div> -->
 
-                <!-- <div class="mt-8 bg-gray-50 p-6 rounded-lg">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Student Supervision</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-blue-600 mb-2">32</div>
-                            <p class="text-gray-600">Graduated PhD Students</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-green-600 mb-2">15</div>
-                            <p class="text-gray-600">Current PhD Students</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-purple-600 mb-2">8</div>
-                            <p class="text-gray-600">Current MS Students</p>
-                        </div>
-                    </div>
-                </div> -->
+
 
             </section>
         </div>
 
-        <!-- Team Tab -->
-        <div id="team" class="tab-content">
-            <section class="bg-white rounded-lg shadow-md p-8">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Research Team</h2>
-                <p class="text-gray-700 leading-relaxed mb-8">
-                    Our research team focuses on cutting-edge research in artificial intelligence, machine learning, and computer vision. The team consists of postdoctoral researchers, PhD students, and MS students, working together to advance AI technology development and applications.
+        <!-- Collaboration Tab -->
+        <div id="team" class="tab-content" role="tabpanel" aria-labelledby="tab-team">
+            <section class="bg-white rounded-lg shadow-md p-4 sm:p-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-6">Collaboration</h2>
+                <p class="text-gray-700 leading-relaxed mb-8 text-justify">
+                    I have been fortunate to learn from wonderful mentors and to collaborate with many talented researchers and students.
+                    This page acknowledges the people I have closely worked with. If you are interested in collaborating, feel free to reach out.
                 </p>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 rounded-lg p-6 text-center">
-                        <img src="https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/0799d24a-d933-48f7-af10-8db8797cb792/image_1757486461_3_1.jpg" 
-                             alt="Dr. Ming Li" 
-                             class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Ming Li</h3>
-                        <p class="text-blue-600 text-sm mb-2">Postdoctoral Researcher</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Focuses on deep learning and computer vision research, published 15 papers in top-tier conferences including CVPR and ICCV.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-lg p-6 text-center">
-                        <img src="https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e268b1a5-c879-42f0-acfb-d5040e20acfe/image_1757486461_6_1.jpg" 
-                             alt="Hua Wang PhD Student" 
-                             class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Hua Wang</h3>
-                        <p class="text-green-600 text-sm mb-2">PhD Student (5th year)</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Research interests in natural language processing and multi-modal learning, recipient of the 2023 Microsoft Research Fellowship.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-lg p-6 text-center">
-                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-purple-200 flex items-center justify-center">
-                            <i class="fas fa-user text-purple-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Jing Chen</h3>
-                        <p class="text-purple-600 text-sm mb-2">PhD Student (3rd year)</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Specializes in graph neural networks and social network analysis, published 8 papers in conferences including ICLR and NIPS.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-lg p-6 text-center">
-                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-red-200 flex items-center justify-center">
-                            <i class="fas fa-user text-red-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Yang Liu</h3>
-                        <p class="text-red-600 text-sm mb-2">PhD Student (2nd year)</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Research focus on reinforcement learning and intelligent decision systems, recipient of Tsinghua University Excellence Scholarship.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-lg p-6 text-center">
-                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-yellow-200 flex items-center justify-center">
-                            <i class="fas fa-user text-yellow-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Min Zhao</h3>
-                        <p class="text-yellow-600 text-sm mb-2">MS Student (2nd year)</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Focuses on federated learning and privacy-preserving technologies, actively participates in multiple international collaboration projects.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-lg p-6 text-center">
-                        <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-indigo-200 flex items-center justify-center">
-                            <i class="fas fa-user text-indigo-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Lei Sun</h3>
-                        <p class="text-indigo-600 text-sm mb-2">MS Student (1st year)</p>
-                        <p class="text-gray-700 text-sm leading-relaxed">
-                            New team member with research interests in machine learning theory and algorithm optimization.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="mt-8 bg-blue-50 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Team Achievements</h3>
-                    <div class="grid md:grid-cols-4 gap-6">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-blue-600 mb-2">120+</div>
-                            <p class="text-gray-600 text-sm">Published Papers</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-green-600 mb-2">15</div>
-                            <p class="text-gray-600 text-sm">Patents Granted</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-purple-600 mb-2">8</div>
-                            <p class="text-gray-600 text-sm">Major Awards</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-red-600 mb-2">$5M+</div>
-                            <p class="text-gray-600 text-sm">Research Funding</p>
-                        </div>
-                    </div>
-                </div>
+
+                <!--
+                    如何新增/修改科研合作人员：编辑 data.js 中的 collaborationData 数组。
+                    分组（Supervisors / Collaborators / Interns 等）与成员卡片均由 script.js 自动渲染到下方 #collaborationList。
+                    成员字段：name(必填) / url(姓名主页) / role(角色单位) / note(备注) / homepage(主页链接) / photo(头像图片) / icon(头像图标)。
+                    某分组 members 为空时会显示 "To be updated."。
+                -->
+
+                <div id="collaborationList"></div>
             </section>
         </div>
 
@@ -1421,8 +689,14 @@
     <footer class="bg-gray-800 text-white py-8 mt-12">
         <div class="container mx-auto px-6">
             <div class="text-center">
-                <p class="mb-2">&copy; 2025 Dr. Jingbo Zhang. All rights reserved.</p>
+                <p class="mb-2">&copy; <span id="copyrightYear">2025</span> Dr. Jingbo Zhang. All rights reserved.</p>
                 <p class="text-gray-400 text-sm">Department of Computer Science, City University of Hong Kong</p>
+                <!-- 访问统计：由不蒜子(busuanzi)填充，成功加载后由 script.js 显示；失败则保持隐藏 -->
+                <p id="siteStats" class="text-gray-400 text-sm mt-2" style="display:none;">
+                    <i class="fas fa-eye mr-1"></i>Total visits: <span id="busuanzi_value_site_pv">0</span>
+                    <span class="mx-2">·</span>
+                    <i class="fas fa-user mr-1"></i>Unique visitors: <span id="busuanzi_value_site_uv">0</span>
+                </p>
             </div>
         </div>
     </footer>
@@ -1490,6 +764,11 @@
             });
         })();
     </script>
+    <!-- 访问统计脚本：使用 vercount（不蒜子兼容镜像，更稳定，沿用相同的 busuanzi_value_* 元素）。
+         如需切回原不蒜子，改用下面这行：
+         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+    <script defer src="https://cn.vercount.one/js"></script>
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

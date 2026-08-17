@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tabButtons.forEach(btn => {
             btn.classList.remove('active', 'border-blue-600', 'text-blue-600');
             btn.classList.add('border-transparent', 'text-gray-700');
+            btn.setAttribute('aria-selected', 'false');
         });
         
         tabContents.forEach(content => {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (activeButton && activeContent) {
             activeButton.classList.add('active', 'border-blue-600', 'text-blue-600');
             activeButton.classList.remove('border-transparent', 'text-gray-700');
+            activeButton.setAttribute('aria-selected', 'true');
             activeContent.classList.add('active');
         }
     }
@@ -37,6 +39,181 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 初始化第一个标签为活跃状态
     switchTab('homepage');
+
+    // ====== 论文 / 专利：从 data.js 渲染 ======
+    function buildPublicationLinks(pub) {
+        const links = [];
+        const ext = 'target="_blank" rel="noopener noreferrer"';
+        if (pub.page)   links.push(`<a href="${pub.page}" ${ext} class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>`);
+        if (pub.pdf)    links.push(`<a href="${pub.pdf}" ${ext} class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>`);
+        if (pub.code)   links.push(`<a href="${pub.code}" ${ext} class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>`);
+        if (pub.video)  links.push(`<a href="${pub.video}" ${ext} class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>`);
+        if (pub.bibtex) links.push(`<a href="${pub.bibtex}" ${ext} class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>`);
+        return links.join('\n                                    ');
+    }
+
+    function renderPublicationCard(pub) {
+        const card = document.createElement('div');
+        card.className = 'publication-item bg-gray-50 rounded-lg p-4 sm:p-6';
+        card.innerHTML = `
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="md:col-span-1">
+                    <img src="${pub.image}" alt="${pub.imageAlt || 'Paper'}" loading="lazy" decoding="async" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">${pub.title}</h4>
+                    <p class="text-sm text-gray-600 mb-2">${pub.authors}</p>
+                    <p class="text-sm text-gray-500 mb-2"><em>${pub.venue}</em></p>
+                    <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">${buildPublicationLinks(pub)}</div>
+                </div>
+            </div>`;
+        return card;
+    }
+
+    function renderPatentCard(pat) {
+        const isGranted = pat.status === 'granted';
+        const statusClass = isGranted ? 'text-green-600' : 'text-yellow-600';
+        const statusIcon = isGranted ? 'fa-check-circle' : 'fa-clock';
+        const card = document.createElement('div');
+        card.className = 'patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6';
+        card.innerHTML = `
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="md:col-span-1">
+                    <img src="${pat.image}" alt="patents" loading="lazy" decoding="async" class="w-full h-40 object-cover object-top rounded-lg">
+                </div>
+                <div class="md:col-span-3">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-gray-800 mb-2">${pat.title}</h4>
+                        <p class="text-sm text-gray-600 mb-2">Patent No: ${pat.patentNo}</p>
+                        <p class="text-sm text-gray-600 mb-2">Inventors: ${pat.inventors}</p>
+                        <div class="mt-3 flex items-center text-sm ${statusClass}">
+                            <i class="fas ${statusIcon} mr-1"></i>
+                            <span>${pat.statusText}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        return card;
+    }
+
+    // 渲染主论文列表
+    const publicationsList = document.getElementById('publicationsList');
+    if (publicationsList && Array.isArray(window.publicationsData)) {
+        window.publicationsData.forEach(pub => publicationsList.appendChild(renderPublicationCard(pub)));
+    }
+
+    // 渲染专利列表
+    const patentsList = document.getElementById('patentsList');
+    if (patentsList && Array.isArray(window.patentsData)) {
+        window.patentsData.forEach(pat => patentsList.appendChild(renderPatentCard(pat)));
+    }
+
+    // 展开/折叠专利列表（数据来自 data.js 的 additionalPatentsData）
+    const togglePatentsButton = document.querySelector('#togglePatents');
+    const additionalPatentsContainer = document.querySelector('#additionalPatents');
+    let patentsExpanded = false;
+
+    function loadMorePatents() {
+        const extraPatents = Array.isArray(window.additionalPatentsData) ? window.additionalPatentsData : [];
+        extraPatents.forEach(pat => additionalPatentsContainer.appendChild(renderPatentCard(pat)));
+
+        const collapseButtonContainer = document.createElement('div');
+        collapseButtonContainer.className = 'text-center mt-8 pt-6 border-t border-gray-200';
+
+        const collapseButton = document.createElement('button');
+        collapseButton.className = 'inline-flex items-center px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors';
+        collapseButton.innerHTML = '<i class="fas fa-chevron-up mr-2"></i>Collapse Patent List';
+
+        collapseButtonContainer.appendChild(collapseButton);
+        additionalPatentsContainer.appendChild(collapseButtonContainer);
+
+        collapseButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            additionalPatentsContainer.style.display = 'none';
+            if (togglePatentsButton) {
+                togglePatentsButton.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>Show more';
+                togglePatentsButton.style.display = 'inline-flex';
+                patentsExpanded = false;
+                togglePatentsButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    }
+
+    if (togglePatentsButton && additionalPatentsContainer) {
+        // 没有可折叠的专利时隐藏按钮
+        if (!Array.isArray(window.additionalPatentsData) || window.additionalPatentsData.length === 0) {
+            togglePatentsButton.style.display = 'none';
+        }
+        togglePatentsButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!patentsExpanded) {
+                if (additionalPatentsContainer.children.length === 0) {
+                    loadMorePatents();
+                }
+                additionalPatentsContainer.style.display = 'block';
+                this.style.display = 'none';
+                patentsExpanded = true;
+                setTimeout(() => {
+                    additionalPatentsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        });
+    }
+
+    // ====== 科研合作（Collaboration）：从 data.js 渲染 ======
+    function renderCollaborationMember(m, accent, defaultIcon) {
+        const avatar = m.photo
+            ? `<img src="${m.photo}" alt="${m.name}" loading="lazy" decoding="async" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">`
+            : `<div class="w-24 h-24 rounded-full mx-auto mb-4 bg-${accent}-100 flex items-center justify-center">
+                    <i class="fas ${m.icon || defaultIcon || 'fa-user'} text-${accent}-600 text-2xl"></i>
+                </div>`;
+        const nameLink = m.url || m.homepage;
+        const nameHtml = nameLink
+            ? `<a href="${nameLink}" class="hover:text-${accent}-600 transition-colors" target="_blank" rel="noopener noreferrer">${m.name}</a>`
+            : m.name;
+        const roleHtml = m.role ? `<p class="text-${accent}-600 text-sm mb-2 text-center">${m.role}</p>` : '';
+        const noteHtml = m.note ? `<p class="text-gray-600 text-sm leading-relaxed">${m.note}</p>` : '';
+        const homeHtml = m.homepage
+            ? `<div class="mt-3"><a href="${m.homepage}" class="text-${accent}-600 hover:text-${accent}-800 text-sm" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe mr-1"></i>Homepage</a></div>`
+            : '';
+        const card = document.createElement('div');
+        card.className = 'bg-gray-50 rounded-lg p-6 text-center transition-all duration-300 hover:shadow-md';
+        card.innerHTML = `
+            ${avatar}
+            <h4 class="text-lg font-semibold text-gray-800 mb-1">${nameHtml}</h4>
+            ${roleHtml}
+            ${noteHtml}
+            ${homeHtml}`;
+        return card;
+    }
+
+    function renderCollaboration() {
+        const container = document.getElementById('collaborationList');
+        if (!container || !Array.isArray(window.collaborationData)) return;
+        window.collaborationData.forEach((sec, idx) => {
+            const isLast = idx === window.collaborationData.length - 1;
+            const group = document.createElement('div');
+            group.className = isLast ? '' : 'mb-10';
+            group.innerHTML = `
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas ${sec.icon} text-${sec.accent}-600 mr-2"></i>${sec.title}
+                </h3>`;
+            const members = Array.isArray(sec.members) ? sec.members : [];
+            if (members.length === 0) {
+                const placeholder = document.createElement('p');
+                placeholder.className = 'text-gray-400 text-sm italic';
+                placeholder.textContent = 'To be updated.';
+                group.appendChild(placeholder);
+            } else {
+                const grid = document.createElement('div');
+                grid.className = 'grid sm:grid-cols-2 lg:grid-cols-3 gap-6';
+                members.forEach(m => grid.appendChild(renderCollaborationMember(m, sec.accent, sec.memberIcon)));
+                group.appendChild(grid);
+            }
+            container.appendChild(group);
+        });
+    }
+    renderCollaboration();
 
     // 平滑滚动功能
     function smoothScrollTo(element) {
@@ -58,30 +235,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 动态加载更多论文功能
+    // 动态加载更多论文功能（数据来自 data.js 的 additionalPublicationsData）
     function loadMorePublications() {
         const additionalContainer = document.querySelector('#additionalPublications');
-        
-        // 模拟更多论文数据
-        const additionalPublications = [
-            {
-                title: "A multiple beta wavelet-based locally regularized ultraorthogonal forward regression algorithm for time-varying system identification with applications to EEG",
-                authors: "Yang Li, <strong>Jingbo Zhang</strong>, Weigang Cui, Heng Yuan, Hualiang Wei",
-                venue: "IEEE Transactions on Instrumentation and Measurement (<strong>TIM</strong>), 2019",
-                // description: "",
-                image: "./papers/2019_beta_wavelet/beta_wavelet.jpg",
-                // page: "",
-                pdf: "https://eprints.whiterose.ac.uk/144526/1/IEEE-IM%20Accepted%20Paper%20%28Accepetd%2014-03-2019%29.pdf",
-                // code: "",
-                // video: "",
-                bibtex: "./papers/2019_beta_wavelet/li2019multiple.bib",
-            },
-        ];
+
+        const extraPubs = Array.isArray(window.additionalPublicationsData) ? window.additionalPublicationsData : [];
 
         // 创建新的论文条目
-        additionalPublications.forEach(pub => {
-            const pubElement = createPublicationElement(pub);
-            additionalContainer.appendChild(pubElement);
+        extraPubs.forEach(pub => {
+            additionalContainer.appendChild(renderPublicationCard(pub));
         });
 
         // 在列表末尾添加折叠按钮
@@ -118,57 +280,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    }
-
-    // 创建论文元素的辅助函数
-    function createPublicationElement(publication) {
-        const pubDiv = document.createElement('div');
-        pubDiv.className = 'publication-item bg-gray-50 rounded-lg p-6';
-        const descriptionHtml = publication.description && publication.description.trim() !== ''
-            ? `<p class="text-gray-700 text-sm leading-relaxed mb-3">
-                    ${publication.description}
-                </p>`
-            : `<!-- publication.description is empty, paragraph omitted -->`;
-        const pageHtml = publication.page && publication.page.trim() !== ''
-            ? `<a href="${publication.page}" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-house mr-1"></i>Project Page</a>`
-            : `<!-- publication.page is empty, paragraph omitted -->`;
-        const pdfHtml = publication.pdf && publication.pdf.trim() !== ''
-            ? `<a href="${publication.pdf}" class="text-yellow-500 hover:text-yellow-800"><i class="fas fa-file-pdf mr-1"></i>PDF</a>`
-            : `<!-- publication.pdf is empty, paragraph omitted -->`;
-        const codeHtml = publication.code && publication.code.trim() !== ''
-            ? `<a href="${publication.code}" class="text-red-600 hover:text-red-800"><i class="fab fa-github mr-1"></i>Code</a>`
-            : `<!-- publication.code is empty, paragraph omitted -->`;
-        const videoHtml = publication.video && publication.video.trim() !== ''
-            ? `<a href="${publication.video}" class="text-green-600 hover:text-green-800"><i class="fa-solid fa-video mr-1"></i>Video</a>`
-            : `<!-- publication.video is empty, paragraph omitted -->`;
-        const bibtexHtml = publication.bibtex && publication.bibtex.trim() !== ''
-            ? `<a href="${publication.bibtex}" class="text-purple-600 hover:text-purple-800"><i class="fas fa-quote-left mr-1"></i>BibTeX</a>`
-            : `<!-- publication.bibtex is empty, paragraph omitted -->`;
-        
-        pubDiv.innerHTML = `
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="md:col-span-1">
-                    <img src="${publication.image}" 
-                         alt="Paper" 
-                         class="w-full h-full object-cover rounded-lg">
-                </div>
-                <div class="md:col-span-3">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">${publication.title}</h4>
-                    <p class="text-sm text-gray-600 mb-2">${publication.authors}</p>
-                    <p class="text-sm text-gray-500 mb-2"><em>${publication.venue}</em></p>
-                    ${descriptionHtml}
-                    <div class="flex space-x-4 text-sm">
-                        ${pageHtml}
-                        ${pdfHtml}
-                        ${codeHtml}
-                        ${videoHtml}
-                        ${bibtexHtml}
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        return pubDiv;
     }
 
     // 为展开/折叠论文列表按钮添加事件
@@ -420,6 +531,60 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+
+    // 访问统计：仅当不蒜子成功返回数值时才显示统计行（失败则保持隐藏）
+    (function revealSiteStats() {
+        const statsEl = document.getElementById('siteStats');
+        const pvEl = document.getElementById('busuanzi_value_site_pv');
+        if (!statsEl || !pvEl) return;
+        let tries = 0;
+        const timer = setInterval(function() {
+            tries++;
+            const val = (pvEl.textContent || '').trim();
+            if (val && val !== '0' && /\d/.test(val)) {
+                statsEl.style.display = '';
+                clearInterval(timer);
+            } else if (tries >= 20) { // 约 10s 仍无数据则放弃
+                clearInterval(timer);
+            }
+        }, 500);
+    })();
+
+    // 右侧浮动目录（scrollspy）：根据滚动位置高亮当前所在区块
+    (function initSectionToc() {
+        const tocLinks = document.querySelectorAll('#sectionToc a[href^="#"]');
+        if (!tocLinks.length) return;
+
+        const linkById = {};
+        const sections = [];
+        tocLinks.forEach(a => {
+            const id = a.getAttribute('href').slice(1);
+            const el = document.getElementById(id);
+            if (el) {
+                linkById[id] = a;
+                sections.push(el);
+            }
+        });
+        if (!sections.length) return;
+
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(a => a.classList.remove('is-active'));
+                    const link = linkById[entry.target.id];
+                    if (link) link.classList.add('is-active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+        sections.forEach(s => spy.observe(s));
+    })();
+
+    // 页脚版权年份：自动取当前年份
+    const copyrightYearEl = document.getElementById('copyrightYear');
+    if (copyrightYearEl) {
+        copyrightYearEl.textContent = new Date().getFullYear();
+    }
 
     console.log('个人主页初始化完成');
 });

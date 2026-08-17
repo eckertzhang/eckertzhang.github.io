@@ -1,1 +1,10 @@
-Jingbo Zhang is a PhD candidate at the Department of Computer Science, City University of Hong Kong. His current research interests mainly lie in 3D reconstruction and generation, 2D/3D inpainting, textual optimization, and neural rendering.
+English Bio:
+
+Jingbo Zhang is currently a Senior Researcher at Tencent Robotics X Lab. He received his Ph.D. in Computer Science from City University of Hong Kong in 2025, under the supervision of Prof. Jing Liao. Before pursuing doctoral studies in Hong Kong, he spent two years as a Ph.D. student specializing in pattern recognition at the School of Automation Science and Electrical Engineering, Beihang University (BUAA). Earlier, he earned dual bachelor’s degrees in Engineering Mechanics and Business Administration from BUAA in 2018. 
+His research centers on Interactive World Models for embodied AI, spanning computer vision, computer graphics, vision-language models, and robotics. Building on a foundation in 3D/4D scene reconstruction, generation, editing, and perception, [Name] studies how agents can understand, simulate, and interact with complex physical environments. He/She is also actively exploring World Action Models (WAMs) to bridge environmental simulation and agent execution, with the goal of developing scalable foundational models that enable intelligent agents to act effectively in the real world.
+
+
+中文版简介：
+
+章敬波目前是腾讯 Robotics X 实验室的高级研究员。他于2025年获得香港城市大学计算机科学博士学位，师从廖静教授。在赴港深造之前，他曾在北京航空航天大学自动化科学与电气工程学院攻读模式识别方向博士学位（两年）。此前，他于2018年在北京航空航天大学获得了工程力学与工商管理双学士学位。
+他的研究核心是面向具身智能（Embodied AI）的交互式世界模型（Interactive World Models），研究领域横跨计算机视觉、计算机图形学、视觉语言模型以及机器人学。建立在3D/4D场景重建、生成、编辑与感知的基础之上，他/她致力于研究智能体（Agents）如何理解、模拟并与复杂的物理环境进行交互。目前，他/她也在积极探索世界动作模型（World Action Models, WAMs），旨在桥接环境模拟与智能体执行，最终目标是开发出可扩展的基础模型，使智能体能够在真实世界中高效、精准地执行任务。
