@@ -5,6 +5,7 @@
 // 论文字段说明：
 //   image    : 缩略图路径（必填）
 //   imageAlt : 图片 alt 文本（可选，默认 "Paper"）
+//   imageFit : 图片显示模式（可选）："cover"（默认，原始自适应填充，可能裁剪边缘）/ "contain"（完整显示、不裁剪）
 //   title    : 论文标题（必填）
 //   authors  : 作者 HTML 字符串（可含 <a>/<strong>/<span class="author-mark"> 等）
 //   venue    : 发表信息（会自动包裹在 <em> 里，可含 <strong>）
@@ -21,6 +22,7 @@ window.publicationsData = [
     },
     {
         image: "./papers/2026_GeniWorld/GeniWorld.png",
+        imageFit: "contain",
         title: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions",
         authors: `<a href="https://scholar.google.com.hk/citations?user=v1NkCl0AAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener noreferrer">Chenghao Gu</a><span class="author-mark">*</span>, <a href="https://hanyangyu1021.github.io/" target="_blank" rel="noopener noreferrer">Hanyang Yu</a><span class="author-mark">*</span>, <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a>Jinghe Wang</a>, <a>Hanglei Jin</a>, <a>Shuzhao Xie</a>, <a>Jingyan Jiang</a>, <a>Zhi Wang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>`,
         venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
@@ -29,6 +31,7 @@ window.publicationsData = [
     },
     {
         image: "./papers/2026_ImageWAM/imagewam.png",
+        imageFit: "contain",
         title: "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
         authors: `<a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=v_6ZAw0AAAAJ" target="_blank" rel="noopener noreferrer">Yuyang Zhang</a>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a href="https://qizekun.github.io/" target="_blank" rel="noopener noreferrer">Zekun Qi</a>, <a href="https://cghezhang.github.io/" target="_blank" rel="noopener noreferrer">He Zhang</a>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <strong>Jingbo Zhang</strong>, <a>Zhibo Chen</a>, <a>Yao Mu</a>, <a>Xiaokang Yang</a>, <a>Xin Jin</a>, <a>Wenjun Zeng</a>`,
         venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026

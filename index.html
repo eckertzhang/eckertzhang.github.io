@@ -96,11 +96,6 @@
 
         /* Publication / patent image height control on mobile */
         @media (max-width: 767px) {
-            .publication-item .grid > div:first-child img {
-                max-height: 200px;
-                width: 100%;
-                object-fit: cover;
-            }
             .patent-item .grid > div:first-child img {
                 max-height: 140px;
                 width: 100%;
@@ -527,6 +522,7 @@
                     列表按数组顺序显示，新论文一般加在数组最前面。每条为一个对象，字段：
                       image    : 缩略图路径（必填）
                       imageAlt : 图片替代文本（可选，默认 "Paper"）
+                      imageFit : 图片显示模式（可选）："cover"（默认，自适应填充，可能裁剪）/ "contain"（完整不裁剪）
                       title    : 论文标题（必填）
                       authors  : 作者 HTML（可用 <a href="...">名字</a> / <strong>本人</strong> /
                                  共同一作 <span class="author-mark">*</span> / 通讯 <span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>）

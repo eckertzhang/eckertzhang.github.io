@@ -55,10 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderPublicationCard(pub) {
         const card = document.createElement('div');
         card.className = 'publication-item bg-gray-50 rounded-lg p-4 sm:p-6';
+        // 图片显示模式：默认 'cover'（原始自适应填充，可能裁剪边缘）；设 imageFit: 'contain' 则完整显示、不裁剪
+        const imgClass = pub.imageFit === 'contain'
+            ? 'w-full h-auto max-h-64 object-contain rounded-lg mx-auto'
+            : 'w-full h-48 md:h-full object-cover rounded-lg';
         card.innerHTML = `
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="md:col-span-1">
-                    <img src="${pub.image}" alt="${pub.imageAlt || 'Paper'}" loading="lazy" decoding="async" class="w-full h-full object-cover rounded-lg">
+                    <img src="${pub.image}" alt="${pub.imageAlt || 'Paper'}" loading="lazy" decoding="async" class="${imgClass}">
                 </div>
                 <div class="md:col-span-3">
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">${pub.title}</h4>
