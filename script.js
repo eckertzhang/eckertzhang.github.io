@@ -40,6 +40,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化第一个标签为活跃状态
     switchTab('homepage');
 
+    // ====== 媒体辅助：尺寸清单（防布局抖动）+ 图片/视频渲染 ======
+    // 返回形如 ` width="1000" height="542"` 的属性串（无匹配则返回空串）
+    function dimAttr(src) {
+        const d = window.__mediaDims && window.__mediaDims[src];
+        return d ? ` width="${d.w}" height="${d.h}"` : '';
+    }
+
+    // 缩略图：有 clip 字段的条目渲染为自动播放的静音循环视频（由 GIF 转码而来），否则渲染图片
+    function renderThumb(item, imgClass, alt) {
+        if (item.clip) {
+            return `<video class="${imgClass}"${dimAttr(item.image)} autoplay muted loop playsinline preload="metadata" poster="${item.image}">
+                        <source src="${item.clip}.webm" type="video/webm">
+                        <source src="${item.clip}.mp4" type="video/mp4">
+                    </video>`;
+        }
+        return `<img src="${item.image}" alt="${alt}" loading="lazy" decoding="async"${dimAttr(item.image)} class="${imgClass}">`;
+    }
+
     // ====== 论文 / 专利：从 data.js 渲染 ======
     function buildPublicationLinks(pub) {
         const links = [];
@@ -62,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.innerHTML = `
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="md:col-span-1">
-                    <img src="${pub.image}" alt="${pub.imageAlt || 'Paper'}" loading="lazy" decoding="async" class="${imgClass}">
+                    ${renderThumb(pub, imgClass, pub.imageAlt || 'Paper')}
                 </div>
                 <div class="md:col-span-3">
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">${pub.title}</h4>
@@ -83,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.innerHTML = `
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="md:col-span-1">
-                    <img src="${pat.image}" alt="patents" loading="lazy" decoding="async" class="w-full h-40 object-cover object-top rounded-lg">
+                    ${renderThumb(pat, 'w-full h-40 object-cover object-top rounded-lg', 'patents')}
                 </div>
                 <div class="md:col-span-3">
                     <div class="flex-1">
@@ -167,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ====== 科研合作（Collaboration）：从 data.js 渲染 ======
     function renderCollaborationMember(m, accent, defaultIcon) {
         const avatar = m.photo
-            ? `<img src="${m.photo}" alt="${m.name}" loading="lazy" decoding="async" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">`
+            ? `<img src="${m.photo}" alt="${m.name}" loading="lazy" decoding="async"${dimAttr(m.photo)} class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">`
             : `<div class="w-24 h-24 rounded-full mx-auto mb-4 bg-${accent}-100 flex items-center justify-center">
                     <i class="fas ${m.icon || defaultIcon || 'fa-user'} text-${accent}-600 text-2xl"></i>
                 </div>`;

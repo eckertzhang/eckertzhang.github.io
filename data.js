@@ -14,14 +14,14 @@
 
 window.publicationsData = [
     {
-        image: "./papers/2026_VoxelasMemory/Voxel_as_Memory.jpg",
+        image: "./papers/2026_VoxelasMemory/Voxel_as_Memory.webp",
         title: "Voxel as Memory: Long video generation with 4D voxel control",
         authors: `<a href="https://bestzzhang.github.io/" target="_blank" rel="noopener noreferrer">Zhiyuan Zhang</a>, <strong>Jingbo Zhang</strong>, <a href="https://scholars.cityu.edu.hk/en/persons/zhithuang2/" target="_blank" rel="noopener noreferrer">Zhitong Huang</a>, <a href="https://scholars.cityu.edu.hk/en/persons/qisun45/" target="_blank" rel="noopener noreferrer">Qi Sun</a>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <a>Shenghao Zhang</a>, <a>Yuzhen Liu</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
         page: "https://bestzzhang.github.io/VAM/",
     },
     {
-        image: "./papers/2026_GeniWorld/GeniWorld.png",
+        image: "./papers/2026_GeniWorld/GeniWorld.webp",
         imageFit: "contain",
         title: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions",
         authors: `<a href="https://scholar.google.com.hk/citations?user=v1NkCl0AAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener noreferrer">Chenghao Gu</a><span class="author-mark">*</span>, <a href="https://hanyangyu1021.github.io/" target="_blank" rel="noopener noreferrer">Hanyang Yu</a><span class="author-mark">*</span>, <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a>Jinghe Wang</a>, <a>Hanglei Jin</a>, <a>Shuzhao Xie</a>, <a>Jingyan Jiang</a>, <a>Zhi Wang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>`,
@@ -30,7 +30,7 @@ window.publicationsData = [
         bibtex: "./papers/2026_GeniWorld/gu2026geniworld.bib",
     },
     {
-        image: "./papers/2026_ImageWAM/imagewam.png",
+        image: "./papers/2026_ImageWAM/imagewam.webp",
         imageFit: "contain",
         title: "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
         authors: `<a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=v_6ZAw0AAAAJ" target="_blank" rel="noopener noreferrer">Yuyang Zhang</a>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a href="https://qizekun.github.io/" target="_blank" rel="noopener noreferrer">Zekun Qi</a>, <a href="https://cghezhang.github.io/" target="_blank" rel="noopener noreferrer">He Zhang</a>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <strong>Jingbo Zhang</strong>, <a>Zhibo Chen</a>, <a>Yao Mu</a>, <a>Xiaokang Yang</a>, <a>Xin Jin</a>, <a>Wenjun Zeng</a>`,
@@ -41,7 +41,7 @@ window.publicationsData = [
         bibtex: "./papers/2026_ImageWAM/zhang2026imagewam.bib",
     },
     {
-        image: "./papers/2026_MaskWAM/maskwam.png",
+        image: "./papers/2026_MaskWAM/maskwam.webp",
         title: "MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models",
         authors: `<a href="https://hanyangyu1021.github.io/" target="_blank" rel="noopener noreferrer">Hanyang Yu</a>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <strong>Jingbo Zhang</strong>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a href="https://chenghaogu.github.io/" target="_blank" rel="noopener noreferrer">Chenghao Gu</a>, <a href="https://hengli.me/" target="_blank" rel="noopener noreferrer">Heng Li</a>, <a href="https://ece.hkust.edu.hk/pingtan" target="_blank" rel="noopener noreferrer">Ping Tan</a>`,
         venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
@@ -52,13 +52,14 @@ window.publicationsData = [
         bibtex: "./papers/2026_MaskWAM/yu2026maskwam.bib",
     },
     {
-        image: "./papers/2026_OEVLN/oevln.png",
+        image: "./papers/2026_OEVLN/oevln.webp",
         title: "OE-VLN: Benchmarking Open-Ended Vision-Language Navigation under Natural Human Instructions",
         authors: `<a>Jiaru Zhong</a>, <a>Yuxiang Yang</a>, <a>Wei Cui</a>, <a>Junliang Chen</a>, <strong>Jingbo Zhang</strong>, <a href="https://huaiyuanxu.github.io/" target="_blank" rel="noopener noreferrer">Huaiyuan Xu</a>, <a>Jiahui Xu</a>, <a>Yijie Guo</a>, <a>Yi Wang</a>, <a>Qiang Zhang</a>, <a>Lap-Pui Chau</a>`,
         venue: `Under review, 2026`,
     },
     {
-        image: "./papers/2025_da4d/da4d.gif",
+        image: "./papers/2025_da4d/da4d_poster.webp",
+        clip: "./papers/2025_da4d/da4d",
         title: "DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video",
         authors: `<a href="https://jarvishou829.github.io/" target="_blank" rel="noopener noreferrer">Jiawei Hou</a>, <a>Shenghao Zhang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>, <a href="https://cassiepython.github.io/" target="_blank" rel="noopener noreferrer">Can Wang</a>, <a href="https://edward3862.github.io/" target="_blank" rel="noopener noreferrer">Zheng Gu</a>, <a>Yonggen Ling</a>, <a>Taiping Zeng</a>, <a>Xiangyang Xue</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>, <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>`,
         venue: `IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026`,
@@ -67,7 +68,7 @@ window.publicationsData = [
         bibtex: "./papers/2025_da4d/hou2025detany4d.bib",
     },
     {
-        image: "./papers/2025_wordcraft/font-teaser-new.png",
+        image: "./papers/2025_wordcraft/font-teaser-new.webp",
         title: "WordCraft: Interactive Artistic Typography with Attention Awareness and Noise Blending",
         authors: `Zhe Wang, <strong>Jingbo Zhang</strong>, <a href="https://scholar.google.com/citations?user=-wfXmM4AAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Tianyi Wei</a>, <a href="https://cassiepython.github.io/" target="_blank" rel="noopener noreferrer">Can Wang</a>, <a href="https://research.monash.edu/en/persons/wanchao-su" target="_blank" rel="noopener noreferrer">Wanchao Su</a>`,
         venue: `arXiv preprint arXiv:2507.09573, 2025`,
@@ -75,7 +76,7 @@ window.publicationsData = [
         bibtex: "./papers/2025_wordcraft/wang2025wordcraft.bib",
     },
     {
-        image: "./papers/2025_tairos/perception.png",
+        image: "./papers/2025_tairos/perception.webp",
         title: "TAIROS: An Embodied AI Platform for Robotics Applications",
         authors: `Tencent Robotics X Team & Futian Laboratory, Shenzhen`,
         venue: `TAIROS Technical Report, 2025`,
@@ -84,7 +85,7 @@ window.publicationsData = [
         code: "https://tairos.tencent.com/docs/models/perception/sdk_download",
     },
     {
-        image: "./papers/2025_3d_editing/overview.jpg",
+        image: "./papers/2025_3d_editing/overview.webp",
         title: "Generative object insertion in gaussian splatting with a multi-view diffusion model",
         authors: `<a href="https://github.com/JiuTongBro" target="_blank" rel="noopener noreferrer">Hongliang Zhong</a>, <a href="https://cassiepython.github.io/" target="_blank" rel="noopener noreferrer">Can Wang</a>, <strong>Jingbo Zhang</strong>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `Visual Informatics, 2025`,
@@ -92,7 +93,8 @@ window.publicationsData = [
         bibtex: "./papers/2025_3d_editing/zhong2025generative.bib",
     },
     {
-        image: "./papers/2025_HumanRef-GS/2025_humanref-gs.gif",
+        image: "./papers/2025_HumanRef-GS/2025_humanref-gs_poster.webp",
+        clip: "./papers/2025_HumanRef-GS/2025_humanref-gs",
         title: "HumanRef-GS: Image-to-3D Human Generation With Reference-Guided Diffusion and 3D Gaussian Splatting",
         authors: `<strong>Jingbo Zhang</strong>, <a href="https://xiaoyu258.github.io/" target="_blank" rel="noopener noreferrer">Xiaoyu Li</a>, <a href="https://github.com/JiuTongBro" target="_blank" rel="noopener noreferrer">Hongliang Zhong</a>, <a href="https://qzhang-cv.github.io/" target="_blank" rel="noopener noreferrer">Qi Zhang</a>, <a href="https://yanpei.me/" target="_blank" rel="noopener noreferrer">Yanpei Cao</a>, <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Ying Shan</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE Transactions on Circuits and Systems for Video Technology (<strong>TCSVT</strong>), 2025`,
@@ -101,7 +103,7 @@ window.publicationsData = [
         bibtex: "./papers/2025_HumanRef-GS/zhang2025humanref.bib",
     },
     {
-        image: "./papers/2024_3D_Survey/survey.jpg",
+        image: "./papers/2024_3D_Survey/survey.webp",
         imageAlt: "Survey Paper",
         title: "Advances in 3D Generation: A Survey",
         authors: `<a href="https://xiaoyu258.github.io/" target="_blank" rel="noopener noreferrer">Xiaoyu Li</a>, <a href="https://qzhang-cv.github.io/" target="_blank" rel="noopener noreferrer">Qi Zhang</a>, <a href="https://scholar.google.com.hk/citations?user=2ztThPwAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Di Kang</a>, <a href="https://scholar.google.com/citations?user=gP-UxcoAAAAJ" target="_blank" rel="noopener noreferrer">Weihao Cheng</a>, <a href="https://scholar.google.com/citations?user=UvvufgQAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Yiming Gao</a>, <strong>Jingbo Zhang</strong>, <a href="https://lzhnb.github.io/" target="_blank" rel="noopener noreferrer">Zhihao Liang</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>, <a href="https://yanpei.me/" target="_blank" rel="noopener noreferrer">Yanpei Cao</a>, <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Ying Shan</a>`,
@@ -110,7 +112,7 @@ window.publicationsData = [
         bibtex: "./papers/2024_3D_Survey/li2024advances.bib",
     },
     {
-        image: "./papers/2024_tpami/ict_pami.png",
+        image: "./papers/2024_tpami/ict_pami.webp",
         title: "High-Fidelity and Efficient Pluralistic Image Completion With Transformers",
         authors: `<a href="http://raywzy.com/" target="_blank" rel="noopener noreferrer">Ziyu Wan</a>, <strong>Jingbo Zhang</strong>, <a href="http://www.dongdongchen.bid/" target="_blank" rel="noopener noreferrer">Dongdong Chen</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>), 2024`,
@@ -120,7 +122,8 @@ window.publicationsData = [
         bibtex: "./papers/2024_tpami/wan2024high.bib",
     },
     {
-        image: "./papers/2023_HumanRef/teaser.gif",
+        image: "./papers/2023_HumanRef/teaser_poster.webp",
+        clip: "./papers/2023_HumanRef/teaser",
         title: "HumanRef: Single Image to 3D Human Generation via Reference-Guided Diffusion",
         authors: `<strong>Jingbo Zhang</strong>, <a href="https://xiaoyu258.github.io/" target="_blank" rel="noopener noreferrer">Xiaoyu Li</a>, <a href="https://qzhang-cv.github.io/" target="_blank" rel="noopener noreferrer">Qi Zhang</a>, <a href="https://yanpei.me/" target="_blank" rel="noopener noreferrer">Yanpei Cao</a>, <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Ying Shan</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024`,
@@ -131,7 +134,8 @@ window.publicationsData = [
         bibtex: "./papers/2023_HumanRef/zhang2023humanref.bib",
     },
     {
-        image: "./papers/2023_VQ-NeRF/teaser.gif",
+        image: "./papers/2023_VQ-NeRF/teaser_poster.webp",
+        clip: "./papers/2023_VQ-NeRF/teaser",
         title: "VQ-NeRF: Neural Reflectance Decomposition and Editing with Vector Quantization",
         authors: `<a href="https://github.com/JiuTongBro" target="_blank" rel="noopener noreferrer">Hongliang Zhong</a>, <strong>Jingbo Zhang</strong>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023`,
@@ -142,7 +146,8 @@ window.publicationsData = [
         bibtex: "./papers/2023_AvatarCraft/zhong2023vq.bib",
     },
     {
-        image: "./papers/2023_Text2NeRF/teaser.gif",
+        image: "./papers/2023_Text2NeRF/teaser_poster.webp",
+        clip: "./papers/2023_Text2NeRF/teaser",
         title: "Text2NeRF: Text-Driven 3D Scene Generation with Neural Radiance Fields",
         authors: `<strong>Jingbo Zhang</strong>, <a href="https://xiaoyu258.github.io/" target="_blank" rel="noopener noreferrer">Xiaoyu Li</a>, <a href="http://raywzy.com/" target="_blank" rel="noopener noreferrer">Ziyu Wan</a>, <a href="https://cassiepython.github.io/" target="_blank" rel="noopener noreferrer">Can Wang</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2023`,
@@ -153,7 +158,8 @@ window.publicationsData = [
         bibtex: "./papers/2023_Text2NeRF/zhang2023text2nerf.bib",
     },
     {
-        image: "./papers/2023_AvatarCraft/teaser.gif",
+        image: "./papers/2023_AvatarCraft/teaser_poster.webp",
+        clip: "./papers/2023_AvatarCraft/teaser",
         title: "AvatarCraft: Transforming Text into Neural Human Avatars with Parameterized Shape and Pose Control",
         authors: `<a href="https://j-rx.com/" target="_blank" rel="noopener noreferrer">Ruixiang Jiang</a>, <a href="https://cassiepython.github.io/" target="_blank" rel="noopener noreferrer">Can Wang</a>, <strong>Jingbo Zhang</strong>, <a href="https://mlchai.com/" target="_blank" rel="noopener noreferrer">Menglei Chai</a>, <a href="https://mingminghe.com/" target="_blank" rel="noopener noreferrer">Mingming He</a>, <a href="https://www.dongdongchen.bid/" target="_blank" rel="noopener noreferrer">Dongdong Chen</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2023`,
@@ -164,7 +170,8 @@ window.publicationsData = [
         bibtex: "./papers/2023_AvatarCraft/jiang2023avatarcraft.bib",
     },
     {
-        image: "./papers/2022_FDNeRF/FDNeRF.gif",
+        image: "./papers/2022_FDNeRF/FDNeRF_poster.webp",
+        clip: "./papers/2022_FDNeRF/FDNeRF",
         title: "FDNeRF: Few-shot Dynamic Neural Radiance Fields for Face Reconstruction and Expression Editing",
         authors: `<strong>Jingbo Zhang</strong>, <a href="https://xiaoyu258.github.io/" target="_blank" rel="noopener noreferrer">Xiaoyu Li</a>, <a href="http://raywzy.com/" target="_blank" rel="noopener noreferrer">Ziyu Wan</a>, <a href="https://cassiepython.github.io/" target="_blank" rel="noopener noreferrer">Can Wang</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `<strong>SIGGRAPH Asia</strong>, 2022`,
@@ -175,7 +182,8 @@ window.publicationsData = [
         bibtex: "./papers/2022_FDNeRF/zhang2022fdnerf.bib",
     },
     {
-        image: "./papers/2022_texture_opti/texture_opti.gif",
+        image: "./papers/2022_texture_opti/texture_opti_poster.webp",
+        clip: "./papers/2022_texture_opti/texture_opti",
         title: "Adaptive Joint Optimization for 3D Reconstruction with Differentiable Rendering",
         authors: `<strong>Jingbo Zhang</strong>, <a href="http://raywzy.com/" target="_blank" rel="noopener noreferrer">Ziyu Wan</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), 2022`,
@@ -185,7 +193,7 @@ window.publicationsData = [
         bibtex: "./papers/2022_texture_opti/zhang2022adaptive.bib",
     },
     {
-        image: "./papers/2021_ICT/ICT.png",
+        image: "./papers/2021_ICT/ICT.webp",
         title: "High-Fidelity Pluralistic Image Completion with Transformers",
         authors: `<a href="http://raywzy.com/" target="_blank" rel="noopener noreferrer">Ziyu Wan</a>, <strong>Jingbo Zhang</strong>, <a href="http://www.dongdongchen.bid/" target="_blank" rel="noopener noreferrer">Dongdong Chen</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
         venue: `IEEE International Conference on Computer Vision (<strong>ICCV</strong>), 2021`,
@@ -199,7 +207,7 @@ window.publicationsData = [
 // 点击 "Show more" 后额外展示的论文
 window.additionalPublicationsData = [
     {
-        image: "./papers/2019_beta_wavelet/beta_wavelet.jpg",
+        image: "./papers/2019_beta_wavelet/beta_wavelet.webp",
         title: "A multiple beta wavelet-based locally regularized ultraorthogonal forward regression algorithm for time-varying system identification with applications to EEG",
         authors: `Yang Li, <strong>Jingbo Zhang</strong>, Weigang Cui, Heng Yuan, Hualiang Wei`,
         venue: `IEEE Transactions on Instrumentation and Measurement (<strong>TIM</strong>), 2019`,
@@ -220,7 +228,7 @@ window.additionalPublicationsData = [
 
 window.patentsData = [
     {
-        image: "./patents/CN201711305025_FullTextImage1.png",
+        image: "./patents/CN201711305025_FullTextImage1.webp",
         title: "一种基于beta小波基函数展开的时变非线性系统快速辨识方法",
         patentNo: "CN107967395A",
         inventors: `Yang Li, <b>Jingbo Zhang</b>, Weigang Cui, Song Xu, Qinglei Hu`,
@@ -228,7 +236,7 @@ window.patentsData = [
         statusText: "Granted (2018-04-27)",
     },
     {
-        image: "./patents/CN108509933A.PDF.png",
+        image: "./patents/CN108509933A.PDF.webp",
         title: "一种基于多小波基函数展开的锋电位时变格兰杰因果准确辨识方法",
         patentNo: "CN108509933A",
         inventors: `Yang Li, Daxin Hao, <b>Jingbo Zhang</b>`,
@@ -236,7 +244,7 @@ window.patentsData = [
         statusText: "Granted (2018-09-07)",
     },
     {
-        image: "./patents/DecAny4d.png",
+        image: "./patents/DecAny4d.webp",
         title: "一种面向视频输入的端到端开放集4D目标检测方法",
         patentNo: "2025120130CN",
         inventors: `<b>Jingbo Zhang</b>, Jiawei Hou, Shenghao Zhang, Minglei Lu, Yonggen Ling, Haitao Lin, Yuzhen Liu`,
@@ -248,7 +256,7 @@ window.patentsData = [
 // 折叠区（点击 "Show more" 后展开显示）的专利，写法与 patentsData 完全一致
 window.additionalPatentsData = [
     {
-        image: "./patents/2025120878CN.png",
+        image: "./patents/2025120878CN.webp",
         title: "一种面向机器人操作的端到端开放词汇3D视觉语言模型",
         patentNo: "2025120878CN",
         inventors: `Haitao Lin, Jingshun Huang, Cheng Zhou, Yonggen Ling, He Zhang, Minglei Lu, <b>Jingbo Zhang</b>`,
@@ -256,7 +264,7 @@ window.additionalPatentsData = [
         statusText: "Under Review (Applied 2025-12-31)",
     },
     {
-        image: "./patents/2025120018CN.png",
+        image: "./patents/2025120018CN.webp",
         title: "一种基于全局多路优化的RGB视频6D位姿数据集标注方法",
         patentNo: "2025120018CN",
         inventors: `Minglei Lu, Yonggen Ling, Shenghao Zhang, Yuzhen Liu, Haitao Lin, <b>Jingbo Zhang</b>`,
@@ -264,7 +272,7 @@ window.additionalPatentsData = [
         statusText: "Under Review (Applied 2025-12-01)",
     },
     {
-        image: "./patents/2025110345CN.png",
+        image: "./patents/2025110345CN.webp",
         title: "一种基于动捕系统的机械臂运动学标定方法",
         patentNo: "2025110345CN",
         inventors: `Minglei Lu, Yonggen Ling, <b>Jingbo Zhang</b>, Lingzhu Xiang, Junning Qiu`,
@@ -272,7 +280,7 @@ window.additionalPatentsData = [
         statusText: "Under Review (Applied 2025-11-20)",
     },
     {
-        image: "./patents/202511942210.7.png",
+        image: "./patents/202511942210.7.webp",
         title: "基于视觉语言模型引导的机器人探索策略",
         patentNo: "2025080364CN",
         inventors: `Yuzhen Liu, Zhitong Huang, <b>Jingbo Zhang</b>, Zibo Zhang`,
@@ -308,14 +316,14 @@ window.collaborationData = [
         members: [
             {
                 name: "Jing Liao",
-                photo: "./Collaboration/Photos/jingliao_STF.jpg",
+                photo: "./Collaboration/Photos/jingliao_STF.webp",
                 role: "Associate Professor<br>Department of Computer Science<br>City University of Hong Kong",
                 note: "My Ph.D. advisor.",
                 homepage: "https://www.cityu.edu.hk/stfprofile/jingliao.htm",
             },
             {
                 name: "Xiaoyu Li",
-                photo: "./Collaboration/Photos/lixiaoyu.png",
+                photo: "./Collaboration/Photos/lixiaoyu.webp",
                 role: "Senior Algorithm Expert<br>ATH, Qwen Business Unit<br>Alibaba",
                 note: "Research mentor.",
                 homepage: "https://xiaoyu258.github.io/",
@@ -330,31 +338,31 @@ window.collaborationData = [
         members: [
             {
                 name: "Ziyu Wan",
-                photo: "./Collaboration/Photos/wanziyu.jpg",
+                photo: "./Collaboration/Photos/wanziyu.webp",
                 role: "Technical Staff<br>Microsoft AI Superintelligence", 
                 homepage: "http://raywzy.com/" 
             },
             {
                 name: "Can Wang",
-                photo: "./Collaboration/Photos/wangcan.png",
+                photo: "./Collaboration/Photos/wangcan.webp",
                 role: "Postdoctoral Fellow<br>The University of Hong Kong", 
                 homepage: "https://cassiepython.github.io/" 
             },
             {
                 name: "Wanchao Su",
-                photo: "./Collaboration/Photos/suwanchao.jpeg",
+                photo: "./Collaboration/Photos/suwanchao.webp",
                 role: "Research Fellow<br>Monash University", 
                 homepage: "https://ansire.github.io/" 
             },
             {
                 name: "Zheng Gu",
-                photo: "./Collaboration/Photos/guzheng.png",
+                photo: "./Collaboration/Photos/guzheng.webp",
                 role: "Assistant Professor<br>Shenzhen University", 
                 homepage: "https://edward3862.github.io/" 
             },
             {
                 name: "Zhiyuan Zhang",
-                photo: "./Collaboration/Photos/zhangzhiyuan.png",
+                photo: "./Collaboration/Photos/zhangzhiyuan.webp",
                 role: "Ph.D. Student<br>City University of Hong Kong", 
                 homepage: "https://bestzzhang.github.io/" 
             },
@@ -372,73 +380,73 @@ window.collaborationData = [
             },
             {
                 name: "Huaiyuan Xu",
-                photo: "./Collaboration/Photos/xuhuaiyuan.png",
+                photo: "./Collaboration/Photos/xuhuaiyuan.webp",
                 role: "Postdoctoral Fellow<br>The Hong Kong Polytechnic University", 
                 homepage: "https://huaiyuanxu.github.io/" 
             },
             {
                 name: "Haitao Lin",
-                photo: "./Collaboration/Photos/linhaitao.png",
+                photo: "./Collaboration/Photos/linhaitao.webp",
                 role: "Senior Researcher<br>Robotics X, Tencent", 
                 homepage: "https://hetolin.github.io/" 
             },
             {
                 name: "Wenyao Zhang",
-                photo: "./Collaboration/Photos/zhangwenyao.png",
+                photo: "./Collaboration/Photos/zhangwenyao.webp",
                 role: "Senior Researcher", 
                 homepage: "https://zhangwenyao1.github.io/" 
             },
             {
                 name: "Shenghao Zhang",
-                photo: "./Collaboration/Photos/zhangshenghao.png",
+                photo: "./Collaboration/Photos/zhangshenghao.webp",
                 role: "Senior Researcher<br>Robotics X, Tencent", 
                 // homepage: "" 
             },
             {
                 name: "Yuzhen Liu",
-                photo: "./Collaboration/Photos/liuyuzhen.gif",
+                photo: "./Collaboration/Photos/liuyuzhen.webp",
                 role: "Senior Researcher", 
                 homepage: "https://ieeexplore.ieee.org/author/37086560116" 
             },
             {
                 name: "Minglei Lu",
-                photo: "./Collaboration/Photos/luminglei.png",
+                photo: "./Collaboration/Photos/luminglei.webp",
                 role: "Senior Researcher<br>Robotics X, Tencent", 
                 homepage: "https://scholar.google.com/citations?user=jq2fvmIAAAAJ&hl=en" 
             },
             {
                 name: "Hongliang Zhong",
-                photo: "./Collaboration/Photos/zhonghongliang.png",
+                photo: "./Collaboration/Photos/zhonghongliang.webp",
                 role: "Ph.D. Student<br>Zhejiang University", 
                 homepage: "https://github.com/JiuTongBro" 
             },
             {
                 name: "Jichao Zhang",
-                photo: "./Collaboration/Photos/zhangjichao.png",
+                photo: "./Collaboration/Photos/zhangjichao.webp",
                 role: "Assistant Professor<br>Ocean University of China", 
                 homepage: "https://zhangqianhui.github.io/" 
             },
             {
                 name: "Weijie Wang",
-                photo: "./Collaboration/Photos/wangweijie.jpeg",
+                photo: "./Collaboration/Photos/wangweijie.webp",
                 role: "Senior Researcher", 
                 homepage: "https://scholar.google.com.hk/citations?hl=zh-CN&user=AtB0KFsAAAAJ" 
             },
             {
                 name: "Lei Liu",
-                photo: "./Collaboration/Photos/liulei.jpg",
+                photo: "./Collaboration/Photos/liulei.webp",
                 role: "Postdoctoral Fellow<br>The University of Hong Kong", 
                 homepage: "https://scholar.google.com/citations?user=3FsuonEAAAAJ&hl=zh-CN" 
             },
             {
                 name: "Hanyang Yu",
-                photo: "./Collaboration/Photos/yuhanyang.jpg",
+                photo: "./Collaboration/Photos/yuhanyang.webp",
                 role: "Ph.D. Student<br>Hong Kong University of Science and Technology", 
                 homepage: "https://hanyangyu1021.github.io/" 
             },
             {
                 name: "Yuyang Zhang",
-                photo: "./Collaboration/Photos/zhangyuyang.png",
+                photo: "./Collaboration/Photos/zhangyuyang.webp",
                 role: "Ph.D. Student<br>Shanghai Jiao Tong University", 
                 homepage: "https://scholar.google.com.hk/citations?hl=zh-CN&user=v_6ZAw0AAAAJ" 
             },
@@ -452,13 +460,13 @@ window.collaborationData = [
         members: [
             {
                 name: "Jiawei Hou",
-                photo: "./Collaboration/Photos/houjiawei.png",
+                photo: "./Collaboration/Photos/houjiawei.webp",
                 role: "Ph.D. Student<br>Fudan University", 
                 homepage: "https://jarvishou829.github.io/" 
             },
             {
                 name: "Zhiyuan Zhang",
-                photo: "./Collaboration/Photos/zhangzhiyuan.png",
+                photo: "./Collaboration/Photos/zhangzhiyuan.webp",
                 role: "Ph.D. Student<br>City University of Hong Kong", 
                 homepage: "https://bestzzhang.github.io/" 
             },
@@ -470,13 +478,13 @@ window.collaborationData = [
             },
             {
                 name: "Yuxiang Yang",
-                photo: "./Collaboration/Photos/yangyuxiang.png",
+                photo: "./Collaboration/Photos/yangyuxiang.webp",
                 role: "Ph.D. Student<br>The Hong Kong Polytechnic University", 
                 homepage: "https://scholar.google.com.hk/citations?hl=zh-CN&user=uyiHu0kAAAAJ" 
             },
             {
                 name: "Yu Liu",
-                photo: "./Collaboration/Photos/liuyu.png",
+                photo: "./Collaboration/Photos/liuyu.webp",
                 role: "Ph.D. Student<br>Jilin University", 
                 homepage: "https://rainyrobo.github.io/" 
             },
