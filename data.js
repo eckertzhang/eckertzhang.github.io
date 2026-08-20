@@ -26,6 +26,7 @@ window.publicationsData = [
         title: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions",
         authors: `<a href="https://scholar.google.com.hk/citations?user=v1NkCl0AAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener noreferrer">Chenghao Gu</a><span class="author-mark">*</span>, <a href="https://hanyangyu1021.github.io/" target="_blank" rel="noopener noreferrer">Hanyang Yu</a><span class="author-mark">*</span>, <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a>Jinghe Wang</a>, <a>Hanglei Jin</a>, <a>Shuzhao Xie</a>, <a>Jingyan Jiang</a>, <a>Zhi Wang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>`,
         venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
+        page: "https://chenghaogu.github.io/GeniWorld/",
         pdf: "https://arxiv.org/pdf/2608.06332",
         bibtex: "./papers/2026_GeniWorld/gu2026geniworld.bib",
     },
