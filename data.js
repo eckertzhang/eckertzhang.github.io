@@ -17,7 +17,7 @@ window.publicationsData = [
         image: "./papers/2026_VoxelasMemory/Voxel_as_Memory.webp",
         title: "Voxel as Memory: Long video generation with 4D voxel control",
         authors: `<a href="https://bestzzhang.github.io/" target="_blank" rel="noopener noreferrer">Zhiyuan Zhang</a>, <strong>Jingbo Zhang</strong>, <a href="https://scholars.cityu.edu.hk/en/persons/zhithuang2/" target="_blank" rel="noopener noreferrer">Zhitong Huang</a>, <a href="https://scholars.cityu.edu.hk/en/persons/qisun45/" target="_blank" rel="noopener noreferrer">Qi Sun</a>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <a>Shenghao Zhang</a>, <a>Yuzhen Liu</a>, <a href="https://www.cityu.edu.hk/stfprofile/jingliao.htm" target="_blank" rel="noopener noreferrer">Jing Liao</a>`,
-        venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
+        venue: `Under review, 2026`, // alt: International Conference on Learning Representations (<strong>ICLR</strong>), 2027
         page: "https://bestzzhang.github.io/VAM/",
     },
     {
@@ -25,7 +25,7 @@ window.publicationsData = [
         imageFit: "contain",
         title: "GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions",
         authors: `<a href="https://scholar.google.com.hk/citations?user=v1NkCl0AAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener noreferrer">Chenghao Gu</a><span class="author-mark">*</span>, <a href="https://hanyangyu1021.github.io/" target="_blank" rel="noopener noreferrer">Hanyang Yu</a><span class="author-mark">*</span>, <strong>Jingbo Zhang</strong><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a>Jinghe Wang</a>, <a>Hanglei Jin</a>, <a>Shuzhao Xie</a>, <a>Jingyan Jiang</a>, <a>Zhi Wang</a><span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>`,
-        venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
+        venue: `Under review, 2026`, // alt: IEEE Robotics and Automation Letters (<strong>RAL</strong>), 2026
         page: "https://chenghaogu.github.io/GeniWorld/",
         pdf: "https://arxiv.org/pdf/2608.06332",
         bibtex: "./papers/2026_GeniWorld/gu2026geniworld.bib",
@@ -35,7 +35,7 @@ window.publicationsData = [
         imageFit: "contain",
         title: "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
         authors: `<a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=v_6ZAw0AAAAJ" target="_blank" rel="noopener noreferrer">Yuyang Zhang</a>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a href="https://qizekun.github.io/" target="_blank" rel="noopener noreferrer">Zekun Qi</a>, <a href="https://cghezhang.github.io/" target="_blank" rel="noopener noreferrer">He Zhang</a>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <strong>Jingbo Zhang</strong>, <a>Zhibo Chen</a>, <a>Yao Mu</a>, <a>Xiaokang Yang</a>, <a>Xin Jin</a>, <a>Wenjun Zeng</a>`,
-        venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
+        venue: `Conference on Robot Learning (<strong>CoRL</strong>), 2026`,
         page: "https://zhangwenyao1.github.io/ImageWAM/",
         pdf: "https://arxiv.org/pdf/2606.19531",
         code: "https://github.com/yuyangalin/ImageWAM",
@@ -45,7 +45,7 @@ window.publicationsData = [
         image: "./papers/2026_MaskWAM/maskwam.webp",
         title: "MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models",
         authors: `<a href="https://hanyangyu1021.github.io/" target="_blank" rel="noopener noreferrer">Hanyang Yu</a>, <a href="https://hetolin.github.io/" target="_blank" rel="noopener noreferrer">Haitao Lin</a>, <strong>Jingbo Zhang</strong>, <a href="https://zhangwenyao1.github.io/" target="_blank" rel="noopener noreferrer">Wenyao Zhang</a>, <a href="https://chenghaogu.github.io/" target="_blank" rel="noopener noreferrer">Chenghao Gu</a>, <a href="https://hengli.me/" target="_blank" rel="noopener noreferrer">Heng Li</a>, <a href="https://ece.hkust.edu.hk/pingtan" target="_blank" rel="noopener noreferrer">Ping Tan</a>`,
-        venue: `Under review, 2026`, // alt: Conference on Robot Learning (<strong>CoRL</strong>), 2026
+        venue: `Conference on Robot Learning (<strong>CoRL</strong>), 2026`,
         page: "https://hanyangyu1021.github.io/maskwam.github.io/",
         pdf: "https://arxiv.org/pdf/2606.13515",
         code: "https://github.com/hanyangyu1021/maskwam",
