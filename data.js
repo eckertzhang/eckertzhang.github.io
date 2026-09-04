@@ -53,10 +53,16 @@ window.publicationsData = [
         bibtex: "./papers/2026_MaskWAM/yu2026maskwam.bib",
     },
     {
-        image: "./papers/2026_OEVLN/oevln.webp",
-        title: "OE-VLN: Benchmarking Open-Ended Vision-Language Navigation under Natural Human Instructions",
+        image: "./papers/2026_RGVLN/pipeline.webp",
+        title: "RG-VLN: Benchmarking Underspecified Request Grounding in Vision-Language Navigation",
         authors: `<a>Jiaru Zhong</a>, <a>Yuxiang Yang</a>, <a>Wei Cui</a>, <a>Junliang Chen</a>, <strong>Jingbo Zhang</strong>, <a href="https://huaiyuanxu.github.io/" target="_blank" rel="noopener noreferrer">Huaiyuan Xu</a>, <a>Jiahui Xu</a>, <a>Yijie Guo</a>, <a>Yi Wang</a>, <a>Qiang Zhang</a>, <a>Lap-Pui Chau</a>`,
         venue: `Under review, 2026`,
+    },
+    {
+        image: "./papers/2026_StructMesh-GS/pipeline.jpg",
+        title: "StructMesh-GS: Structure-Adaptive Mesh Refinement of Geometry-Grounded Gaussians for Indoor Reconstruction",
+        authors: `<a>Ziyu Zhang</a>, <strong>Jingbo Zhang</strong>, <a href="https://edward3862.github.io/" target="_blank" rel="noopener noreferrer">Zheng Gu</a>, <a>Xiang Gao</a>, <a>Shuhan Shen</a>`,
+        venue: `Under review, 2026`, // alt: Fourteenth International Conference on 3D Vision (<strong>3DV</strong>), 2027
     },
     {
         image: "./papers/2025_da4d/da4d_poster.webp",
