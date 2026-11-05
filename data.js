@@ -484,10 +484,11 @@ window.collaborationData = [
                 homepage: "https://scholar.google.com.hk/citations?hl=zh-CN&user=v1NkCl0AAAAJ" 
             },
             {
-                name: "Yuxiang Yang",
-                photo: "./Collaboration/Photos/yangyuxiang.webp",
+                name: "** Yang",
+                // name: "Yuxiang Yang",
+                // photo: "./Collaboration/Photos/yangyuxiang.webp",
                 role: "Ph.D. Student<br>The Hong Kong Polytechnic University", 
-                homepage: "https://scholar.google.com.hk/citations?hl=zh-CN&user=uyiHu0kAAAAJ" 
+                // homepage: "https://scholar.google.com.hk/citations?hl=zh-CN&user=uyiHu0kAAAAJ" 
             },
             {
                 name: "Yu Liu",
