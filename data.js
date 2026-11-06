@@ -251,6 +251,22 @@ window.patentsData = [
         statusText: "Granted (2018-09-07)",
     },
     {
+        image: "./patents/Geniworld.webp", // TODO: 修改为正确的专利图片路径
+        title: "一种基于时间重采样的视觉语言动作模型后训练方法",
+        patentNo: "2026090630CN",
+        inventors: `Yu Liu, <b>Jingbo Zhang</b>, Haitao Lin, Hanyang Yu, Minglei Lu`,
+        status: "review",
+        statusText: "Under Review (Applied 2026-09-30)",
+    },
+    {
+        image: "./patents/Geniworld.webp",
+        title: "一种基于视觉动作条件的可泛化机器人操作世界模型构建方法及系统",
+        patentNo: "2026080506CN",
+        inventors: `<b>Jingbo Zhang</b>, Chenghao Gu, Hanyang Yu, Haitao Lin, Minglei Lu, Yong Deng, He Zhang`,
+        status: "review",
+        statusText: "Under Review (Applied 2026-08-21)",
+    },
+    {
         image: "./patents/DecAny4d.webp",
         title: "一种面向视频输入的端到端开放集4D目标检测方法",
         patentNo: "2025120130CN",
