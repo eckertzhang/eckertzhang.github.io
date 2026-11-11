@@ -48,14 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 缩略图：有 clip 字段的条目渲染为自动播放的静音循环视频（由 GIF 转码而来），否则渲染图片
-    function renderThumb(item, imgClass, alt) {
+    function renderThumb(item, imgClass, alt, imgStyle) {
+        const styleAttr = imgStyle ? ` style="${imgStyle}"` : '';
         if (item.clip) {
-            return `<video class="${imgClass}"${dimAttr(item.image)} autoplay muted loop playsinline preload="metadata" poster="${item.image}">
+            return `<video class="${imgClass}"${styleAttr}${dimAttr(item.image)} autoplay muted loop playsinline preload="metadata" poster="${item.image}">
                         <source src="${item.clip}.webm" type="video/webm">
                         <source src="${item.clip}.mp4" type="video/mp4">
                     </video>`;
         }
-        return `<img src="${item.image}" alt="${alt}" loading="lazy" decoding="async"${dimAttr(item.image)} class="${imgClass}">`;
+        return `<img src="${item.image}" alt="${alt}" loading="lazy" decoding="async"${dimAttr(item.image)} class="${imgClass}"${styleAttr}>`;
     }
 
     // ====== 论文 / 专利：从 data.js 渲染 ======
@@ -70,21 +71,49 @@ document.addEventListener('DOMContentLoaded', function() {
         return links.join('\n                                    ');
     }
 
+    // 作者：数组里每项形如 "Name"、"Name*#"、"Name+ | https://url"；本人加粗。
+    // 旧写法（整段 HTML 字符串）原样输出。
+    const SELF_NAME = 'Jingbo Zhang';
+    const AUTHOR_MARKS = {
+        '*': '<span class="author-mark"><span class="author-mark-star">*</span></span>',
+        '#': '<span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>',
+        '+': '<span class="author-mark"><span class="author-mark-lead">&Dagger;</span></span>',
+    };
+    function renderAuthors(authors) {
+        if (!Array.isArray(authors)) return authors;
+        return authors.map(entry => {
+            const [head, url] = entry.split('|').map(s => s.trim());
+            const [, name, marks] = head.match(/^(.*?)([*#+]*)$/);
+            let html = name;
+            if (name === SELF_NAME) html = `<strong>${name}</strong>`;
+            else if (url) html = `<a href="${url}" target="_blank" rel="noopener noreferrer">${name}</a>`;
+            return html + [...marks].map(m => AUTHOR_MARKS[m]).join('');
+        }).join(', ');
+    }
+
+    const isShown = pub => pub.show !== false;
+
     function renderPublicationCard(pub) {
         const card = document.createElement('div');
         card.className = 'publication-item bg-gray-50 rounded-lg p-4 sm:p-6';
-        // 图片显示模式：默认 'cover'（原始自适应填充，可能裁剪边缘）；设 imageFit: 'contain' 则完整显示、不裁剪
-        const imgClass = pub.imageFit === 'contain'
-            ? 'w-full h-auto max-h-64 object-contain rounded-lg mx-auto'
-            : 'w-full h-48 md:h-full object-cover rounded-lg';
+        // 图片显示模式：默认 'cover'（原始自适应填充，可能裁剪边缘）；设 imageFit: 'contain' 则完整显示、不裁剪；
+        // 设 imageFit: 'fill' 则忽略原图长宽比，统一拉伸缩放到 imageAspect（默认 16/10，与桌面端卡片文字区高度最匹配）
+        let imgClass = 'w-full h-48 md:h-full object-cover rounded-lg';
+        let imgStyle = '';
+        if (pub.imageFit === 'contain') {
+            imgClass = 'w-full h-auto max-h-64 object-contain rounded-lg mx-auto';
+        } else if (pub.imageFit === 'fill') {
+            imgClass = 'w-full h-auto object-fill rounded-lg';
+            imgStyle = `aspect-ratio: ${pub.imageAspect || '16 / 10'}`;
+        }
         card.innerHTML = `
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="md:col-span-1">
-                    ${renderThumb(pub, imgClass, pub.imageAlt || 'Paper')}
+                    ${renderThumb(pub, imgClass, pub.imageAlt || 'Paper', imgStyle)}
                 </div>
                 <div class="md:col-span-3">
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">${pub.title}</h4>
-                    <p class="text-sm text-gray-600 mb-2">${pub.authors}</p>
+                    <p class="text-sm text-gray-600 mb-2">${renderAuthors(pub.authors)}</p>
                     <p class="text-sm text-gray-500 mb-2"><em>${pub.venue}</em></p>
                     <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">${buildPublicationLinks(pub)}</div>
                 </div>
@@ -121,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 渲染主论文列表
     const publicationsList = document.getElementById('publicationsList');
     if (publicationsList && Array.isArray(window.publicationsData)) {
-        window.publicationsData.forEach(pub => publicationsList.appendChild(renderPublicationCard(pub)));
+        window.publicationsData.filter(isShown).forEach(pub => publicationsList.appendChild(renderPublicationCard(pub)));
     }
 
     // 渲染专利列表
@@ -261,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadMorePublications() {
         const additionalContainer = document.querySelector('#additionalPublications');
 
-        const extraPubs = Array.isArray(window.additionalPublicationsData) ? window.additionalPublicationsData : [];
+        const extraPubs = Array.isArray(window.additionalPublicationsData) ? window.additionalPublicationsData.filter(isShown) : [];
 
         // 创建新的论文条目
         extraPubs.forEach(pub => {
@@ -310,6 +339,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let isExpanded = false;
     
     if (toggleButton && additionalContainer) {
+        // 没有可折叠的论文时隐藏按钮
+        if (!Array.isArray(window.additionalPublicationsData) || window.additionalPublicationsData.filter(isShown).length === 0) {
+            toggleButton.style.display = 'none';
+        }
         toggleButton.addEventListener('click', function(e) {
             e.preventDefault();
             

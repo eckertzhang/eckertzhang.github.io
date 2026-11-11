@@ -110,17 +110,33 @@
             }
         }
 
-        /* Author contribution markers: * = co-first author, ✉ = corresponding author */
+        /* Author contribution markers: * = co-first author, ✉ = corresponding author, ‡ = project lead */
+        /* line-height: 0 避免尾标撑高所在行，保持行距一致 */
         .author-mark {
             color: #764ba2;
             font-weight: 600;
             vertical-align: super;
             font-size: 0.7em;
             margin-left: 1px;
+            line-height: 0;
         }
+        /* 三种符号的字形大小和高低差异很大；以下字号与 top 偏移按 system-ui 字体实测，
+           使三者墨迹高度一致（约为 .author-mark 字号的 0.67 倍）且垂直中心对齐 */
         .author-mark .fa-envelope {
-            font-size: 0.85em;
+            font-size: 0.9em;
             font-weight: 400;
+        }
+        .author-mark-star {
+            font-size: 1.95em;
+            font-weight: 400;
+            position: relative;
+            top: 0.355em;
+        }
+        .author-mark-lead {
+            font-size: 1.25em;
+            font-weight: 700;
+            position: relative;
+            top: 0.268em;
         }
         .author-legend {
             font-size: 0.8rem;
@@ -211,9 +227,10 @@
                             <a href="#" class="email-link text-white hover:text-blue-200 transition-colors inline-flex" data-encoded="amJ6aGFuZzYtY0BteS5jaXR5dS5lZHUuaGs=" title="Email" aria-label="Email">
                                 <i class="fas fa-envelope text-xl leading-none"></i>
                             </a>
-                            <!-- <a href="tel:+86-15727336166" class="text-white hover:text-green-200 transition-colors" title="Phone">
-                                <i class="fas fa-phone text-xl"></i>
-                            </a> -->
+                            <button type="button" class="phone-btn relative p-0 m-0 border-0 bg-transparent text-white hover:text-green-200 transition-colors cursor-pointer group leading-none inline-flex" data-encoded="Kzg2IDE1NzI3MzM2MTY2" aria-label="Phone, click to copy">
+                                <i class="fas fa-phone text-xl leading-none"></i>
+                                <span class="phone-tip pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-2 whitespace-nowrap rounded bg-black/80 px-2 py-1 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity z-10"></span>
+                            </button>
                             <a href="https://scholar.google.com/citations?user=M8I1aE4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-white hover:text-red-200 transition-colors inline-flex" title="Google Scholar">
                                 <i class="fab fa-google text-xl leading-none"></i>
                             </a>
@@ -527,9 +544,11 @@
             <section id="publications" class="scroll-mt-20 bg-white rounded-lg shadow-md p-4 sm:p-8 mb-8">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gradient mb-2">Publications</h2>
                 <p class="author-legend mb-6">
-                    <span class="author-mark">*</span> Equal contribution
+                    <span class="author-mark"><span class="author-mark-star">*</span></span> Equal contribution
                     <span class="mx-2">·</span>
                     <span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span> Corresponding author
+                    <span class="mx-2">·</span>
+                    <span class="author-mark"><span class="author-mark-lead">&Dagger;</span></span> Project lead
                 </p>
 
                 <!--
@@ -540,11 +559,14 @@
                       image    : 缩略图路径（必填）
                       imageAlt : 图片替代文本（可选，默认 "Paper"）
                       imageFit : 图片显示模式（可选）："cover"（默认，自适应填充，可能裁剪）/ "contain"（完整不裁剪）
+                                 / "fill"（忽略原图长宽比，统一拉伸缩放到 imageAspect，可能变形）
+                      imageAspect : 配合 "fill" 的目标长宽比（可选，默认 "16/10"，如 "16/9"、"4/3"）
                       title    : 论文标题（必填）
-                      authors  : 作者 HTML（可用 <a href="...">名字</a> / <strong>本人</strong> /
-                                 共同一作 <span class="author-mark">*</span> / 通讯 <span class="author-mark"><i class="fas fa-envelope" aria-hidden="true"></i></span>）
+                      authors  : 作者数组，每项 "姓名[后缀] [| 主页URL]"，如 "Wei Han"、"Hanyang Yu* | https://..."、"Jingbo Zhang#"
+                                 后缀：* 共同一作 / # 通讯 / + Project lead（‡）；本人自动加粗
                       venue    : 发表信息（自动包裹 <em>，可含 <strong>，如 "... (<strong>CVPR</strong>), 2026"）
                       page / pdf / code / video / bibtex : 各类链接 URL，留空或删除该字段则对应按钮不显示
+                      show     : 是否展示（可选，默认展示）；写 show: false 则隐藏该论文
                     下面注释掉的 "Paper example" 仅作 HTML 结构参考模板，无需改动。
                 -->
 
@@ -750,6 +772,31 @@
                     link.setAttribute('href', 'mailto:' + email);
                 } catch(e) {
                     console.error('Email link decode error:', e);
+                }
+            });
+
+            // 电话：Base64 编码防爬，悬停显示号码，点击复制
+            document.querySelectorAll('.phone-btn[data-encoded]').forEach(function(btn) {
+                try {
+                    const phone = atob(btn.getAttribute('data-encoded'));
+                    const tip = btn.querySelector('.phone-tip');
+                    const label = 'Phone: ' + phone;
+
+                    if (tip) tip.textContent = label;
+
+                    btn.addEventListener('click', function() {
+                        navigator.clipboard.writeText(phone).then(function() {
+                            if (!tip) return;
+                            tip.textContent = '✓ Copied!';
+                            tip.classList.add('opacity-100');
+                            setTimeout(function() {
+                                tip.textContent = label;
+                                tip.classList.remove('opacity-100');
+                            }, 1500);
+                        });
+                    });
+                } catch(e) {
+                    console.error('Phone decode error:', e);
                 }
             });
 
