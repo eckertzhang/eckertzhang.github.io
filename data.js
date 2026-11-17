@@ -21,6 +21,8 @@
 //   venue    : 发表信息（会自动包裹在 <em> 里，可含 <strong>）
 //   page/pdf/code/video/bibtex : 各类链接 URL，留空或删除则该按钮不显示
 //   show     : 是否在页面上展示（可选，默认展示）；写 show: false 则隐藏该论文，条目仍保留在此处
+//   pin      : 是否置顶（可选，默认不置顶）；写 pin: true 则排到列表最前面并加深背景色，
+//              多篇置顶时按在本文件中的先后顺序排列（折叠区的论文置顶后也会移到主列表顶部）
 // ============================================================================
 
 window.publicationsData = [
@@ -35,7 +37,8 @@ window.publicationsData = [
         ],
         venue: `Under review, 2026`, // alt: IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2027
         // page: "https://bestzzhang.github.io/VAM/",
-        show: false,
+        // show: false,
+        pin: true,
     },
     {
         image: "./papers/2026_PhysVAM/PhysVAM.webp",
@@ -52,7 +55,7 @@ window.publicationsData = [
     {
         image: "./papers/2026_FlexART/FlexART.webp",
         imageFit: "fill",
-        title: "FlexART: Unified 3D Articulation Understanding with Multimodal Language Models",
+        title: "FlexART: A Unified MLLM for 3D Articulation Understanding with Flexible Prompting",
         authors: [
             "Chaoqun Ma", "Mengqi Rong", "Yining Yang", "Minglei Lu", "Jingbo Zhang+", "Shuhan Shen#",
         ],
@@ -70,9 +73,9 @@ window.publicationsData = [
         // page: "https://bestzzhang.github.io/VAM/",
     },
     {
-        image: "./papers/zhanweitu.webp",
+        image: "./papers/2026_DEICA/DEICA.webp",
         imageFit: "fill",
-        title: "OPIC: One-Pair In-Context Human-to-End-Effector Demonstration Generation",
+        title: "DEICA: Data-Efficient Human-to-Robot Video Generation via In-Context Adaptation",
         authors: [
             "Lianghan Zhu", "Yanqi Bao", "Zheng Gu", "Jingbo Zhang", "Jing Wu",
             "Yukun Lai", "Jing Huo", "Jieqi Shi", "Yang Gao", 
@@ -80,7 +83,7 @@ window.publicationsData = [
         ],
         venue: `Under review, 2026`, // alt: IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2027
         // page: "https://bestzzhang.github.io/VAM/",
-        show: false,
+        // show: false,
     },
     {
         image: "./papers/2026_SODM/SODM.png",
@@ -107,6 +110,7 @@ window.publicationsData = [
         ],
         venue: `Under review, 2026`, // alt: International Conference on Learning Representations (<strong>ICLR</strong>), 2027
         page: "https://bestzzhang.github.io/VAM/",
+        pin: true,
     },
     {
         image: "./papers/2026_GeniWorld/GeniWorld.webp",
@@ -122,6 +126,7 @@ window.publicationsData = [
         page: "https://chenghaogu.github.io/GeniWorld/",
         pdf: "https://arxiv.org/pdf/2608.06332",
         bibtex: "./papers/2026_GeniWorld/gu2026geniworld.bib",
+        pin: true,
     },
     {
         image: "./papers/2026_ImageWAM/imagewam.webp",
@@ -138,6 +143,7 @@ window.publicationsData = [
         pdf: "https://arxiv.org/pdf/2606.19531",
         code: "https://github.com/yuyangalin/ImageWAM",
         bibtex: "./papers/2026_ImageWAM/zhang2026imagewam.bib",
+        pin: true,
     },
     {
         image: "./papers/2026_MaskWAM/maskwam.webp",
@@ -431,6 +437,14 @@ window.patentsData = [
     },
     {
         image: "./patents/Geniworld.webp", // TODO: 修改为正确的专利图片路径
+        title: "一种基于历史运动编码与多时距价值函数引导的机器人动态物体操作算法",
+        patentNo: "2026110127CN",
+        inventors: `<b>Jingbo Zhang</b>, Yuxiang Yang, Haitao Lin, Yu Liu, He Zhang, Minglei Lu`,
+        status: "review",
+        statusText: "Under Review (Applied 2026-11-05)",
+    },
+    {
+        image: "./patents/Geniworld.webp", // TODO: 修改为正确的专利图片路径
         title: "一种基于时间重采样的视觉语言动作模型后训练方法",
         patentNo: "2026090630CN",
         inventors: `Yu Liu, <b>Jingbo Zhang</b>, Haitao Lin, Hanyang Yu, Minglei Lu`,
@@ -553,7 +567,7 @@ window.collaborationData = [
             {
                 name: "Wanchao Su",
                 photo: "./Collaboration/Photos/suwanchao.webp",
-                role: "Research Fellow<br>Monash University", 
+                role: "Associate Professor<br>Dalian University of Technology", 
                 homepage: "https://ansire.github.io/" 
             },
             {

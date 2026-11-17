@@ -53,6 +53,9 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
+        .publication-pinned {
+            background-color: #e6e1ef;
+        }
         .academic-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
@@ -567,11 +570,12 @@
                       venue    : 发表信息（自动包裹 <em>，可含 <strong>，如 "... (<strong>CVPR</strong>), 2026"）
                       page / pdf / code / video / bibtex : 各类链接 URL，留空或删除该字段则对应按钮不显示
                       show     : 是否展示（可选，默认展示）；写 show: false 则隐藏该论文
+                      pin      : 是否置顶（可选）；写 pin: true 则排到最前面并加深背景色
                     下面注释掉的 "Paper example" 仅作 HTML 结构参考模板，无需改动。
                 -->
 
                 <div class="space-y-6">
-                    <div id="publicationsList" class="space-y-6"></div>
+                    <div id="publicationsList" class="space-y-3"></div>
                 </div>
 
                 <div class="text-center mt-6">
@@ -581,7 +585,7 @@
                 </div>
                 
                 <!-- Additional Publications (initially hidden) -->
-                <div id="additionalPublications" class="space-y-6 mt-6" style="display: none;"></div>
+                <div id="additionalPublications" class="space-y-3 mt-3" style="display: none;"></div>
             </section>
 
             <!-- Patents -->
@@ -609,7 +613,7 @@
                 </div>
 
                 <!-- Additional Patents (initially hidden) -->
-                <div id="additionalPatents" class="mt-6" style="display: none;"></div>
+                <div id="additionalPatents" class="mt-3" style="display: none;"></div>
 
             </section>
 
@@ -621,7 +625,7 @@
                 <p class="text-gray-700 leading-relaxed text-justify">
                     I have served as a reviewer for several prestigious journals and conferences, 
                     including <strong>TPAMI, TVCG, TCSVT, TMM, Computers & Graphics, ACM Computing Surveys, SIVP, Visual Informatics, Virtual Reality, 
-                    CVPR, ECCV, NeurIPS, Siggraph Asia, Pacific Graphics</strong>, etc.
+                    CVPR, ECCV, NeurIPS, Siggraph Asia, ICLR, Pacific Graphics</strong>, etc.
                 </p>
             </section>
 

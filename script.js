@@ -91,11 +91,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }).join(', ');
     }
 
-    const isShown = pub => pub.show !== false;
+    // 置顶论文（pin: true，可来自主列表或折叠区）统一排在主列表最前面，保持原有相对顺序
+    const visiblePubs = list => Array.isArray(list) ? list.filter(pub => pub.show !== false) : [];
+    const unpinned = pub => !pub.pin;
+    const mainPubs = visiblePubs(window.publicationsData);
+    const extraPubs = visiblePubs(window.additionalPublicationsData);
+    const pinnedPubs = [...mainPubs, ...extraPubs].filter(pub => pub.pin);
 
     function renderPublicationCard(pub) {
         const card = document.createElement('div');
-        card.className = 'publication-item bg-gray-50 rounded-lg p-4 sm:p-6';
+        card.className = `publication-item ${pub.pin ? 'publication-pinned' : 'bg-gray-50'} rounded-lg p-4 sm:p-6`;
         // 图片显示模式：默认 'cover'（原始自适应填充，可能裁剪边缘）；设 imageFit: 'contain' 则完整显示、不裁剪；
         // 设 imageFit: 'fill' 则忽略原图长宽比，统一拉伸缩放到 imageAspect（默认 16/10，与桌面端卡片文字区高度最匹配）
         let imgClass = 'w-full h-48 md:h-full object-cover rounded-lg';
@@ -126,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const statusClass = isGranted ? 'text-green-600' : 'text-yellow-600';
         const statusIcon = isGranted ? 'fa-check-circle' : 'fa-clock';
         const card = document.createElement('div');
-        card.className = 'patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-6';
+        card.className = 'patent-item bg-gray-50 rounded-lg p-4 sm:p-6 mt-3';
         card.innerHTML = `
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="md:col-span-1">
@@ -149,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 渲染主论文列表
     const publicationsList = document.getElementById('publicationsList');
-    if (publicationsList && Array.isArray(window.publicationsData)) {
-        window.publicationsData.filter(isShown).forEach(pub => publicationsList.appendChild(renderPublicationCard(pub)));
+    if (publicationsList) {
+        [...pinnedPubs, ...mainPubs.filter(unpinned)].forEach(pub => publicationsList.appendChild(renderPublicationCard(pub)));
     }
 
     // 渲染专利列表
@@ -183,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
             additionalPatentsContainer.style.display = 'none';
             if (togglePatentsButton) {
                 togglePatentsButton.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>Show more';
-                togglePatentsButton.style.display = 'inline-flex';
+                togglePatentsButton.parentElement.style.display = '';
                 patentsExpanded = false;
                 togglePatentsButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
@@ -191,9 +196,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (togglePatentsButton && additionalPatentsContainer) {
-        // 没有可折叠的专利时隐藏按钮
+        // 没有可折叠的专利时隐藏按钮（连同外层容器，避免其 margin 留下空隙；下同）
         if (!Array.isArray(window.additionalPatentsData) || window.additionalPatentsData.length === 0) {
-            togglePatentsButton.style.display = 'none';
+            togglePatentsButton.parentElement.style.display = 'none';
         }
         togglePatentsButton.addEventListener('click', function(e) {
             e.preventDefault();
@@ -202,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     loadMorePatents();
                 }
                 additionalPatentsContainer.style.display = 'block';
-                this.style.display = 'none';
+                this.parentElement.style.display = 'none';
                 patentsExpanded = true;
                 setTimeout(() => {
                     additionalPatentsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -290,10 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadMorePublications() {
         const additionalContainer = document.querySelector('#additionalPublications');
 
-        const extraPubs = Array.isArray(window.additionalPublicationsData) ? window.additionalPublicationsData.filter(isShown) : [];
-
         // 创建新的论文条目
-        extraPubs.forEach(pub => {
+        extraPubs.filter(unpinned).forEach(pub => {
             additionalContainer.appendChild(renderPublicationCard(pub));
         });
 
@@ -321,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalToggleButton = document.querySelector('#togglePublications');
             if (originalToggleButton) {
                 originalToggleButton.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>View Complete Publication List';
-                originalToggleButton.style.display = 'inline-flex';
+                originalToggleButton.parentElement.style.display = '';
                 isExpanded = false;
                 
                 // 滚动回到原始按钮位置
@@ -340,8 +343,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (toggleButton && additionalContainer) {
         // 没有可折叠的论文时隐藏按钮
-        if (!Array.isArray(window.additionalPublicationsData) || window.additionalPublicationsData.filter(isShown).length === 0) {
-            toggleButton.style.display = 'none';
+        if (extraPubs.filter(unpinned).length === 0) {
+            toggleButton.parentElement.style.display = 'none';
         }
         toggleButton.addEventListener('click', function(e) {
             e.preventDefault();
@@ -354,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 additionalContainer.style.display = 'block';
                 
                 // 隐藏原始按钮
-                this.style.display = 'none';
+                this.parentElement.style.display = 'none';
                 isExpanded = true;
                 
                 // 平滑滚动到展开的内容
