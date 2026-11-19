@@ -147,6 +147,7 @@ window.publicationsData = [
     },
     {
         image: "./papers/2026_MaskWAM/maskwam.webp",
+        imageFit: "fill",
         title: "MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models",
         authors: [
             "Hanyang Yu | https://hanyangyu1021.github.io/", "Haitao Lin | https://hetolin.github.io/",
@@ -160,6 +161,7 @@ window.publicationsData = [
         code: "https://github.com/hanyangyu1021/maskwam",
         video: "https://www.youtube.com/watch?v=x0tY7byEaF4",
         bibtex: "./papers/2026_MaskWAM/yu2026maskwam.bib",
+        pin: true,
     },
     {
         image: "./papers/2026_RGVLN/pipeline.webp",
@@ -437,6 +439,22 @@ window.patentsData = [
     },
     {
         image: "./patents/Geniworld.webp", // TODO: 修改为正确的专利图片路径
+        title: "一种用于机器人操作的语义与几何驱动的世界动作生成方法",
+        patentNo: "2026110490",
+        inventors: `<b>Jingbo Zhang</b>, Yu Liu, Haitao Lin, Zhitong Huang, Minglei Lu, He Zhang, Yuchen Zhou`,
+        status: "review",
+        statusText: "Under Review (Applied 2026-11-18)",
+    },
+    {
+        image: "./patents/Geniworld.webp", // TODO: 修改为正确的专利图片路径
+        title: "一种支持灵活提示的三维铰接物体结构与运动统一预测方法及系统",
+        patentNo: "2026110519",
+        inventors: `<b>Jingbo Zhang</b>, Chaoqun Ma, Shuhan Shen, Mengqi Rong, Yining Yang, Haitao Lin, Minglei Lu`,
+        status: "review",
+        statusText: "Under Review (Applied 2026-11-19)",
+    },
+    {
+        image: "./patents/Geniworld.webp", // TODO: 修改为正确的专利图片路径
         title: "一种基于历史运动编码与多时距价值函数引导的机器人动态物体操作算法",
         patentNo: "2026110127CN",
         inventors: `<b>Jingbo Zhang</b>, Yuxiang Yang, Haitao Lin, Yu Liu, He Zhang, Minglei Lu`,
@@ -471,6 +489,14 @@ window.patentsData = [
 
 // 折叠区（点击 "Show more" 后展开显示）的专利，写法与 patentsData 完全一致
 window.additionalPatentsData = [
+    {
+        image: "./patents/Geniworld.webp", // TODO: 修改为正确的专利图片路径
+        title: "一种基于引导进度建模的机器人世界动作模型预训练方法",
+        patentNo: "2026110518",
+        inventors: `Hanyang Yu, He Zhang, Yubo Dong, Minglei Lu, <b>Jingbo Zhang</b>`,
+        status: "review",
+        statusText: "Under Review (Applied 2026-11-19)",
+    },
     {
         image: "./patents/2025120878CN.webp",
         title: "一种面向机器人操作的端到端开放词汇3D视觉语言模型",
@@ -575,6 +601,12 @@ window.collaborationData = [
                 photo: "./Collaboration/Photos/guzheng.webp",
                 role: "Assistant Professor<br>Shenzhen University", 
                 homepage: "https://edward3862.github.io/" 
+            },
+            {
+                name: "Yanqi Bao",
+                photo: "./Collaboration/Photos/yanqibao.webp",
+                role: "Researcher<br>Horizon Robotics", 
+                homepage: "https://bbbbby-99.github.io/yanqibao.github.io/#:~:text=Yanqi%20Bao%20is%20currently%20a%20PhD%20student%20of%20the%20Department" 
             },
             {
                 name: "Zhiyuan Zhang",
