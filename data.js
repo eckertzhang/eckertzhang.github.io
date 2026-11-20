@@ -51,6 +51,9 @@ window.publicationsData = [
         ],
         venue: `Under review, 2026`, // alt: IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2027
         page: "https://metarobo.github.io/physvam.github.io/",
+        pdf: "https://arxiv.org/abs/2611.26105",
+        // bibtex: "",
+        pin: true,
     },
     {
         image: "./papers/2026_FlexART/FlexART.webp",
