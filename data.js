@@ -50,7 +50,7 @@ window.publicationsData = [
             "Haitao Lin | https://hetolin.github.io/", "Huaiyuan Xu#", "Yi Wang", "Lap-Pui Chau#",
         ],
         venue: `Under review, 2026`, // alt: IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2027
-        // page: "https://bestzzhang.github.io/VAM/",
+        page: "https://metarobo.github.io/physvam.github.io/",
     },
     {
         image: "./papers/2026_FlexART/FlexART.webp",
